@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Post page</title>
+  </head>
+  <body class="bg-slate-900">
+    <main class="w-screen h-screen flex justify-center items-center text-white">
+      <form
+        action="../cgi/upload.py"
+        enctype="multipart/form-data"
+        method="post"
+        class="flex flex-col w-1/4 p-8 space-y-4 bg-slate-800 rounded-md"
+      >
+        <div class="flex flex-col space-y-1">
+          <label class="text-slate-300">Upload Image: </label>
+          <input
+            type="file"
+            id="image_input_id"
+            name="image_input"
+            accept="image/*"
+            class="cursor-pointer p-2 rounded-md bg-slate-700 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="py-2 bg-emerald-500 rounded-md hover:bg-emerald-600 transition-all duration-300"
+        >
+          Upload
+        </button>
+        <a
+          href="index.html"
+          class="py-2 text-center ring-2 ring-emerald-500 rounded-md"
+        >
+          Back to home
+        </a>
+      </form>
+    </main>
+  </body>
+</html>

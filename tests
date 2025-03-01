@@ -1,0 +1,30 @@
+Request tests:
+
+-> Simple Request:
+curl --resolve 127.0.0.1:8008:127.0.0.1 127.0.0.1:8008
+
+-> Get Request:
+curl 127.0.0.1:8008/index.html
+
+-> Post Request:
+curl -X POST -H "Content-Type: plain/text" --data "1234567890" 127.0.0.1:8008/uploads/blabla.txt
+
+-> Download File
+curl -O 127.0.0.1:8008/uploads/blabla.txt
+
+-> Delete Request:
+curl -X DELETE 127.0.0.1:8008/uploads/blabla.txt
+
+-> Unknown Request:
+curl -X UNKNOWN 127.0.0.1:8008
+
+----------------------------------------------
+
+Performance Tests:
+
+-> Siege:
+siege -b http://127.0.0.1:8008/index.html -t 1m
+
+-> Leaks:
+pgrep webserv
+top -p <process ID>

@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Web Server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/webserv",  // Path to your executable
+            "args": [
+                "./config/default.conf"  // Replace with your actual config file or command-line arguments
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,  // Enable to see console output
+            "MIMode": "gdb",  // If you're using gdb for debugging
+            "miDebuggerPath": "/usr/bin/gdb",  // Specify path to GDB if needed, or leave as is if GDB is in your PATH
+            "preLaunchTask": "build C++",  // Runs the build task before debugging (optional)
+            "serverLaunchTimeout": 10000,
+            "filterStderr": true,
+            "filterStdout": true,
+            "logging": {
+                "moduleLoad": false
+            }
+        }
+    ]
+}

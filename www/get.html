@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Get Page</title>
+  </head>
+  <body class="bg-slate-900">
+    <main class="w-screen h-screen flex justify-center items-center text-white">
+      <form
+        action="../cgi/get_vars.py"
+        method="get"
+        class="flex flex-col space-y-4 w-96 p-8 bg-slate-800 rounded-md"
+      >
+        <div class="flex justify-center w-full">
+          <h1 class="text-2xl text-slate-100">GET with CGI</h1>
+        </div>
+        <div class="flex flex-col space-y-1">
+          <label class="text-slate-300">First variable: </label>
+          <input
+            type="text"
+            placeholder="Enter a variable"
+            name="varOne"
+            class="p-2 rounded-md bg-slate-700 outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+        <div class="flex flex-col space-y-1">
+          <label class="text-slate-300">Second variable: </label>
+          <input
+            type="text"
+            placeholder="Enter a variable"
+            name="varTwo"
+            class="p-2 rounded-md bg-slate-700 outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+        <button
+          type="submit"
+          class="py-2 bg-emerald-500 rounded-md hover:bg-emerald-600 transition-all duration-300"
+        >
+          go GET 'em
+        </button>
+        <a
+          href="index.html"
+          class="py-2 text-center ring-2 ring-emerald-500 rounded-md"
+        >
+          Back to home
+        </a>
+      </form>
+    </main>
+  </body>
+</html>

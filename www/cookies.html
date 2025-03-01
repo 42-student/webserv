@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cookies Page</title>
+  </head>
+  <body class="bg-slate-900">
+    <main class="w-screen h-screen flex justify-center items-center text-white">
+      <section class="flex flex-col justify-start space-y-10">
+        <div class="flex flex-col space-y-2">
+          <h1 class="text-2xl">Create cookie</h1>
+          <form
+            id="createCookieForm"
+            action="../cgi/set_cookie.py"
+            class="flex flex-row items-center p-8 bg-slate-800 space-x-2 rounded-md"
+          >
+            <input
+              id="key"
+              type="text"
+              placeholder="key"
+              name="key"
+              class="p-2 rounded-md bg-slate-700 outline-none focus:ring-2 focus:ring-emerald-500"
+              required
+            />
+            <p class="font-semibold">=</p>
+            <input
+              id="value"
+              type="text"
+              placeholder="value"
+              name="value"
+              class="p-2 rounded-md bg-slate-700 outline-none focus:ring-2 focus:ring-emerald-500"
+              required
+            />
+            <button
+              id="submitButton"
+              type="submit"
+              class="py-2 px-5 bg-emerald-500 rounded-md hover:bg-emerald-600 transition-all duration-300"
+            >
+              Create
+            </button>
+          </form>
+        </div>
+        <div class="flex flex-col space-y-2">
+          <h1 class="text-2xl">Get cookie</h1>
+
+          <form
+            action="../cgi/get_cookie.py"
+            method="get"
+            class="flex flex-row items-center p-8 bg-slate-800 space-x-2 rounded-md"
+          >
+            <input
+              type="text"
+              placeholder="Cookie Key"
+              name="key"
+              class="p-2 rounded-md bg-slate-700 outline-none focus:ring-2 focus:ring-emerald-500 w-3/5"
+              required
+            />
+            <button
+              type="submit"
+              class="py-2 px-5 bg-emerald-500 rounded-md w-2/5 hover:bg-emerald-600 transition-all duration-300"
+            >
+              Get
+            </button>
+          </form>
+        </div>
+        <a
+          href="index.html"
+          class="py-2 text-center ring-2 ring-emerald-500 rounded-md"
+        >
+          Back to home
+        </a>
+      </section>
+    </main>
+    <script>
+      const submitButton = document.getElementById('submitButton');
+
+      const handleClick = (e) => {
+        const inputValues = [
+          ...document
+            .querySelectorAll('#createCookieForm input[type="text"]')
+            .values(),
+        ].map((input) => input.value);
+
+        if (!inputValues.every((val) => val.length)) return;
+
+        alert('Cookie created successfully');
+      };
+
+      submitButton.addEventListener('click', handleClick);
+    </script>
+  </body>
+</html>
