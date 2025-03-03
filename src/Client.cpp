@@ -66,3 +66,8 @@ void Client::clearClient()
 	response.clear();
 	request.clear();
 }
+
+int Client::getSocket()
+{
+	return this->_cliSock;
+}

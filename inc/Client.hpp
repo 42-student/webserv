@@ -29,6 +29,8 @@ class Client
 			void			setServer(Server &);
 			const time_t	&getLastMessageTime() const;	
 			void			clearClient();
+
+			int getSocket();
 };
 
 #endif
