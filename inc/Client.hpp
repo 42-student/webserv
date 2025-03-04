@@ -11,6 +11,7 @@ class Client
 			int					_cliSock;
 			struct sockaddr_in	_cliSockAddr;
 			time_t				_lastMessage;
+			time_t				_cgiStartTime;
 
 	public:
 			Server		server;
@@ -19,18 +20,19 @@ class Client
 
 			Client();
 			Client(const Client &other);
-			Client(Server &);
+			Client(Server &serv);
 			Client &operator=(const Client &rhs);
 			~Client();
 
 			void			buildResponse();
 			void			updateLastMessageTime();	
 			void			setSocket(int &);
+			int				getSocket();
 			void			setServer(Server &);
-			const time_t	&getLastMessageTime() const;	
+			const time_t	&getLastMessageTime() const;
+			void			setCgiStartTime(time_t start);
+			time_t			getCgiStartTime() const;
 			void			clearClient();
-
-			int getSocket();
 };
 
 #endif

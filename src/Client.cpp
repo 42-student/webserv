@@ -3,6 +3,7 @@
 Client::Client()
 {
 	_lastMessage = time(NULL);
+	_cgiStartTime = 0;
 }
 
 Client::Client(const Client &copy)
@@ -13,13 +14,15 @@ Client::Client(const Client &copy)
 	this->response = copy.response;
 	this->server = copy.server;
 	this->_lastMessage = copy._lastMessage;
+	this->_cgiStartTime = copy._cgiStartTime;
 }
 
-Client::Client(Server &server)
+Client::Client(Server &serv)
 {
-	setServer(server);
+	setServer(serv);
 	request.setMaxBodySize(server.getClientMaxBodySize());
 	_lastMessage = time(NULL);
+	_cgiStartTime = 0;
 }
 
 Client &Client::operator=(const Client &copy)
@@ -30,6 +33,7 @@ Client &Client::operator=(const Client &copy)
 	this->response = copy.response;
 	this->server = copy.server;
 	this->_lastMessage = copy._lastMessage;
+	this->_cgiStartTime = copy._cgiStartTime;
 	return (*this);
 }
 
@@ -51,6 +55,11 @@ void Client::setSocket(int &socket)
 	_cliSock = socket;
 }
 
+int Client::getSocket()
+{
+	return this->_cliSock;
+}
+
 void Client::setServer(Server &server)
 {
 	response.setServer(server);
@@ -58,16 +67,21 @@ void Client::setServer(Server &server)
 
 const time_t &Client::getLastMessageTime() const
 {
-	return (_lastMessage);
+	return this->_lastMessage;
+}
+
+void Client::setCgiStartTime(time_t start)
+{
+	_cgiStartTime = start;
+}
+
+time_t Client::getCgiStartTime() const
+{
+	return this->_cgiStartTime;
 }
 
 void Client::clearClient()
 {
 	response.clear();
 	request.clear();
-}
-
-int Client::getSocket()
-{
-	return this->_cliSock;
 }

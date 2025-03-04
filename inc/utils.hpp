@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <climits>
+#include <poll.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <dirent.h>
@@ -47,6 +48,7 @@
 #define ORANGE "\033[38;5;208m"
 #define WHITE "\033[38;10m"
 #define RESET "\033[0m"
+#define CYAN "\033[0;36m"
 
 #define MAX_URI_LENGTH 4096
 #define MAX_CONTENT_LENGTH 31457280

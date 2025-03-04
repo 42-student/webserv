@@ -203,19 +203,20 @@ void Cgi::execute(short &errorCode)
 {
 	if (!this->_av[0] || !this->_av[1])
 	{
+		PrintApp::printEvent(RED_BOLD, SUCCESS, "CGI execute failed: Invalid arguments.");
 		errorCode = 500;
 		return;
-	}	
+	}
 	if (pipe(pipeIn) < 0 || pipe(pipeOut) < 0)
 	{
-		PrintApp::printEvent(RED_BOLD, SUCCESS, "Failed to execute pipe() operation. Please check your system resources and try again.");
+		PrintApp::printEvent(RED_BOLD, SUCCESS, "Failed to create pipes for CGI: %s.", strerror(errno));
 		close(pipeIn[0]);
 		close(pipeIn[1]);
 		close(pipeOut[0]);
 		close(pipeOut[1]);
 		errorCode = 500;
 		return;
-	}	
+	}
 	this->_cgiPid = fork();
 	if (this->_cgiPid == 0)
 	{
@@ -226,11 +227,12 @@ void Cgi::execute(short &errorCode)
 		close(pipeOut[0]);
 		close(pipeOut[1]);
 		this->_exitStatus = execve(this->_av[0], this->_av, this->_chEnv);
-		exit(this->_exitStatus);	
-	} 
+		fprintf(stderr, "execve failed: %s\n", strerror(errno));
+		exit(this->_exitStatus);
+	}
 	else if (this->_cgiPid < 0)
 	{
-		PrintApp::printEvent(RED_BOLD, SUCCESS, "Fork failed. Unable to create a new process. Please check the system resources and try again.");
+		PrintApp::printEvent(RED_BOLD, SUCCESS, "Fork failed: %s.", strerror(errno));
 		close(pipeIn[0]);
 		close(pipeIn[1]);
 		close(pipeOut[0]);
@@ -238,38 +240,16 @@ void Cgi::execute(short &errorCode)
 		errorCode = 500;
 		return;
 	}
-	if (!isFileUpload())
-	{
-		int status;
-		const int TIMEOUT_SECONDS = 5;
-		time_t startTime = time(NULL);
-    	while (true)
-		{
-    	    pid_t result = waitpid(this->_cgiPid, &status, WNOHANG);
-    	    if (result == this->_cgiPid)
-			{
-    	        if (WIFEXITED(status) || WIFSIGNALED(status))
-    	            return;
-    	    }
-    	    if (time(NULL) - startTime > TIMEOUT_SECONDS)
-			{
-    	        kill(this->_cgiPid, SIGKILL);
-    	        waitpid(this->_cgiPid, &status, 0);
-    	        PrintApp::printEvent(RED_BOLD, SUCCESS, "CGI script execution timed out and was terminated.");
-    	        errorCode = 504;
-    	        return;
-    	    }
-    	    usleep(100000);
-    	}
-	}
+	close(pipeIn[0]);
+	close(pipeOut[1]);
 }
 
 bool Cgi::isFileUpload()
 {
-    std::map<std::string, std::string>::iterator it = this->_env.find("CONTENT_TYPE");
-    if (it != this->_env.end())
-        return it->second.find("multipart/form-data") != std::string::npos;
-    return false;
+	std::map<std::string, std::string>::iterator it = this->_env.find("CONTENT_TYPE");
+	if (it != this->_env.end())
+		return it->second.find("multipart/form-data") != std::string::npos;
+	return false;
 }
 
 int Cgi::findStart(const std::string path, const std::string delim)
@@ -296,23 +276,23 @@ std::string Cgi::decode(std::string &path)
 
 unsigned int Cgi::fromHexToDec(const std::string &nb)
 {
-    unsigned int result = 0;
-    std::size_t i = 0;
-    while (i < nb.length())
+	unsigned int result = 0;
+	std::size_t i = 0;
+	while (i < nb.length())
 	{
-        char c = nb[i];
-        if (!std::isxdigit(c))
-            return 0;
-        result *= 16;
-        if (c >= '0' && c <= '9')
-            result += c - '0';
-        else if (c >= 'A' && c <= 'F')
-            result += c - 'A' + 10;
-        else if (c >= 'a' && c <= 'f')
-            result += c - 'a' + 10;
-        ++i;
-    }
-    return result;
+		char c = nb[i];
+		if (!std::isxdigit(c))
+			return 0;
+		result *= 16;
+		if (c >= '0' && c <= '9')
+			result += c - '0';
+		else if (c >= 'A' && c <= 'F')
+			result += c - 'A' + 10;
+		else if (c >= 'a' && c <= 'f')
+			result += c - 'a' + 10;
+		++i;
+	}
+	return result;
 }
 
 void Cgi::clear()

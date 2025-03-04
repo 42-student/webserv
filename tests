@@ -18,6 +18,9 @@ curl -X DELETE 127.0.0.1:8008/uploads/blabla.txt
 -> Unknown Request:
 curl -X UNKNOWN 127.0.0.1:8008
 
+-> Redirect Request:
+curl -v 127.0.0.1:8008/redirect
+
 ----------------------------------------------
 
 Performance Tests:

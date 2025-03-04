@@ -530,6 +530,11 @@ void Response::setServerDefaultErrorPages()
 	_respBody = getErrorPage(_code);
 }
 
+void Response::setCode(short code)
+{
+	_code = code;
+}
+
 void Response::setErrorResponse(short code)
 {
 	responseContent = "";

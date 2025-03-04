@@ -66,6 +66,7 @@ class Response
 			void			setStatusLine();
 			void			setHeaders();
 			void			setServerDefaultErrorPages();
+			void			setCode(short code);
 			void			setErrorResponse(short code);
 			void			setCgiState(int);
 			void			getLocationMatch(std::string &path, std::vector<Location> locations, std::string &locationKey);
