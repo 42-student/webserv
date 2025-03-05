@@ -46,7 +46,6 @@ void Response::buildResponse()
 		return;
 	else if (_autoIndex)
 	{
-		std::cout << "Auto index " << std::endl;
 		if (buildHtmlIndex(_targetFile, _body, _bodyLen))
 		{
 			_code = 500;

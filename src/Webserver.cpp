@@ -46,7 +46,6 @@ void Webserver::processServerRequests()
 					const int CGI_TIMEOUT_SECONDS = 5;
 					if ((now - start) > CGI_TIMEOUT_SECONDS)
 					{
-						std::cout << "CGI timeout for client FD " << it->first << ", PID " << client.response.cgiObj.getCgiPid() << std::endl;
 						kill(client.response.cgiObj.getCgiPid(), SIGKILL);
 						int status;
 						waitpid(client.response.cgiObj.getCgiPid(), &status, 0);
@@ -226,7 +225,7 @@ void Webserver::readAndProcessRequest(const int &i, Client &client)
 	int bytesRead = read(i, buffer, 40000);
 	if (bytesRead == 0)
 	{
-		PrintApp::printEvent(YELLOW, SUCCESS, "Connection with client %d closed.", i);
+		PrintApp::printEvent(YELLOW, SUCCESS, "Connection with client closed.");
 		closeConnection(i);
 		return;
 	}
@@ -252,7 +251,6 @@ void Webserver::readAndProcessRequest(const int &i, Client &client)
 		{
 			handleReqBody(client);
 			client.setCgiStartTime(time(NULL));
-			std::cout << "Set CGI start time to " << client.getCgiStartTime() << std::endl;
 			addToPoll(client.response.cgiObj.pipeIn[1], POLLOUT);
 			addToPoll(client.response.cgiObj.pipeOut[0], POLLIN);
 			removeFromPoll(i);
@@ -431,7 +429,7 @@ void Webserver::handleClientTimeout()
 	{
 		if (time(NULL) - it->second.getLastMessageTime() > 30)
 		{
-			PrintApp::printEvent(YELLOW, SUCCESS, "The connection with Client %d has timed out. Closing the connection...", it->first);
+			PrintApp::printEvent(YELLOW, SUCCESS, "The connection with Client has timed out. Closing the connection...");
 			int fd = it->first;
 			++it;
 			closeConnection(fd);
