@@ -5,43 +5,44 @@
 
 class Server;
 
-class Parser {
+class Parser
+{
 	private:
 			std::vector<Server>			_servList;
 			std::vector<std::string>	_servConf;
-			size_t						_nbOfServ;
+			size_t						_servNbs;
 
+			std::string					trimWhitespace(const std::string& str) const;
+			std::string					removeComments(const std::string& str) const;
+			void						extractServerBlocks(const std::string& content);
+			size_t						findServerStart(size_t pos, const std::string& content) const;
+			size_t						findServerEnd(size_t pos, const std::string& content) const;
+			Server						parsServConf(const std::string& config);
+			std::vector<std::string>	tokenize(const std::string& str, const std::string& delimiters) const;
+			void						validateParameterCount(const std::vector<std::string>& params) const;
+			void						processDirective(const std::string& directive, size_t& i, const std::vector<std::string>& params, Server& server,
+														std::vector<std::string>& errorCodes, int& locationFlag, bool& isAutoindexSet, bool& isMaxSizeSet);
+			void						checkDuplicatePort(Server& server);
+			void						checkDuplicateHost(Server& server);
+			void						checkDuplicateRoot(Server& server);
+			void						checkDuplicateMaxBodySize(bool isSet) const;
+			void						checkDuplicateServerName(Server& server);
+			void						checkDuplicateIndex(Server& server);
+			void						checkDuplicateRedirect(Server& server);
+			void						checkDuplicateAutoindex(bool isSet) const;
+			void						validateScopeChar(const std::string& param) const;
+			void						validateClosingBracket(const std::vector<std::string>& params, size_t i) const;
+			void						setDefaultServerValues(Server& server);
+			void						validateServer(Server& server);
+			bool						isDuplicateServer(Server& curr, Server& next);
+			void						checkDuplicateServers();
+			
 	public:
 			Parser();
 			~Parser();
 
-			int							parsServConf(const std::string &config_file);
-			const std::string			extractServConf(std::string &fileContent);
-			const std::string			removeComments(std::string &string);
-			const std::string			removeSpaces(std::string &string);
-			void						splitServers(std::string &content);
-			size_t						findStartServ(size_t start, std::string &content);
-			size_t						findEndServ(size_t start, std::string &content);
-			void						createServFromConf(std::string &config, Server &server);
-			std::vector<std::string>	splitParam(std::string inputStr, std::string delimeter);
-			void						valServParamSize(const std::vector<std::string> &parameters);
-			void						valDupPort(Server &server);
-			void						valServScopeChar(const std::string &parameter);
-			std::vector<std::string>	parsLocCodes(const std::vector<std::string> &parameters, size_t &i);
-			void						valClosingBracket(const std::vector<std::string> &parameter, size_t &i);
-			void						valDupHost(Server &server);
-			void						valDupRoot(Server &server);
-			void						processErrorCodes(const std::vector<std::string> &parameters, size_t &i, std::vector<std::string> &errorCodes);
-			void						valDupMaxBodySize(bool isMaxSizeSet);
-			void						valDupServName(Server &server);
-			void						valDupIndex(Server &server);
-			void						valDupRedirect(Server &server);
-			void						valDupAutoindex(bool flag_autoindex);
-			void						setDefaultServVal(Server &server);
-			void						servValidations(Server &server);
-			bool						checkIfServDup(Server &currentServer, Server &nextServer);
-			void						checkDupServConf();
-			std::vector<Server>			getServers();
+			int						parseServerConfig(const std::string& filePath);
+			std::vector<Server>		getServers() const;
 };
 
 #endif

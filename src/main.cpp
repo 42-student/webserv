@@ -11,7 +11,7 @@ int main(int ac, char **av)
 		std::string configFile = (av[1]);
 		Parser servParser;
 		Webserver webServ;
-		servParser.parsServConf(configFile);
+		servParser.parseServerConfig(configFile);
 		webServ.setupServers(servParser.getServers());
 		webServ.processServerRequests();
 	}
