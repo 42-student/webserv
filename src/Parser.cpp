@@ -322,7 +322,7 @@ void Parser::validateServer(Server& server)
 	if (server.checkLocation())
 		throw Error("Duplicate location found in the server configuration.");
 	if (!server.getPort())
-		throw Error("Port number is missing in the server configuration");
+		throw Error("Port number is missing in the server configuration.");
 	if (!server.isValidErrorPages())
 		throw Error("Incorrect error page path or invalid number of error pages specified.");
 }

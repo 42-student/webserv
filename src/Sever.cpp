@@ -134,7 +134,7 @@ void Server::setErrorPages(const std::vector<std::string>& param)
 	if (param.empty())
 		return;
 	if (param.size() % 2 != 0)
-		throw Error("Error pages require code-path pairs, got odd number of parameters");
+		throw Error("Error pages require code-path pairs, got odd number of parameters.");
 	for (size_t i = 0; i < param.size(); i += 2)
 	{
 		std::string codeStr = param[i];
@@ -237,9 +237,9 @@ void Server::handleIndexLocation(const std::vector<std::string>& param, size_t& 
 void Server::handleAutoindex(const std::vector<std::string>& param, size_t& i, const std::string& path, Location& newLocation, bool& flagAutoIndex)
 {
 	if (path == "/cgi")
-		throw Error("Autoindex not allowed for CGI location");
+		throw Error("Autoindex not allowed for CGI location.");
 	if (flagAutoIndex)
-		throw Error("Duplicate autoindex directive in location");
+		throw Error("Duplicate autoindex directive in location.");
 	newLocation.setAutoindex(checkToken(param[++i]));
 	flagAutoIndex = true;
 }
@@ -256,25 +256,25 @@ void Server::handleRedirect(const std::vector<std::string>& param, size_t& i, co
 void Server::handleReturn(const std::vector<std::string>& param, size_t& i, const std::string& path, Location& newLocation)
 {
 	if (path == "/cgi")
-		throw Error("Return not allowed for CGI location");
+		throw Error("Return not allowed for CGI location.");
 	if (!newLocation.getReturn().empty())
-		throw Error("Duplicate return directive in location");
+		throw Error("Duplicate return directive in location.");
 	newLocation.setReturn(checkToken(param[++i]));
 }
 
 void Server::handleAlias(const std::vector<std::string>& param, size_t& i, const std::string& path, Location& newLocation)
 {
 	if (path == "/cgi")
-		throw Error("Alias not allowed for CGI location");
+		throw Error("Alias not allowed for CGI location.");
 	if (!newLocation.getAlias().empty())
-		throw Error("Duplicate alias directive in location");
+		throw Error("Duplicate alias directive in location.");
 	newLocation.setAlias(checkToken(param[++i]));
 }
 
 void Server::handleMaxBodySize(const std::vector<std::string>& param, size_t& i, Location& newLocation, bool& flagMaxSize)
 {
 	if (flagMaxSize)
-		throw Error("Duplicate client_max_body_size directive in location");
+		throw Error("Duplicate client_max_body_size directive in location.");
 	newLocation.setMaxBodySize(checkToken(param[++i]));
 	flagMaxSize = true;
 }
@@ -282,13 +282,13 @@ void Server::handleMaxBodySize(const std::vector<std::string>& param, size_t& i,
 void Server::handleAllowMethods(const std::vector<std::string>& param, size_t& i, Location& newLocation, bool& flagMethods)
 {
 	if (flagMethods)
-		throw Error("Duplicate allow_methods directive in location");
+		throw Error("Duplicate allow_methods directive in location.");
 	std::vector<std::string> methods;
 	size_t j = i;
 	while (++j < param.size() && param[j].find(";") == std::string::npos)
 		methods.push_back(param[j]);
 	if (j >= param.size())
-		throw Error("Allow_methods missing semicolon");
+		throw Error("Allow_methods missing semicolon.");
 	methods.push_back(checkToken(param[j]));
 	newLocation.setMethods(methods);
 	i = j;
@@ -302,7 +302,7 @@ void Server::handleCgiExtension(const std::vector<std::string>& param, size_t& i
 	while (++j < param.size() && param[j].find(";") == std::string::npos)
 		extensions.push_back(param[j]);
 	if (j >= param.size())
-		throw Error("CGI extension missing semicolon");
+		throw Error("CGI extension missing semicolon.");
 	extensions.push_back(checkToken(param[j]));
 	newLocation.setCgiExtension(extensions);
 	i = j;
@@ -315,7 +315,7 @@ void Server::handleCgiPath(const std::vector<std::string>& param, size_t& i, Loc
 	while (++j < param.size() && param[j].find(";") == std::string::npos)
 		paths.push_back(param[j]);
 	if (j >= param.size())
-		throw Error("CGI path missing semicolon");
+		throw Error("CGI path missing semicolon.");
 	std::string lastPath = checkToken(param[j]);
 	if (lastPath.find("/python") == std::string::npos)
 		throw Error("CGI path must include 'python': " + lastPath);
@@ -405,13 +405,13 @@ void Server::handleLocationDefaults(Location& newLocation, bool flagMaxSize)
 void Server::handleLocationValidation(int valid)
 {
 	if (valid == 1)
-		throw Error("Invalid CGI configuration");
+		throw Error("Invalid CGI configuration.");
 	if (valid == 2)
-		throw Error("Invalid path configuration");
+		throw Error("Invalid path configuration.");
 	if (valid == 3)
-		throw Error("Invalid redirection file");
+		throw Error("Invalid redirection file.");
 	if (valid == 4)
-		throw Error("Invalid alias file");
+		throw Error("Invalid alias file.");
 }
 
 int Server::isValidLocation(Location& location) const
