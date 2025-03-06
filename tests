@@ -28,6 +28,8 @@ Performance Tests:
 -> Siege:
 siege -b http://127.0.0.1:8008/index.html -t 1m
 
+siege -c 250 http://127.0.0.1:8008/index.html -t 1m
+
 -> Leaks:
 pgrep webserv
 top -p <process ID>

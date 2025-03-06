@@ -26,1020 +26,533 @@ Request::Request()
 
 Request::~Request() {}
 
-// void Request::parseHTTPRequestData(char *data, size_t size)
-// {
-// 	u_int8_t character;
-// 	static std::stringstream s;
-// 	for (size_t i = 0; i < size; ++i)
-// 	{
-// 		character = data[i];
-// 		switch (_parsStatus)
-// 		{
-// 			case REQUEST_LINE:
-// 			{
-// 				if (character == 'G')
-// 					_httpMethod = GET;
-// 				else if (character == 'P')
-// 				{
-// 					_parsStatus = REQUEST_LINE_POST_PUT;
-// 					break;
-// 				}
-// 				else if (character == 'D')
-// 					_httpMethod = DELETE;
-// 				else if (character == 'H')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "HEAD");
-// 					return;
-// 				}
-// 				else if (character == 'O')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "OPTIONS");
-// 					return;
-// 				}
-// 				else if (character == 'U')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "UNKNOWN");
-// 					return;
-// 				}
-// 				else
-// 				{
-// 					PrintApp::printEvent(ORANGE, SUCCESS, "Invalid character \"%c\".", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_METHOD;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_POST_PUT:
-// 			{
-// 				if (character == 'O')
-// 					_httpMethod = POST;
-// 				else if (character == 'U')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PUT");
-// 					return;
-// 				}
-// 				else if (character == 'A')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PATCH");
-// 					return;
-// 				}
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", character);
-// 					return;
-// 				}
-// 				_httpMethodIndex++;
-// 				_parsStatus = REQUEST_LINE_METHOD;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_METHOD:
-// 			{
-// 				if (character == _httpMethodStr[_httpMethod][_httpMethodIndex])
-// 					_httpMethodIndex++;
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", character);
-// 					return;
-// 				}	
-// 				if ((size_t)_httpMethodIndex == _httpMethodStr[_httpMethod].length())
-// 					_parsStatus = REQUEST_LINE_FIRST_SPACE;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_FIRST_SPACE:
-// 			{
-// 				if (character != ' ')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_URI_PATH_SLASH;
-// 				continue;
-// 			}
-// 			case REQUEST_LINE_URI_PATH_SLASH:
-// 			{
-// 				if (character == '/')
-// 				{
-// 					_parsStatus = REQUEST_LINE_URI_PATH;
-// 					_storage.clear();
-// 				}
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case REQUEST_LINE_URI_PATH:
-// 			{
-// 				if (character == ' ')
-// 				{
-// 					_parsStatus = REQUEST_LINE_VER;
-// 					_reqPath.append(_storage);
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (character == '?')
-// 				{
-// 					_parsStatus = REQUEST_LINE_URI_QUERY;
-// 					_reqPath.append(_storage);
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (character == '#')
-// 				{
-// 					_parsStatus = REQUEST_LINE_URI_FRAGMENT;
-// 					_reqPath.append(_storage);
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (!isValidURIChar(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				else if (i > MAX_URI_LENGTH)
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case REQUEST_LINE_URI_QUERY:
-// 			{
-// 				if (character == ' ')
-// 				{
-// 					_parsStatus = REQUEST_LINE_VER;
-// 					_query.append(_storage);
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (character == '#')
-// 				{
-// 					_parsStatus = REQUEST_LINE_URI_FRAGMENT;
-// 					_query.append(_storage);
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (!isValidURIChar(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				else if (i > MAX_URI_LENGTH)
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case REQUEST_LINE_URI_FRAGMENT:
-// 			{
-// 				if (character == ' ')
-// 				{
-// 					_parsStatus = REQUEST_LINE_VER;
-// 					_storage.clear();
-// 					continue;
-// 				}
-// 				else if (!isValidURIChar(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				else if (i > MAX_URI_LENGTH)
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case REQUEST_LINE_VER:
-// 			{
-// 				if (isValidUriPosition(_reqPath))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				if (character != 'H')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_HT;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_HT:
-// 			{
-// 				if (character != 'T')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_HTT;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_HTT:
-// 			{
-// 				if (character != 'T')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_HTTP;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_HTTP:
-// 			{
-// 				if (character != 'P')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_HTTP_SLASH;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_HTTP_SLASH:
-// 			{
-// 				if (character != '/')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_MAJOR;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_MAJOR:
-// 			{
-// 				if (!isdigit(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_verMaj = character;	
-// 				_parsStatus = REQUEST_LINE_DOT;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_DOT:
-// 			{
-// 				if (character != '.')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_MINOR;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_MINOR:
-// 			{
-// 				if (!isdigit(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_verMin = character;
-// 				_parsStatus = REQUEST_LINE_CR;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_CR:
-// 			{
-// 				if (character != '\r')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = REQUEST_LINE_LF;
-// 				break;
-// 			}
-// 			case REQUEST_LINE_LF:
-// 			{
-// 				if (character != '\n')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = FIELD_NAME_START;
-// 				_storage.clear();
-// 				continue;
-// 			}
-// 			case FIELD_NAME_START:
-// 			{
-// 				if (character == '\r')
-// 					_parsStatus = FIELDS_END;
-// 				else if (isValidTokenChar(character))
-// 					_parsStatus = FIELD_NAME;
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case FIELDS_END:
-// 			{
-// 				if (character == '\n')
-// 				{
-// 					_storage.clear();
-// 					_fieldsDoneFlag = true;
-// 					extractRequestHeaders();
-// 					if (_bodyFlag == 1)
-// 					{
-// 						if (_chunkedFlag == true)
-// 							_parsStatus = CHUNKED_LENGTH_BEGIN;
-// 						else
-// 							_parsStatus = MESSAGE_BODY;
-// 					}
-// 					else
-// 						_parsStatus = PARSING_DONE;
-// 					continue;
-// 				}
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case FIELD_NAME:
-// 			{
-// 				if (character == ':')
-// 				{
-// 					_heyStorage = _storage;
-// 					_storage.clear();
-// 					_parsStatus = FIELD_VALUE;
-// 					continue;
-// 				}
-// 				else if (!isValidTokenChar(character))
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case FIELD_VALUE:
-// 			{
-// 				if (character == '\r')
-// 				{
-// 					setHeader(_heyStorage, _storage);
-// 					_heyStorage.clear();
-// 					_storage.clear();
-// 					_parsStatus = FIELD_VALUE_END;
-// 					continue;
-// 				}
-// 				break;
-// 			}
-// 			case FIELD_VALUE_END:
-// 			{
-// 				if (character == '\n')
-// 				{
-// 					_parsStatus = FIELD_NAME_START;
-// 					continue;
-// 				}
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				break;
-// 			}
-// 			case CHUNKED_LENGTH_BEGIN:
-// 			{
-// 				if (isxdigit(character) == 0)
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				s.str("");
-// 				s.clear();
-// 				s << character;
-// 				s >> std::hex >> _chunkLen;
-// 				if (_chunkLen == 0)
-// 					_parsStatus = CHUNKED_LENGTH_CR;
-// 				else
-// 					_parsStatus = CHUNKED_LENGTH;
-// 				continue;
-// 			}
-// 			case CHUNKED_LENGTH:
-// 			{
-// 				if (isxdigit(character) != 0)
-// 				{
-// 					int temp_len = 0;
-// 					s.str("");
-// 					s.clear();
-// 					s << character;
-// 					s >> std::hex >> temp_len;
-// 					_chunkLen *= 16;
-// 					_chunkLen += temp_len;
-// 				}
-// 				else if (character == '\r')
-// 					_parsStatus = CHUNKED_END_LF;
-// 				else
-// 					_parsStatus = CHUNKED_IGNORE;
-// 				continue;
-// 			}
-// 			case CHUNKED_LENGTH_CR:
-// 			{
-// 				if (character == '\r')
-// 					_parsStatus = CHUNKED_END_LF;
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				continue;
-// 			}
-// 			case CHUNKED_LENGTH_LF:
-// 			{
-// 				if (character == '\n')
-// 				{
-// 					if (_chunkLen == 0)
-// 						_parsStatus = CHUNKED_END_CR;
-// 					else
-// 						_parsStatus = CHUNKED_DATA;
-// 				} else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				continue;
-// 			}
-// 			case CHUNKED_IGNORE:
-// 			{
-// 				if (character == '\r')
-// 					_parsStatus = CHUNKED_END_LF;
-// 				continue;
-// 			}
-// 			case CHUNKED_DATA:
-// 			{
-// 				_reqBody.push_back(character);
-// 				--_chunkLen;
-// 				if (_chunkLen == 0)
-// 					_parsStatus = CHUNKED_DATA_CR;
-// 				continue;
-// 			}
-// 			case CHUNKED_DATA_CR:
-// 			{
-// 				if (character == '\r')
-// 					_parsStatus = CHUNKED_DATA_LF;
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				continue;
-// 			}
-// 			case CHUNKED_DATA_LF:
-// 			{
-// 				if (character == '\n')
-// 					_parsStatus = CHUNKED_LENGTH_BEGIN;
-// 				else
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				continue;
-// 			}
-// 			case CHUNKED_END_CR:
-// 			{
-// 				if (character != '\r')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_parsStatus = CHUNKED_END_LF;
-// 				continue;
-// 			}
-// 			case CHUNKED_END_LF:
-// 			{
-// 				if (character != '\n')
-// 				{
-// 					PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-// 					return;
-// 				}
-// 				_bodyDoneFlag = true;
-// 				_parsStatus = PARSING_DONE;
-// 				continue;
-// 			}
-// 			case MESSAGE_BODY:
-// 			{
-// 				if (_reqBody.size() < _bodyLength)
-// 				_reqBody.push_back(character);
-// 				if (_reqBody.size() == _bodyLength)
-// 				{
-// 					_bodyDoneFlag = true;
-// 					_parsStatus = PARSING_DONE;
-// 				}
-// 				break;
-// 			}
-// 			case PARSING_DONE:
-// 			{
-// 				return;
-// 			}
-// 		}
-// 		_storage += character;
-// 	}
-// 	if (_parsStatus == PARSING_DONE)
-// 	{
-// 		_bodyStr.append((char *)_reqBody.data(), _reqBody.size());
-// 	}
-// }
-
-// Implementation
 void Request::parseHTTPRequestData(char *data, size_t size)
 {
-    u_int8_t character;
-    static std::stringstream s;
-    
-    for (size_t i = 0; i < size; ++i)
-    {
-        character = data[i];
-        
-        if (_parsStatus == STATE_REQUEST_LINE)
-        {
-            if (character == 'G')
-                _httpMethod = GET;
-            else if (character == 'P')
-            {
-                _parsStatus = STATE_REQUEST_LINE_POST_PUT;
-                continue;
-            }
-            else if (character == 'D')
-                _httpMethod = DELETE;
-            else if (character == 'H')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "HEAD");
-                return;
-            }
-            else if (character == 'O')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "OPTIONS");
-                return;
-            }
-            else if (character == 'U')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "UNKNOWN");
-                return;
-            }
-            else
-            {
-                PrintApp::printEvent(ORANGE, SUCCESS, "Invalid character \"%c\".", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_METHOD;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_POST_PUT)
-        {
-            if (character == 'O')
-                _httpMethod = POST;
-            else if (character == 'U')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PUT");
-                return;
-            }
-            else if (character == 'A')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PATCH");
-                return;
-            }
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", character);
-                return;
-            }
-            _httpMethodIndex++;
-            _parsStatus = STATE_REQUEST_LINE_METHOD;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_METHOD)
-        {
-            if (character == _httpMethodStr[_httpMethod][_httpMethodIndex])
-                _httpMethodIndex++;
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", character);
-                return;
-            }   
-            if ((size_t)_httpMethodIndex == _httpMethodStr[_httpMethod].length())
-                _parsStatus = STATE_REQUEST_LINE_FIRST_SPACE;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_FIRST_SPACE)
-        {
-            if (character != ' ')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_URI_PATH_SLASH;
-            continue;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_URI_PATH_SLASH)
-        {
-            if (character == '/')
-            {
-                _parsStatus = STATE_REQUEST_LINE_URI_PATH;
-                _storage.clear();
-            }
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_URI_PATH)
-        {
-            if (character == ' ')
-            {
-                _parsStatus = STATE_REQUEST_LINE_VER;
-                _reqPath.append(_storage);
-                _storage.clear();
-                continue;
-            }
-            else if (character == '?')
-            {
-                _parsStatus = STATE_REQUEST_LINE_URI_QUERY;
-                _reqPath.append(_storage);
-                _storage.clear();
-                continue;
-            }
-            else if (character == '#')
-            {
-                _parsStatus = STATE_REQUEST_LINE_URI_FRAGMENT;
-                _reqPath.append(_storage);
-                _storage.clear();
-                continue;
-            }
-            else if (!isValidURIChar(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            else if (i > MAX_URI_LENGTH)
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_URI_QUERY)
-        {
-            if (character == ' ')
-            {
-                _parsStatus = STATE_REQUEST_LINE_VER;
-                _query.append(_storage);
-                _storage.clear();
-                continue;
-            }
-            else if (character == '#')
-            {
-                _parsStatus = STATE_REQUEST_LINE_URI_FRAGMENT;
-                _query.append(_storage);
-                _storage.clear();
-                continue;
-            }
-            else if (!isValidURIChar(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            else if (i > MAX_URI_LENGTH)
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_URI_FRAGMENT)
-        {
-            if (character == ' ')
-            {
-                _parsStatus = STATE_REQUEST_LINE_VER;
-                _storage.clear();
-                continue;
-            }
-            else if (!isValidURIChar(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            else if (i > MAX_URI_LENGTH)
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length: \"%c\".", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_VER)
-        {
-            if (isValidUriPosition(_reqPath))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            if (character != 'H')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_HT;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_HT)
-        {
-            if (character != 'T')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_HTT;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_HTT)
-        {
-            if (character != 'T')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_HTTP;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_HTTP)
-        {
-            if (character != 'P')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_HTTP_SLASH;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_HTTP_SLASH)
-        {
-            if (character != '/')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_MAJOR;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_MAJOR)
-        {
-            if (!isdigit(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _verMaj = character;    
-            _parsStatus = STATE_REQUEST_LINE_DOT;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_DOT)
-        {
-            if (character != '.')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_MINOR;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_MINOR)
-        {
-            if (!isdigit(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _verMin = character;
-            _parsStatus = STATE_REQUEST_LINE_CR;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_CR)
-        {
-            if (character != '\r')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_REQUEST_LINE_LF;
-        }
-        else if (_parsStatus == STATE_REQUEST_LINE_LF)
-        {
-            if (character != '\n')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_FIELD_NAME_START;
-            _storage.clear();
-            continue;
-        }
-        else if (_parsStatus == STATE_FIELD_NAME_START)
-        {
-            if (character == '\r')
-                _parsStatus = STATE_FIELDS_END;
-            else if (isValidTokenChar(character))
-                _parsStatus = STATE_FIELD_NAME;
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_FIELDS_END)
-        {
-            if (character == '\n')
-            {
-                _storage.clear();
-                _fieldsDoneFlag = true;
-                extractRequestHeaders();
-                if (_bodyFlag == 1)
-                {
-                    if (_chunkedFlag == true)
-                        _parsStatus = STATE_CHUNKED_LENGTH_BEGIN;
-                    else
-                        _parsStatus = STATE_MESSAGE_BODY;
-                }
-                else
-                    _parsStatus = STATE_PARSING_DONE;
-                continue;
-            }
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_FIELD_NAME)
-        {
-            if (character == ':')
-            {
-                _heyStorage = _storage;
-                _storage.clear();
-                _parsStatus = STATE_FIELD_VALUE;
-                continue;
-            }
-            else if (!isValidTokenChar(character))
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_FIELD_VALUE)
-        {
-            if (character == '\r')
-            {
-                setHeader(_heyStorage, _storage);
-                _heyStorage.clear();
-                _storage.clear();
-                _parsStatus = STATE_FIELD_VALUE_END;
-                continue;
-            }
-        }
-        else if (_parsStatus == STATE_FIELD_VALUE_END)
-        {
-            if (character == '\n')
-            {
-                _parsStatus = STATE_FIELD_NAME_START;
-                continue;
-            }
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-        }
-        else if (_parsStatus == STATE_CHUNKED_LENGTH_BEGIN)
-        {
-            if (isxdigit(character) == 0)
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            s.str("");
-            s.clear();
-            s << character;
-            s >> std::hex >> _chunkLen;
-            if (_chunkLen == 0)
-                _parsStatus = STATE_CHUNKED_LENGTH_CR;
-            else
-                _parsStatus = STATE_CHUNKED_LENGTH;
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_LENGTH)
-        {
-            if (isxdigit(character) != 0)
-            {
-                int temp_len = 0;
-                s.str("");
-                s.clear();
-                s << character;
-                s >> std::hex >> temp_len;
-                _chunkLen *= 16;
-                _chunkLen += temp_len;
-            }
-            else if (character == '\r')
-                _parsStatus = STATE_CHUNKED_END_LF;
-            else
-                _parsStatus = STATE_CHUNKED_IGNORE;
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_LENGTH_CR)
-        {
-            if (character == '\r')
-                _parsStatus = STATE_CHUNKED_END_LF;
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_LENGTH_LF)
-        {
-            if (character == '\n')
-            {
-                if (_chunkLen == 0)
-                    _parsStatus = STATE_CHUNKED_END_CR;
-                else
-                    _parsStatus = STATE_CHUNKED_DATA;
-            }
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_IGNORE)
-        {
-            if (character == '\r')
-                _parsStatus = STATE_CHUNKED_END_LF;
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_DATA)
-        {
-            _reqBody.push_back(character);
-            --_chunkLen;
-            if (_chunkLen == 0)
-                _parsStatus = STATE_CHUNKED_DATA_CR;
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_DATA_CR)
-        {
-            if (character == '\r')
-                _parsStatus = STATE_CHUNKED_DATA_LF;
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_DATA_LF)
-        {
-            if (character == '\n')
-                _parsStatus = STATE_CHUNKED_LENGTH_BEGIN;
-            else
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_END_CR)
-        {
-            if (character != '\r')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _parsStatus = STATE_CHUNKED_END_LF;
-            continue;
-        }
-        else if (_parsStatus == STATE_CHUNKED_END_LF)
-        {
-            if (character != '\n')
-            {
-                PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", character);
-                return;
-            }
-            _bodyDoneFlag = true;
-            _parsStatus = STATE_PARSING_DONE;
-            continue;
-        }
-        else if (_parsStatus == STATE_MESSAGE_BODY)
-        {
-            if (_reqBody.size() < _bodyLength)
-                _reqBody.push_back(character);
-            if (_reqBody.size() == _bodyLength)
-            {
-                _bodyDoneFlag = true;
-                _parsStatus = STATE_PARSING_DONE;
-            }
-        }
-        else if (_parsStatus == STATE_PARSING_DONE)
-        {
-            return;
-        }
-        
-        _storage += character;
-    }
-    
-    if (_parsStatus == STATE_PARSING_DONE)
-    {
-        _bodyStr.append((char *)_reqBody.data(), _reqBody.size());
-    }
+	for (size_t i = 0; i < size; ++i)
+	{
+		u_int8_t c = data[i];
+		processChar(c);
+		if (_parsStatus == STATE_PARSING_DONE)
+			break;
+	}
+	if (_parsStatus == STATE_PARSING_DONE)
+		_bodyStr.assign(reinterpret_cast<char *>(&_reqBody[0]), _reqBody.size());
 }
 
-////////////////////////////////////////////////////////////////
+void Request::processChar(u_int8_t c)
+{
+	if (_parsStatus < STATE_FIELD_NAME_START)
+		processRequestLine(c);
+	else if (_parsStatus >= STATE_FIELD_NAME_START && _parsStatus <= STATE_FIELD_VALUE_END)
+		processHeaders(c);
+	else if (_parsStatus >= STATE_CHUNKED_LENGTH_BEGIN && _parsStatus <= STATE_CHUNKED_END_LF)
+		processChunked(c);
+	else if (_parsStatus == STATE_MESSAGE_BODY)
+		processMessageBody(c);
+}
+
+void Request::processRequestLine(u_int8_t c)
+{
+	if (_parsStatus == STATE_REQUEST_LINE)
+	{
+		if (c == 'G')
+			_httpMethod = GET;
+		else if (c == 'P')
+		{
+			_parsStatus = STATE_REQUEST_LINE_POST_PUT;
+			return;
+		}
+		else if (c == 'D')
+			_httpMethod = DELETE;
+		else if (c == 'H')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "HEAD");
+			return;
+		}
+		else if (c == 'O')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "OPTIONS");
+			return;
+		}
+		else if (c == 'U')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "UNKNOWN");
+			return;
+		}
+		else
+		{
+			PrintApp::printEvent(ORANGE, SUCCESS, "Invalid character \"%c\".", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_METHOD;
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_POST_PUT)
+	{
+		if (c == 'O')
+			_httpMethod = POST;
+		else if (c == 'U')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PUT");
+			return;
+		}
+		else if (c == 'A')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PATCH");
+			return;
+		}
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", c);
+			return;
+		}
+		_httpMethodIndex++;
+		_parsStatus = STATE_REQUEST_LINE_METHOD;
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_METHOD)
+	{
+		if (c == _httpMethodStr[_httpMethod][_httpMethodIndex])
+			_httpMethodIndex++;
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", c);
+			return;
+		}
+		_storage += c;
+		if ((size_t)_httpMethodIndex == _httpMethodStr[_httpMethod].length())
+			_parsStatus = STATE_REQUEST_LINE_FIRST_SPACE;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_FIRST_SPACE)
+	{
+		if (c != ' ')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_URI_PATH_SLASH;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_URI_PATH_SLASH)
+	{
+		if (c == '/')
+		{
+			_parsStatus = STATE_REQUEST_LINE_URI_PATH;
+			_storage = "/";
+		}
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_URI_PATH)
+	{
+		if (c == ' ')
+		{
+			_parsStatus = STATE_REQUEST_LINE_VER;
+			_reqPath.append(_storage);
+			_storage = "";
+			return;
+		}
+		else if (c == '?')
+		{
+			_parsStatus = STATE_REQUEST_LINE_URI_QUERY;
+			_reqPath.append(_storage);
+			_storage = "";
+			return;
+		}
+		else if (c == '#')
+		{
+			_parsStatus = STATE_REQUEST_LINE_URI_FRAGMENT;
+			_reqPath.append(_storage);
+			_storage = "";
+			return;
+		}
+		else if (!isValidURIChar(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		else if (_storage.length() > MAX_URI_LENGTH)
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length.", c);
+			return;
+		}
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_URI_QUERY)
+	{
+		if (c == ' ')
+		{
+			_parsStatus = STATE_REQUEST_LINE_VER;
+			_query.append(_storage);
+			_storage = "";
+			return;
+		}
+		else if (c == '#')
+		{
+			_parsStatus = STATE_REQUEST_LINE_URI_FRAGMENT;
+			_query.append(_storage);
+			_storage = "";
+			return;
+		}
+		else if (!isValidURIChar(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		else if (_storage.length() > MAX_URI_LENGTH)
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length.", c);
+			return;
+		}
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_URI_FRAGMENT)
+	{
+		if (c == ' ')
+		{
+			_parsStatus = STATE_REQUEST_LINE_VER;
+			_storage = "";
+			return;
+		}
+		else if (!isValidURIChar(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		else if (_storage.length() > MAX_URI_LENGTH)
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 414, "URI exceeds maximum length.", c);
+			return;
+		}
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_VER)
+	{
+		if (isValidUriPosition(_reqPath))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character in URI.");
+			return;
+		}
+		if (c != 'H')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_HT;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_HT)
+	{
+		if (c != 'T')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_HTT;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_HTT)
+	{
+		if (c != 'T')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_HTTP;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_HTTP)
+	{
+		if (c != 'P')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_HTTP_SLASH;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_HTTP_SLASH)
+	{
+		if (c != '/')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_MAJOR;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_MAJOR)
+	{
+		if (!isdigit(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_verMaj = c;
+		_parsStatus = STATE_REQUEST_LINE_DOT;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_DOT)
+	{
+		if (c != '.')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected '.' but found \"%c\".", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_MINOR;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_MINOR)
+	{
+		if (!isdigit(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character \"%c\" found.", c);
+			return;
+		}
+		_verMin = c;
+		_parsStatus = STATE_REQUEST_LINE_CR;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_CR)
+	{
+		if (c != '\r')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected CR but found \"%c\".", c);
+			return;
+		}
+		_parsStatus = STATE_REQUEST_LINE_LF;
+		return;
+	}
+	else if (_parsStatus == STATE_REQUEST_LINE_LF)
+	{
+		if (c != '\n')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF but found \"%c\".", c);
+			return;
+		}
+		_parsStatus = STATE_FIELD_NAME_START;
+		_storage = "";
+		return;
+	}
+}
+
+void Request::processHeaders(u_int8_t c)
+{
+	if (_parsStatus == STATE_FIELD_NAME_START)
+	{
+		if (c == '\r')
+		{
+			_parsStatus = STATE_FIELDS_END;
+			return;
+		}
+		else if (isValidTokenChar(c))
+		{
+			_parsStatus = STATE_FIELD_NAME;
+			_storage = "";
+        	_storage += c;
+        	return;
+		}
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Unexpected character in header: \"%c\".", c);
+			return;
+		}
+	}
+	else if (_parsStatus == STATE_FIELDS_END)
+	{
+		if (c == '\n')
+		{
+			_storage = "";
+			_fieldsDoneFlag = true;
+			extractRequestHeaders();
+			if (_bodyFlag)
+				_parsStatus = _chunkedFlag ? STATE_CHUNKED_LENGTH_BEGIN : STATE_MESSAGE_BODY;
+			else
+				_parsStatus = STATE_PARSING_DONE;
+			return;
+		}
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF at end of headers but found \"%c\".", c);
+			return;
+		}
+	}
+	else if (_parsStatus == STATE_FIELD_NAME)
+	{
+		if (c == ':')
+		{
+			_heyStorage = _storage;
+			_storage = "";
+			_parsStatus = STATE_FIELD_VALUE;
+			return;
+		}
+		else if (!isValidTokenChar(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Invalid character in header name: \"%c\".", c);
+			return;
+		}
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_FIELD_VALUE)
+	{
+		if (c == '\r')
+		{
+			setHeader(_heyStorage, _storage);
+			_heyStorage = "";
+			_storage = "";
+			_parsStatus = STATE_FIELD_VALUE_END;
+			return;
+		}
+		_storage += c;
+		return;
+	}
+	else if (_parsStatus == STATE_FIELD_VALUE_END)
+	{
+		if (c == '\n')
+		{
+			_parsStatus = STATE_FIELD_NAME_START;
+			return;
+		}
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF after header value but found \"%c\".", c);
+			return;
+		}
+	}
+}
+
+void Request::processChunked(u_int8_t c)
+{
+	if (_parsStatus == STATE_CHUNKED_LENGTH_BEGIN)
+	{
+		if (!isxdigit(c))
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Invalid chunk length character: \"%c\".", c);
+			return;
+		}
+		_storage = "";
+		_storage += c;
+		std::istringstream iss(_storage);
+		iss >> std::hex >> _chunkLen;
+		_parsStatus = (_chunkLen == 0) ? STATE_CHUNKED_LENGTH_CR : STATE_CHUNKED_LENGTH;
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_LENGTH)
+	{
+		if (isxdigit(c))
+		{
+			_storage += c;
+			std::istringstream iss(_storage);
+			iss >> std::hex >> _chunkLen;
+		}
+		else if (c == '\r')
+			_parsStatus = STATE_CHUNKED_LENGTH_LF;
+		else
+			_parsStatus = STATE_CHUNKED_IGNORE;
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_LENGTH_CR)
+	{
+		if (c == '\r')
+			_parsStatus = STATE_CHUNKED_LENGTH_LF;
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected CR in chunked length but found \"%c\".", c);
+			return;
+		}
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_LENGTH_LF)
+	{
+		if (c == '\n')
+			_parsStatus = (_chunkLen == 0) ? STATE_CHUNKED_END_CR : STATE_CHUNKED_DATA;
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF in chunked length but found \"%c\".", c);
+			return;
+		}
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_IGNORE)
+	{
+		if (c == '\r')
+			_parsStatus = STATE_CHUNKED_END_LF;
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_DATA)
+	{
+		_reqBody.push_back(c);
+		if (_chunkLen > 0)
+			_chunkLen--;
+		if (_chunkLen == 0)
+			_parsStatus = STATE_CHUNKED_DATA_CR;
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_DATA_CR)
+	{
+		if (c == '\r')
+			_parsStatus = STATE_CHUNKED_DATA_LF;
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected CR after chunk data but found \"%c\".", c);
+			return;
+		}
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_DATA_LF)
+	{
+		if (c == '\n')
+			_parsStatus = STATE_CHUNKED_LENGTH_BEGIN;
+		else
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF after chunk data but found \"%c\".", c);
+			return;
+		}
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_END_CR)
+	{
+		if (c != '\r')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected CR in chunked end but found \"%c\".", c);
+			return;
+		}
+		_parsStatus = STATE_CHUNKED_END_LF;
+		return;
+	}
+	else if (_parsStatus == STATE_CHUNKED_END_LF)
+	{
+		if (c != '\n')
+		{
+			PrintApp::printErrorCode(ORANGE, _errorCode, 400, "Expected LF in chunked end but found \"%c\".", c);
+			return;
+		}
+		_bodyDoneFlag = true;
+		_parsStatus = STATE_PARSING_DONE;
+		return;
+	}
+}
+
+void Request::processMessageBody(u_int8_t c)
+{
+	_reqBody.push_back(c);
+	if (_reqBody.size() >= _bodyLength)
+	{
+		_bodyDoneFlag = true;
+		_parsStatus = STATE_PARSING_DONE;
+	}
+}
 
 bool Request::isValidUriPosition(std::string path)
 {
