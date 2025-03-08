@@ -318,15 +318,15 @@ bool Response::filePermitted(Request& req, std::string& loc_key)
 
 bool Response::initCgi(const std::string& path, std::string& loc_key)
 {
-	cgi_handler_.clear();
-	cgi_handler_.setCgiPath(path);
+	cgi_handler_.clear_resources();
+	cgi_handler_.set_script_path(path);
 	cgi_flag_ = 1;
 	if (pipe(cgi_pipe_) < 0)
 	{
 		status_code_ = 500;
 		return true;
 	}
-	cgi_handler_.initEnv(req_, server_.getLocationKey(loc_key));
+	cgi_handler_.initialize_environment(req_, server_.getLocationKey(loc_key));
 	cgi_handler_.execute(status_code_);
 	return false;
 }
@@ -361,15 +361,15 @@ std::string Response::joinPaths(const std::string& p1, const std::string& p2, co
 
 int Response::handleTempCgi(std::string& loc_key)
 {
-	cgi_handler_.clear();
-	cgi_handler_.setCgiPath(target_file_);
+	cgi_handler_.clear_resources();
+	cgi_handler_.set_script_path(target_file_);
 	cgi_flag_ = 1;
 	if (pipe(cgi_pipe_) < 0)
 	{
 		status_code_ = 500;
 		return 1;
 	}
-	cgi_handler_.initEnvCgi(req_, server_.getLocationKey(loc_key));
+	cgi_handler_.initialize_interpreter_environment(req_, server_.getLocationKey(loc_key));
 	cgi_handler_.execute(status_code_);
 	return 0;
 }

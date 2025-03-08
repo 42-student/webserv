@@ -8,13 +8,13 @@ Client::Client()
 
 Client::Client(const Client &copy)
 {
-	this->_cliSock = copy._cliSock;
-	this->_cliSockAddr = copy._cliSockAddr;
-	this->request = copy.request;
-	this->response = copy.response;
-	this->server = copy.server;
-	this->_lastMessage = copy._lastMessage;
-	this->_cgiStartTime = copy._cgiStartTime;
+	_cliSock = copy._cliSock;
+	_cliSockAddr = copy._cliSockAddr;
+	request = copy.request;
+	response = copy.response;
+	server = copy.server;
+	_lastMessage = copy._lastMessage;
+	_cgiStartTime = copy._cgiStartTime;
 }
 
 Client::Client(Server &serv)
@@ -27,13 +27,16 @@ Client::Client(Server &serv)
 
 Client &Client::operator=(const Client &copy)
 {
-	this->_cliSock = copy._cliSock;
-	this->_cliSockAddr = copy._cliSockAddr;
-	this->request = copy.request;
-	this->response = copy.response;
-	this->server = copy.server;
-	this->_lastMessage = copy._lastMessage;
-	this->_cgiStartTime = copy._cgiStartTime;
+	if (this != &copy)
+	{
+		_cliSock = copy._cliSock;
+		_cliSockAddr = copy._cliSockAddr;
+		request = copy.request;
+		response = copy.response;
+		server = copy.server;
+		_lastMessage = copy._lastMessage;
+		_cgiStartTime = copy._cgiStartTime;
+	}
 	return (*this);
 }
 

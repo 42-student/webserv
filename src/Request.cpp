@@ -4,9 +4,9 @@ Request::Request()
 {
 	_httpMethod = NONE;
 	_parsStatus = STATE_REQUEST_LINE;
-	 _httpMethodStr[::GET] = "GET";
-	 _httpMethodStr[::POST] = "POST";
-	 _httpMethodStr[::DELETE] = "DELETE";
+	_httpMethodStr[::GET] = "GET";
+	_httpMethodStr[::POST] = "POST";
+	_httpMethodStr[::DELETE] = "DELETE";
 	_reqPath = "";
 	_query = "";
 	_bodyStr = "";
@@ -79,11 +79,6 @@ void Request::processRequestLine(u_int8_t c)
 			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "UNKNOWN");
 			return;
 		}
-		else
-		{
-			PrintApp::printEvent(ORANGE, SUCCESS, "Invalid character \"%c\".", c);
-			return;
-		}
 		_parsStatus = STATE_REQUEST_LINE_METHOD;
 		_storage += c;
 		return;
@@ -102,11 +97,6 @@ void Request::processRequestLine(u_int8_t c)
 			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Unsupported method <%s>.", "PATCH");
 			return;
 		}
-		else
-		{
-			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", c);
-			return;
-		}
 		_httpMethodIndex++;
 		_parsStatus = STATE_REQUEST_LINE_METHOD;
 		_storage += c;
@@ -116,11 +106,6 @@ void Request::processRequestLine(u_int8_t c)
 	{
 		if (c == _httpMethodStr[_httpMethod][_httpMethodIndex])
 			_httpMethodIndex++;
-		else
-		{
-			PrintApp::printErrorCode(ORANGE, _errorCode, 501, "Invalid character \"%c\".", c);
-			return;
-		}
 		_storage += c;
 		if ((size_t)_httpMethodIndex == _httpMethodStr[_httpMethod].length())
 			_parsStatus = STATE_REQUEST_LINE_FIRST_SPACE;

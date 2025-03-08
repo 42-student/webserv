@@ -1,286 +1,259 @@
 #include "../inc/Cgi.hpp"
 
-Cgi::Cgi()
+Cgi::Cgi() : env_array_(NULL), arg_array_(NULL), script_path_(""), process_id_(-1), exit_status_(0)
 {
-	this->_cgiPid = -1;
-	this->_exitStatus = 0;
-	this->_cgiPath = "";
-	this->_chEnv = NULL;
-	this->_av = NULL;
+	pipe_in[0] = pipe_in[1] = pipe_out[0] = pipe_out[1] = -1;
 }
 
-Cgi::Cgi(std::string path)
+Cgi::Cgi(const std::string& script_path) : env_array_(NULL), arg_array_(NULL), script_path_(script_path), process_id_(-1), exit_status_(0)
 {
-	this->_cgiPid = -1;
-	this->_exitStatus = 0;
-	this->_cgiPath = path;
-	this->_chEnv = NULL;
-	this->_av = NULL;
+	pipe_in[0] = pipe_in[1] = pipe_out[0] = pipe_out[1] = -1;
 }
 
-Cgi::Cgi(const Cgi &copy)
+Cgi::Cgi(const Cgi& other) : environment_(other.environment_), env_array_(NULL), arg_array_(NULL),
+	script_path_(other.script_path_), process_id_(other.process_id_), exit_status_(other.exit_status_)
 {
-	this->_env = copy._env;
-	this->_chEnv = copy._chEnv;
-	this->_av = copy._av;
-	this->_cgiPath = copy._cgiPath;
-	this->_cgiPid = copy._cgiPid;
-	this->_exitStatus = copy._exitStatus;
+	pipe_in[0] = pipe_in[1] = pipe_out[0] = pipe_out[1] = -1;
 }
 
-Cgi &Cgi::operator=(const Cgi &copy)
+Cgi& Cgi::operator=(const Cgi& rhs)
 {
-	this->_env = copy._env;
-	this->_chEnv = copy._chEnv;
-	this->_av = copy._av;
-	this->_cgiPath = copy._cgiPath;
-	this->_cgiPid = copy._cgiPid;
-	this->_exitStatus = copy._exitStatus;
-	return (*this);
+	if (this != &rhs)
+	{
+		clear_resources();
+		environment_ = rhs.environment_;
+		env_array_ = NULL;
+		arg_array_ = NULL;
+		script_path_ = rhs.script_path_;
+		process_id_ = rhs.process_id_;
+		exit_status_ = rhs.exit_status_;
+	}
+	return *this;
 }
 
 Cgi::~Cgi()
 {
-	clear();
+	clear_resources();
 }
 
-void Cgi::setCgiPath(const std::string &_cgiPath)
+void Cgi::set_script_path(const std::string& path)
 {
-	this->_cgiPath = _cgiPath;
+	script_path_ = path;
 }
 
-const pid_t &Cgi::getCgiPid() const
+const pid_t& Cgi::get_process_id() const
 {
-	return (this->_cgiPid);
+	return process_id_;
 }
 
-const std::string &Cgi::getCgiPath() const
+const std::string& Cgi::get_script_path() const
 {
-	return (this->_cgiPath);
+	return script_path_;
 }
 
-std::string Cgi::getPathInfo(std::string &path, std::vector<std::string> extensions)
+std::string Cgi::extract_path_info(const std::string& path, const std::vector<std::string>& extensions) const
 {
-	std::string tmp;
-	size_t start, end;	
-	for (std::vector<std::string>::iterator itNext = extensions.begin(); itNext != extensions.end(); itNext++)
+	std::string result;
+	size_t ext_pos = std::string::npos;
+	std::vector<std::string>::const_iterator it;
+	for (it = extensions.begin(); it != extensions.end(); ++it)
 	{
-		start = path.find(*itNext);
-		if (start != std::string::npos)
+		ext_pos = path.find(*it);
+		if (ext_pos != std::string::npos)
 			break;
 	}
-	if (start == std::string::npos)
+	if (ext_pos == std::string::npos || ext_pos + it->length() >= path.size())
 		return "";
-	if (start + 3 >= path.size())
+	result = path.substr(ext_pos + it->length());
+	if (result.empty() || result[0] != '/')
 		return "";
-	tmp = path.substr(start + 3, path.size());
-	if (tmp.empty() || tmp[0] != '/')
-		return "";
-	end = tmp.find("?");
-	return (end == std::string::npos ? tmp : tmp.substr(0, end));
+	size_t query_pos = result.find('?');
+	return (query_pos == std::string::npos) ? result : result.substr(0, query_pos);
 }
 
-void Cgi::setContentLength(int length)
+void Cgi::set_common_environment_vars(const std::string&)
 {
-	std::stringstream out;
-	out << length;
-	_env["CONTENT_LENGTH"] = out.str();
+	environment_["GATEWAY_INTERFACE"] = "CGI/1.1";
+	environment_["SERVER_PROTOCOL"] = "HTTP/1.1";
+	environment_["REDIRECT_STATUS"] = "200";
+	environment_["SERVER_SOFTWARE"] = "miau";
+	environment_["SCRIPT_FILENAME"] = script_path_;
+	environment_["SCRIPT_NAME"] = script_path_;
 }
 
-void Cgi::setContentType(const std::string &contentType)
+void Cgi::set_content_variables(Request& request)
 {
-	_env["CONTENT_TYPE"] = contentType;
-}
-
-void Cgi::setDefaultEnvValues(Request &req, std::string cgiExec)
-{
-	_env["GATEWAY_INTERFACE"] = "CGI/1.1";
-	_env["SCRIPT_NAME"] = cgiExec;
-	_env["SCRIPT_FILENAME"] = _cgiPath;
-	_env["PATH_INFO"] = _cgiPath;
-	_env["PATH_TRANSLATED"] = _cgiPath;
-	_env["REQUEST_URI"] = _cgiPath;
-	_env["SERVER_NAME"] = req.getHeader("host");
-	_env["SERVER_PORT"] = "8008";
-	_env["REQUEST_METHOD"] = req.getMethodStr();
-	_env["SERVER_PROTOCOL"] = "HTTP/1.1";
-	_env["REDIRECT_STATUS"] = "200";
-	_env["SERVER_SOFTWARE"] = "CHEETAHS";
-}
-
-void Cgi::setRequestHeaders(Request &req)
-{
-	std::map<std::string, std::string> requestHeaders = req.getHeaders();
-	for (std::map<std::string, std::string>::iterator it = requestHeaders.begin(); it != requestHeaders.end(); ++it)
+	if (!request.getBody().empty())
 	{
-		std::string name = it->first;
-		std::transform(name.begin(), name.end(), name.begin(), ::toupper);
-		std::string key = "HTTP_" + name;
-		_env[key] = it->second;
+		std::stringstream ss;
+		ss << request.getBody().length();
+		environment_["CONTENT_LENGTH"] = ss.str();
+		std::string content_type = request.getHeader("content-type");
+		if (!content_type.empty())
+			environment_["CONTENT_TYPE"] = content_type;
 	}
 }
 
-void Cgi::createAv(const std::string &cgiExec)
+void Cgi::set_server_variables(Request& request)
 {
-	_av = new char *[3];
-	_av[0] = strdup(cgiExec.c_str());
-	_av[1] = strdup(_cgiPath.c_str());
-	_av[2] = NULL;
+	std::string host = request.getHeader("host");
+	size_t colon_pos = host.find(':');
+	if (colon_pos != std::string::npos)
+	{
+		environment_["SERVER_NAME"] = host.substr(0, colon_pos);
+		environment_["SERVER_PORT"] = host.substr(colon_pos + 1);
+	}
+	else
+	{
+		environment_["SERVER_NAME"] = host;
+		environment_["SERVER_PORT"] = "80";
+	}
+	environment_["REQUEST_METHOD"] = request.getMethodStr();
+	environment_["REMOTE_ADDR"] = host;
 }
 
-void Cgi::createChEnv()
+void Cgi::set_request_headers(Request& request)
 {
-	_chEnv = new char *[_env.size() + 1];
+	std::map<std::string, std::string> headers = request.getHeaders();
+	for (std::map<std::string, std::string>::const_iterator it = headers.begin(); it != headers.end(); ++it)
+	{
+		std::string key = it->first;
+		std::transform(key.begin(), key.end(), key.begin(), ::toupper);
+		environment_["HTTP_" + key] = it->second;
+	}
+}
+
+void Cgi::build_argument_array(const std::string& interpreter_path)
+{
+	arg_array_ = new char*[3];
+	arg_array_[0] = new char[interpreter_path.length() + 1];
+	std::strcpy(arg_array_[0], interpreter_path.c_str());
+	arg_array_[1] = new char[script_path_.length() + 1];
+	std::strcpy(arg_array_[1], script_path_.c_str());
+	arg_array_[2] = NULL;
+}
+
+void Cgi::build_environment_array()
+{
+	env_array_ = new char*[environment_.size() + 1];
 	int i = 0;
-	for (std::map<std::string, std::string>::const_iterator it = _env.begin(); it != _env.end(); ++it)
+	for (std::map<std::string, std::string>::const_iterator it = environment_.begin(); it != environment_.end(); ++it)
 	{
-		std::string tmp = it->first + "=" + it->second;
-		_chEnv[i] = strdup(tmp.c_str());
-		i++;
+		std::string env_var = it->first + "=" + it->second;
+		env_array_[i] = new char[env_var.length() + 1];
+		std::strcpy(env_array_[i], env_var.c_str());
+		++i;
 	}
-	_chEnv[i] = NULL;
+	env_array_[i] = NULL;
 }
 
-void Cgi::initEnv(Request &req, const std::vector<Location>::iterator itLocation)
+void Cgi::initialize_environment(Request& request, const std::vector<Location>::iterator location)
 {
-	int poz;
-	std::string extension;
-	std::string extPath;	
-	extension = this->_cgiPath.substr(this->_cgiPath.find("."));
-	std::map<std::string, std::string>::iterator itPath = itLocation->extPath.find(extension);
-	if (itPath == itLocation->extPath.end())
+	std::string extension = script_path_.substr(script_path_.find('.'));
+	std::map<std::string, std::string>::iterator it = location->extPath.find(extension);
+	if (it == location->extPath.end())
 		return;
-	extPath = itLocation->extPath[extension];	
-	this->_env["AUTH_TYPE"] = "Basic";
-	this->_env["CONTENT_LENGTH"] = req.getHeader("content-length");
-	this->_env["CONTENT_TYPE"] = req.getHeader("content-type");
-	this->_env["GATEWAY_INTERFACE"] = "CGI/1.1";
-	poz = findStart(this->_cgiPath, "cgi/");
-	this->_env["SCRIPT_NAME"] = this->_cgiPath;
-	this->_env["SCRIPT_FILENAME"] = ((poz < 0 || (size_t)(poz + 8) > this->_cgiPath.size()) ? "" : this->_cgiPath.substr(poz + 8, this->_cgiPath.size()));
-	this->_env["PATH_INFO"] = getPathInfo(req.getPath(), itLocation->getCgiExtension());
-	this->_env["PATH_TRANSLATED"] = itLocation->getRootLocation() + (this->_env["PATH_INFO"] == "" ? "/" : this->_env["PATH_INFO"]);
-	this->_env["QUERY_STRING"] = decode(req.getQuery());
-	this->_env["REMOTE_ADDR"] = req.getHeader("host");
-	poz = findStart(req.getHeader("host"), ":");
-	this->_env["SERVER_NAME"] = (poz > 0 ? req.getHeader("host").substr(0, poz) : "");
-	this->_env["SERVER_PORT"] = (poz > 0 ? req.getHeader("host").substr(poz + 1, req.getHeader("host").size()) : "");
-	this->_env["REQUEST_METHOD"] = req.getMethodStr();
-	this->_env["HTTP_COOKIE"] = req.getHeader("cookie");
-	this->_env["DOCUMENT_ROOT"] = itLocation->getRootLocation();
-	this->_env["REQUEST_URI"] = req.getPath() + req.getQuery();
-	this->_env["SERVER_PROTOCOL"] = "HTTP/1.1";
-	this->_env["REDIRECT_STATUS"] = "200";
-	this->_env["SERVER_SOFTWARE"] = "miau";	
-	createChEnv();
-	createAv(extPath);
+	std::string interpreter_path = it->second;
+	environment_["AUTH_TYPE"] = "Basic";
+	set_content_variables(request);
+	set_common_environment_vars(interpreter_path);
+	set_server_variables(request);
+	set_request_headers(request);
+	environment_["PATH_INFO"] = extract_path_info(request.getPath(), location->getCgiExtension());
+	environment_["PATH_TRANSLATED"] = location->getRootLocation() + 
+		(environment_["PATH_INFO"].empty() ? "/" : environment_["PATH_INFO"]);
+	environment_["QUERY_STRING"] = decode_url(request.getQuery());
+	environment_["DOCUMENT_ROOT"] = location->getRootLocation();
+	environment_["REQUEST_URI"] = request.getPath() + request.getQuery();
+	build_environment_array();
+	build_argument_array(interpreter_path);
 }
 
-void Cgi::initEnvCgi(Request &req, const std::vector<Location>::iterator itLocation)
+void Cgi::initialize_interpreter_environment(Request& request, const std::vector<Location>::iterator location)
 {
-	std::string cgiExec = ("cgi/" + itLocation->getCgiPath()[0]).c_str();
-	char *cwd = getcwd(NULL, 0);
-	if (_cgiPath[0] != '/')
-	{
-		std::string tmp(cwd);
-		tmp.append("/");
-		if (!_cgiPath.empty())
-			_cgiPath.insert(0, tmp);
-	}	
-	if (req.getHttpMethod() == POST)
-	{
-		setContentLength(req.getBody().length());
-		setContentType(req.getHeader("content-type"));
-	}	
-	setDefaultEnvValues(req, cgiExec);
-	setRequestHeaders(req);	
-	createChEnv();
-	createAv(cgiExec);	
-	delete[] cwd;
+	std::string interpreter_path = "cgi/" + location->getCgiPath()[0];
+	script_path_ = make_absolute_path(script_path_);
+	set_content_variables(request);
+	set_common_environment_vars(interpreter_path);
+	set_server_variables(request);
+	set_request_headers(request);
+	environment_["REQUEST_URI"] = request.getPath() + request.getQuery();
+	environment_["PATH_INFO"] = extract_path_info(request.getPath(), location->getCgiExtension());
+	build_environment_array();
+	build_argument_array(interpreter_path);
 }
 
-void Cgi::execute(short &errorCode)
+void Cgi::execute(short& error_code)
 {
-	if (!this->_av[0] || !this->_av[1])
+	if (!arg_array_ || !arg_array_[0] || !arg_array_[1] || !env_array_)
 	{
 		PrintApp::printEvent(RED_BOLD, SUCCESS, "CGI execute failed: Invalid arguments.");
-		errorCode = 500;
+		error_code = 500;
 		return;
 	}
-	if (pipe(pipeIn) < 0 || pipe(pipeOut) < 0)
+	if (pipe(pipe_in) < 0 || pipe(pipe_out) < 0)
 	{
 		PrintApp::printEvent(RED_BOLD, SUCCESS, "Failed to create pipes for CGI: %s.", strerror(errno));
-		close(pipeIn[0]);
-		close(pipeIn[1]);
-		close(pipeOut[0]);
-		close(pipeOut[1]);
-		errorCode = 500;
+		close(pipe_in[0]); close(pipe_in[1]);
+		close(pipe_out[0]); close(pipe_out[1]);
+		error_code = 500;
 		return;
 	}
-	this->_cgiPid = fork();
-	if (this->_cgiPid == 0)
+	process_id_ = fork();
+	if (process_id_ == 0)
 	{
-		dup2(pipeIn[0], STDIN_FILENO);
-		dup2(pipeOut[1], STDOUT_FILENO);
-		close(pipeIn[0]);
-		close(pipeIn[1]);
-		close(pipeOut[0]);
-		close(pipeOut[1]);
-		this->_exitStatus = execve(this->_av[0], this->_av, this->_chEnv);
-		fprintf(stderr, "execve failed: %s\n", strerror(errno));
-		exit(this->_exitStatus);
+		dup2(pipe_in[0], STDIN_FILENO);
+		dup2(pipe_out[1], STDOUT_FILENO);
+		close(pipe_in[0]); close(pipe_in[1]);
+		close(pipe_out[0]); close(pipe_out[1]);
+		execve(arg_array_[0], arg_array_, env_array_);
+		std::string error_msg = "execve failed: " + std::string(strerror(errno)) + "\n";
+		write(STDOUT_FILENO, error_msg.c_str(), error_msg.length());
+		exit(1);
 	}
-	else if (this->_cgiPid < 0)
+	else if (process_id_ < 0)
 	{
 		PrintApp::printEvent(RED_BOLD, SUCCESS, "Fork failed: %s.", strerror(errno));
-		close(pipeIn[0]);
-		close(pipeIn[1]);
-		close(pipeOut[0]);
-		close(pipeOut[1]);
-		errorCode = 500;
-		return;
+		close(pipe_in[0]); close(pipe_in[1]);
+		close(pipe_out[0]); close(pipe_out[1]);
+		error_code = 500;
 	}
-	close(pipeIn[0]);
-	close(pipeOut[1]);
-}
-
-bool Cgi::isFileUpload()
-{
-	std::map<std::string, std::string>::iterator it = this->_env.find("CONTENT_TYPE");
-	if (it != this->_env.end())
-		return it->second.find("multipart/form-data") != std::string::npos;
-	return false;
-}
-
-int Cgi::findStart(const std::string path, const std::string delim)
-{
-	if (path.empty())
-		return (-1);
-	return path.find(delim);
-}
-
-std::string Cgi::decode(std::string &path)
-{
-	std::string decodedPath = path;
-	size_t token = decodedPath.find("%");
-	while (token != std::string::npos)
+	else
 	{
-		if (decodedPath.length() < token + 2)
-			break;
-		char decimal = fromHexToDec(decodedPath.substr(token + 1, 2));
-		decodedPath.replace(token, 3, toString(decimal));
-		token = decodedPath.find("%");
+		close(pipe_in[0]);
+		close(pipe_out[1]);
 	}
-	return decodedPath;
 }
 
-unsigned int Cgi::fromHexToDec(const std::string &nb)
+bool Cgi::is_file_upload() const
+{
+	std::map<std::string, std::string>::const_iterator it = environment_.find("CONTENT_TYPE");
+	return (it != environment_.end() && it->second.find("multipart/form-data") != std::string::npos);
+}
+
+std::string Cgi::decode_url(const std::string& encoded) const
+{
+	std::string result = encoded;
+	size_t pos = result.find('%');
+	while (pos != std::string::npos)
+	{
+		if (pos + 2 >= result.length())
+			break;
+		char decoded_char = static_cast<char>(hex_to_decimal(result.substr(pos + 1, 2)));
+		if (decoded_char == 0 && result.substr(pos + 1, 2) != "00")
+			break;
+		result.replace(pos, 3, 1, decoded_char);
+		pos = result.find('%', pos + 1);
+	}
+	return result;
+}
+
+unsigned int Cgi::hex_to_decimal(const std::string& hex) const
 {
 	unsigned int result = 0;
-	std::size_t i = 0;
-	while (i < nb.length())
+	for (size_t i = 0; i < hex.length(); ++i)
 	{
-		char c = nb[i];
+		char c = hex[i];
 		if (!std::isxdigit(c))
 			return 0;
 		result *= 16;
@@ -290,30 +263,47 @@ unsigned int Cgi::fromHexToDec(const std::string &nb)
 			result += c - 'A' + 10;
 		else if (c >= 'a' && c <= 'f')
 			result += c - 'a' + 10;
-		++i;
 	}
 	return result;
 }
 
-void Cgi::clear()
+int Cgi::find_delimiter(const std::string& str, const std::string& delim) const
 {
-	_cgiPid = -1;
-	_exitStatus = 0;
-	_cgiPath.clear();
-	_cgiPath = "";
-	if (_chEnv)
+	if (str.empty())
+		return -1;
+	return static_cast<int>(str.find(delim));
+}
+
+std::string Cgi::make_absolute_path(const std::string& relative_path) const
+{
+	if (relative_path.empty() || relative_path[0] == '/')
+		return relative_path;
+	char* cwd = getcwd(NULL, 0);
+	if (!cwd)
+		return relative_path;
+	std::string absolute = std::string(cwd) + "/" + relative_path;
+	free(cwd);
+	return absolute;
+}
+
+void Cgi::clear_resources()
+{
+	if (env_array_)
 	{
-		for (int i = 0; _chEnv[i] != NULL; ++i)
-			delete[] _chEnv[i];
-		delete[] _chEnv;
-		_chEnv = NULL;
+		for (int i = 0; env_array_[i]; ++i)
+			delete[] env_array_[i];
+		delete[] env_array_;
+		env_array_ = NULL;
 	}
-	if (_av)
+	if (arg_array_)
 	{
-		delete[] _av[0];
-		delete[] _av[1];
-		delete[] _av;
-		_av = NULL;
+		delete[] arg_array_[0];
+		delete[] arg_array_[1];
+		delete[] arg_array_;
+		arg_array_ = NULL;
 	}
-	_env.clear();
+	environment_.clear();
+	script_path_.clear();
+	process_id_ = -1;
+	exit_status_ = 0;
 }

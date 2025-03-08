@@ -46,13 +46,13 @@ void Webserver::processServerRequests()
 					const int CGI_TIMEOUT_SECONDS = 5;
 					if ((now - start) > CGI_TIMEOUT_SECONDS)
 					{
-						kill(client.response.cgi_handler_.getCgiPid(), SIGKILL);
+						kill(client.response.cgi_handler_.get_process_id(), SIGKILL);
 						int status;
-						waitpid(client.response.cgi_handler_.getCgiPid(), &status, 0);
-						removeFromPoll(client.response.cgi_handler_.pipeIn[1]);
-						close(client.response.cgi_handler_.pipeIn[1]);
-						removeFromPoll(client.response.cgi_handler_.pipeOut[0]);
-						close(client.response.cgi_handler_.pipeOut[0]);
+						waitpid(client.response.cgi_handler_.get_process_id(), &status, 0);
+						removeFromPoll(client.response.cgi_handler_.pipe_in[1]);
+						close(client.response.cgi_handler_.pipe_in[1]);
+						removeFromPoll(client.response.cgi_handler_.pipe_out[0]);
+						close(client.response.cgi_handler_.pipe_out[0]);
 						client.response.toggleCgi(2);
 						client.response.setError(504);
 						client.setCgiStartTime(0);
@@ -83,7 +83,7 @@ void Webserver::processServerRequests()
 							handled = true;
 							break;
 						}
-						else if (client.response.getCgiFlag() == 1 && fd == client.response.cgi_handler_.pipeOut[0])
+						else if (client.response.getCgiFlag() == 1 && fd == client.response.cgi_handler_.pipe_out[0])
 						{
 							readCgiResponse(client, client.response.cgi_handler_);
 							handled = true;
@@ -105,7 +105,7 @@ void Webserver::processServerRequests()
 						handled = true;
 						break;
 					}
-					else if (cgi_state == 1 && fd == client.response.cgi_handler_.pipeIn[1])
+					else if (cgi_state == 1 && fd == client.response.cgi_handler_.pipe_in[1])
 					{
 						sendCgiBody(client, client.response.cgi_handler_);
 						handled = true;
@@ -121,14 +121,14 @@ void Webserver::processServerRequests()
 					Client& client = it->second;
 					if (client.response.getCgiFlag() == 1)
 					{
-						if (fd == client.response.cgi_handler_.pipeIn[1])
+						if (fd == client.response.cgi_handler_.pipe_in[1])
 						{
 							removeFromPoll(fd);
 							close(fd);
 							handled = true;
 							break;
 						}
-						else if (fd == client.response.cgi_handler_.pipeOut[0])
+						else if (fd == client.response.cgi_handler_.pipe_out[0])
 						{
 							readCgiResponse(client, client.response.cgi_handler_);
 							handled = true;
@@ -153,7 +153,7 @@ void Webserver::initializePollFds()
     _pollFds.clear();
     for (std::vector<Server>::iterator it = _serv.begin(); it != _serv.end(); ++it)
     {
-    	if (listen(it->getFd(), 512) == -1)
+    	if (listen(it->getFd(), 369) == -1)
     		PrintApp::printEvent(RED_BOLD, FAILURE, "Failed to listen on socket. Reason: %s. Closing the connection...", strerror(errno));
     	if (fcntl(it->getFd(), F_SETFL, O_NONBLOCK) < 0)
     		PrintApp::printEvent(RED_BOLD, FAILURE, "Error setting non-blocking mode using fcntl. Reason: %s. Closing the connection...", strerror(errno));
@@ -251,8 +251,8 @@ void Webserver::readAndProcessRequest(const int &i, Client &client)
 		{
 			handleReqBody(client);
 			client.setCgiStartTime(time(NULL));
-			addToPoll(client.response.cgi_handler_.pipeIn[1], POLLOUT);
-			addToPoll(client.response.cgi_handler_.pipeOut[0], POLLIN);
+			addToPoll(client.response.cgi_handler_.pipe_in[1], POLLOUT);
+			addToPoll(client.response.cgi_handler_.pipe_out[0], POLLIN);
 			removeFromPoll(i);
 		}
 		else
@@ -285,7 +285,7 @@ void Webserver::handleReqBody(Client &client)
 	if (client.request.getBody().length() == 0 && client.request.getHttpMethod() == POST)
 	{
 		std::string tmp;
-		std::fstream file(client.response.cgi_handler_.getCgiPath().c_str(), std::ios::in);
+		std::fstream file(client.response.cgi_handler_.get_script_path().c_str(), std::ios::in);
 		if (file.is_open())
 		{
 			std::stringstream ss;
@@ -310,22 +310,22 @@ void Webserver::sendCgiBody(Client &client, Cgi &cgi)
 	if (req_body.empty())
 		bytesSent = 0;
 	else if (req_body.length() >= 40000)
-		bytesSent = write(cgi.pipeIn[1], req_body.c_str(), 40000);
+		bytesSent = write(cgi.pipe_in[1], req_body.c_str(), 40000);
 	else
-		bytesSent = write(cgi.pipeIn[1], req_body.c_str(), req_body.length());
+		bytesSent = write(cgi.pipe_in[1], req_body.c_str(), req_body.length());
 	if (bytesSent < 0)
 	{
 		PrintApp::printEvent(RED_BOLD, SUCCESS, "Error occurred while sending CGI body. Reason: %s.", strerror(errno));
-		removeFromPoll(cgi.pipeIn[1]);
-		close(cgi.pipeIn[1]);
+		removeFromPoll(cgi.pipe_in[1]);
+		close(cgi.pipe_in[1]);
 		client.response.setError(500);
 		client.response.toggleCgi(2);
 		addToPoll(client.getSocket(), POLLOUT);
 	}
 	else if (bytesSent == 0 || static_cast<size_t>(bytesSent) == req_body.length())
 	{
-		removeFromPoll(cgi.pipeIn[1]);
-		close(cgi.pipeIn[1]);
+		removeFromPoll(cgi.pipe_in[1]);
+		close(cgi.pipe_in[1]);
 	}
 	else
 	{
@@ -337,11 +337,11 @@ void Webserver::sendCgiBody(Client &client, Cgi &cgi)
 void Webserver::readCgiResponse(Client &client, Cgi &cgi)
 {
 	char buffer[40000 * 2];
-	int bytesRead = read(cgi.pipeOut[0], buffer, 40000 * 2);
+	int bytesRead = read(cgi.pipe_out[0], buffer, 40000 * 2);
 	if (bytesRead < 0)
 	{
-		removeFromPoll(cgi.pipeOut[0]);
-		close(cgi.pipeOut[0]);
+		removeFromPoll(cgi.pipe_out[0]);
+		close(cgi.pipe_out[0]);
 		client.response.toggleCgi(2);
 		client.response.setError(500);
 		addToPoll(client.getSocket(), POLLOUT);
@@ -355,11 +355,11 @@ void Webserver::readCgiResponse(Client &client, Cgi &cgi)
 	else
 	{
 		int status;
-		pid_t result = waitpid(cgi.getCgiPid(), &status, WNOHANG);
-		if (result == cgi.getCgiPid())
+		pid_t result = waitpid(cgi.get_process_id(), &status, WNOHANG);
+		if (result == cgi.get_process_id())
 		{
-			removeFromPoll(cgi.pipeOut[0]);
-			close(cgi.pipeOut[0]);
+			removeFromPoll(cgi.pipe_out[0]);
+			close(cgi.pipe_out[0]);
 			if (WEXITSTATUS(status) != 0)
 				client.response.setError(502);
 			else
