@@ -42,7 +42,7 @@ Client::~Client() {}
 void Client::buildResponse()
 {
 	response.setRequest(this->request);
-	response.buildResponse();
+	response.constructResponse();
 }
 
 void Client::updateLastMessageTime()
@@ -82,6 +82,6 @@ time_t Client::getCgiStartTime() const
 
 void Client::clearClient()
 {
-	response.clear();
+	response.reset();
 	request.clear();
 }

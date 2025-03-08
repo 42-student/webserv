@@ -2,48 +2,48 @@
 
 Server::Server()
 {
-	this->_port = 0;
-	this->_host = 0;
-	this->_servName = "";
-	this->_root = "";
-	this->_index = "";
-	this->_autoIndex = false;
-	this->_redirect = "";
-	this->_maxBodySize = MAX_CONTENT_LENGTH;
-	this->_listenFd = 0;
-	this->initErrorPages();
+	_port = 0;
+	_host = 0;
+	_servName = "";
+	_root = "";
+	_index = "";
+	_autoIndex = false;
+	_redirect = "";
+	_maxBodySize = MAX_CONTENT_LENGTH;
+	_listenFd = 0;
+	initErrorPages();
 }
 
 Server::Server(const Server& copy)
 {
-	this->_servAddr = copy._servAddr;
-	this->_locations = copy._locations;
-	this->_port = copy._port;
-	this->_host = copy._host;
-	this->_servName = copy._servName;
-	this->_root = copy._root;
-	this->_index = copy._index;
-	this->_autoIndex = copy._autoIndex;
-	this->_redirect = copy._redirect;
-	this->_maxBodySize = copy._maxBodySize;
-	this->_listenFd = copy._listenFd;
-	this->_errPag = copy._errPag;
+	_servAddr = copy._servAddr;
+	_locations = copy._locations;
+	_port = copy._port;
+	_host = copy._host;
+	_servName = copy._servName;
+	_root = copy._root;
+	_index = copy._index;
+	_autoIndex = copy._autoIndex;
+	_redirect = copy._redirect;
+	_maxBodySize = copy._maxBodySize;
+	_listenFd = copy._listenFd;
+	_errPag = copy._errPag;
 }
 
 Server& Server::operator=(const Server& copy)
 {
-	this->_servAddr = copy._servAddr;
-	this->_locations = copy._locations;
-	this->_port = copy._port;
-	this->_host = copy._host;
-	this->_servName = copy._servName;
-	this->_root = copy._root;
-	this->_index = copy._index;
-	this->_autoIndex = copy._autoIndex;
-	this->_redirect = copy._redirect;
-	this->_maxBodySize = copy._maxBodySize;
-	this->_listenFd = copy._listenFd;
-	this->_errPag = copy._errPag;
+	_servAddr = copy._servAddr;
+	_locations = copy._locations;
+	_port = copy._port;
+	_host = copy._host;
+	_servName = copy._servName;
+	_root = copy._root;
+	_index = copy._index;
+	_autoIndex = copy._autoIndex;
+	_redirect = copy._redirect;
+	_maxBodySize = copy._maxBodySize;
+	_listenFd = copy._listenFd;
+	_errPag = copy._errPag;
 	return *this;
 }
 
@@ -88,7 +88,8 @@ void Server::setServerName(const std::string& servName)
 void Server::setRoot(const std::string& root)
 {
 	std::string r = checkToken(root);
-	if (r[0] != '/') {
+	if (r[0] != '/')
+	{
 		char dir[1024];
 		getcwd(dir, 1024);
 		r = std::string(dir) + "/" + r;
@@ -221,7 +222,7 @@ std::string Server::checkToken(const std::string& param)
 void Server::handleRootLocation(const std::vector<std::string>& param, size_t& i, Location& newLocation)
 {
 	if (!newLocation.getRootLocation().empty())
-		throw Error("Duplicate root directive in location");
+		throw Error("Duplicate root directive in location.");
 	std::string root = checkToken(param[++i]);
 	std::string rootLocation = (ConfigFile::getTypePath(root) == 2) ? root : this->_root + root;
 	newLocation.setRootLocation(rootLocation);
@@ -230,7 +231,7 @@ void Server::handleRootLocation(const std::vector<std::string>& param, size_t& i
 void Server::handleIndexLocation(const std::vector<std::string>& param, size_t& i, Location& newLocation)
 {
 	if (!newLocation.getIndexLocation().empty())
-		throw Error("Duplicate index directive in location");
+		throw Error("Duplicate index directive in location.");
 	newLocation.setIndexLocation(checkToken(param[++i]));
 }
 
@@ -247,9 +248,9 @@ void Server::handleAutoindex(const std::vector<std::string>& param, size_t& i, c
 void Server::handleRedirect(const std::vector<std::string>& param, size_t& i, const std::string& path, Location& newLocation)
 {
 	if (path == "/cgi")
-		throw Error("Redirect not allowed for CGI location");
+		throw Error("Redirect not allowed for CGI location.");
 	if (!newLocation.getRedirect().empty())
-		throw Error("Duplicate redirect directive in location");
+		throw Error("Duplicate redirect directive in location.");
 	newLocation.setRedirect(checkToken(param[++i]));
 }
 
@@ -382,7 +383,8 @@ const std::map<short, std::string>& Server::getErrorPages()
 const std::vector<Location>::iterator Server::getLocationKey(std::string key)
 {
 	for (std::vector<Location>::iterator it = _locations.begin(); it != _locations.end(); ++it)
-		if (it->getPath() == key) return it;
+		if (it->getPath() == key)
+			return it;
 	throw Error("Path to location not found: " + key);
 }
 
@@ -475,8 +477,10 @@ bool Server::isValidErrorPages()
 {
 	for (std::map<short, std::string>::const_iterator it = _errPag.begin(); it != _errPag.end(); ++it)
 	{
-		if (it->first < 100 || it->first > 599) return false;
-		if (!it->second.empty() && (ConfigFile::checkAccessFile(getRoot() + it->second, 0) < 0 || ConfigFile::checkAccessFile(getRoot() + it->second, 4) < 0)) return false;
+		if (it->first < 100 || it->first > 599)
+			return false;
+		if (!it->second.empty() && (ConfigFile::checkAccessFile(getRoot() + it->second, 0) < 0 || ConfigFile::checkAccessFile(getRoot() + it->second, 4) < 0))
+			return false;
 	}
 	return true;
 }
@@ -487,7 +491,8 @@ bool Server::checkLocation() const
 	for (std::vector<Location>::const_iterator it1 = _locations.begin(); it1 != _locations.end() - 1; ++it1)
 	{
 		for (std::vector<Location>::const_iterator it2 = it1 + 1; it2 != _locations.end(); ++it2)
-			if (it1->getPath() == it2->getPath()) return true;
+			if (it1->getPath() == it2->getPath())
+				return true;
 	}
 	return false;
 }

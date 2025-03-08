@@ -39,22 +39,22 @@ void Webserver::processServerRequests()
 			for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 			{
 				Client& client = it->second;
-				if (client.response.getCgiState() == 1 && client.getCgiStartTime() > 0)
+				if (client.response.getCgiFlag() == 1 && client.getCgiStartTime() > 0)
 				{
 					time_t now = time(NULL);
 					time_t start = client.getCgiStartTime();
 					const int CGI_TIMEOUT_SECONDS = 5;
 					if ((now - start) > CGI_TIMEOUT_SECONDS)
 					{
-						kill(client.response.cgiObj.getCgiPid(), SIGKILL);
+						kill(client.response.cgi_handler_.getCgiPid(), SIGKILL);
 						int status;
-						waitpid(client.response.cgiObj.getCgiPid(), &status, 0);
-						removeFromPoll(client.response.cgiObj.pipeIn[1]);
-						close(client.response.cgiObj.pipeIn[1]);
-						removeFromPoll(client.response.cgiObj.pipeOut[0]);
-						close(client.response.cgiObj.pipeOut[0]);
-						client.response.setCgiState(2);
-						client.response.setErrorResponse(504);
+						waitpid(client.response.cgi_handler_.getCgiPid(), &status, 0);
+						removeFromPoll(client.response.cgi_handler_.pipeIn[1]);
+						close(client.response.cgi_handler_.pipeIn[1]);
+						removeFromPoll(client.response.cgi_handler_.pipeOut[0]);
+						close(client.response.cgi_handler_.pipeOut[0]);
+						client.response.toggleCgi(2);
+						client.response.setError(504);
 						client.setCgiStartTime(0);
 						addToPoll(it->first, POLLOUT);
 					}
@@ -83,9 +83,9 @@ void Webserver::processServerRequests()
 							handled = true;
 							break;
 						}
-						else if (client.response.getCgiState() == 1 && fd == client.response.cgiObj.pipeOut[0])
+						else if (client.response.getCgiFlag() == 1 && fd == client.response.cgi_handler_.pipeOut[0])
 						{
-							readCgiResponse(client, client.response.cgiObj);
+							readCgiResponse(client, client.response.cgi_handler_);
 							handled = true;
 							break;
 						}
@@ -98,16 +98,16 @@ void Webserver::processServerRequests()
 				for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 				{
 					Client& client = it->second;
-					int cgi_state = client.response.getCgiState();
+					int cgi_state = client.response.getCgiFlag();
 					if (fd == it->first && (cgi_state == 0 || cgi_state == 2))
 					{
 						sendResponse(fd, client);
 						handled = true;
 						break;
 					}
-					else if (cgi_state == 1 && fd == client.response.cgiObj.pipeIn[1])
+					else if (cgi_state == 1 && fd == client.response.cgi_handler_.pipeIn[1])
 					{
-						sendCgiBody(client, client.response.cgiObj);
+						sendCgiBody(client, client.response.cgi_handler_);
 						handled = true;
 						break;
 					}
@@ -119,18 +119,18 @@ void Webserver::processServerRequests()
 				for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 				{
 					Client& client = it->second;
-					if (client.response.getCgiState() == 1)
+					if (client.response.getCgiFlag() == 1)
 					{
-						if (fd == client.response.cgiObj.pipeIn[1])
+						if (fd == client.response.cgi_handler_.pipeIn[1])
 						{
 							removeFromPoll(fd);
 							close(fd);
 							handled = true;
 							break;
 						}
-						else if (fd == client.response.cgiObj.pipeOut[0])
+						else if (fd == client.response.cgi_handler_.pipeOut[0])
 						{
-							readCgiResponse(client, client.response.cgiObj);
+							readCgiResponse(client, client.response.cgi_handler_);
 							handled = true;
 							break;
 						}
@@ -247,12 +247,12 @@ void Webserver::readAndProcessRequest(const int &i, Client &client)
 		if (client.request.errorCodes() != 501)
 			PrintApp::printEvent(BLUE, SUCCESS, "<%s> \"%s\"", client.request.getMethodStr().c_str(), client.request.getPath().c_str());
 		client.buildResponse();
-		if (client.response.getCgiState())
+		if (client.response.getCgiFlag())
 		{
 			handleReqBody(client);
 			client.setCgiStartTime(time(NULL));
-			addToPoll(client.response.cgiObj.pipeIn[1], POLLOUT);
-			addToPoll(client.response.cgiObj.pipeOut[0], POLLIN);
+			addToPoll(client.response.cgi_handler_.pipeIn[1], POLLOUT);
+			addToPoll(client.response.cgi_handler_.pipeOut[0], POLLIN);
 			removeFromPoll(i);
 		}
 		else
@@ -285,7 +285,7 @@ void Webserver::handleReqBody(Client &client)
 	if (client.request.getBody().length() == 0 && client.request.getHttpMethod() == POST)
 	{
 		std::string tmp;
-		std::fstream file(client.response.cgiObj.getCgiPath().c_str(), std::ios::in);
+		std::fstream file(client.response.cgi_handler_.getCgiPath().c_str(), std::ios::in);
 		if (file.is_open())
 		{
 			std::stringstream ss;
@@ -297,8 +297,8 @@ void Webserver::handleReqBody(Client &client)
 		else
 		{
 			PrintApp::printEvent(RED_BOLD, SUCCESS, "Failed to open CGI script file for default body.");
-			client.response.setErrorResponse(500);
-			client.response.setCgiState(2);
+			client.response.setError(500);
+			client.response.toggleCgi(2);
 		}
 	}
 }
@@ -318,8 +318,8 @@ void Webserver::sendCgiBody(Client &client, Cgi &cgi)
 		PrintApp::printEvent(RED_BOLD, SUCCESS, "Error occurred while sending CGI body. Reason: %s.", strerror(errno));
 		removeFromPoll(cgi.pipeIn[1]);
 		close(cgi.pipeIn[1]);
-		client.response.setErrorResponse(500);
-		client.response.setCgiState(2);
+		client.response.setError(500);
+		client.response.toggleCgi(2);
 		addToPoll(client.getSocket(), POLLOUT);
 	}
 	else if (bytesSent == 0 || static_cast<size_t>(bytesSent) == req_body.length())
@@ -342,8 +342,8 @@ void Webserver::readCgiResponse(Client &client, Cgi &cgi)
 	{
 		removeFromPoll(cgi.pipeOut[0]);
 		close(cgi.pipeOut[0]);
-		client.response.setCgiState(2);
-		client.response.setErrorResponse(500);
+		client.response.toggleCgi(2);
+		client.response.setError(500);
 		addToPoll(client.getSocket(), POLLOUT);
 	}
 	else if (bytesRead > 0)
@@ -361,25 +361,25 @@ void Webserver::readCgiResponse(Client &client, Cgi &cgi)
 			removeFromPoll(cgi.pipeOut[0]);
 			close(cgi.pipeOut[0]);
 			if (WEXITSTATUS(status) != 0)
-				client.response.setErrorResponse(502);
+				client.response.setError(502);
 			else
 			{
-				client.response.setCgiState(2);
+				client.response.toggleCgi(2);
 				if (_cgiOutBuff.find("HTTP/") == 0)
 				{
-					client.response.responseContent = _cgiOutBuff;
+					client.response.full_response_ = _cgiOutBuff;
 					std::string firstLine = _cgiOutBuff.substr(0, _cgiOutBuff.find("\r\n"));
 					std::string statusStr = firstLine.substr(firstLine.find(" ") + 1, 3);
-					client.response.setCode(atoi(statusStr.c_str()));
+					client.response.setStatus(atoi(statusStr.c_str()));
 				}
 				else
 				{
-					client.response.setCode(200);
-					client.response.responseContent = "HTTP/1.1 200 OK\r\n";
-					client.response.responseContent.append("Content-Type: text/html\r\n");
-					client.response.responseContent.append("Content-Length: " + toString(_cgiOutBuff.length()) + "\r\n");
-					client.response.responseContent.append("\r\n");
-					client.response.responseContent.append(_cgiOutBuff);
+					client.response.setStatus(200);
+					client.response.full_response_ = "HTTP/1.1 200 OK\r\n";
+					client.response.full_response_.append("Content-Type: text/html\r\n");
+					client.response.full_response_.append("Content-Length: " + toString(_cgiOutBuff.length()) + "\r\n");
+					client.response.full_response_.append("\r\n");
+					client.response.full_response_.append(_cgiOutBuff);
 				}
 				_cgiOutBuff = "";
 			}
@@ -391,7 +391,7 @@ void Webserver::readCgiResponse(Client &client, Cgi &cgi)
 void Webserver::sendResponse(const int &i, Client &c)
 {
 	int bytesSent;
-	std::string response = c.response.getRes();
+	std::string response = c.response.getResponse();
 	if (response.length() >= 40000)
 		bytesSent = write(i, response.c_str(), 40000);
 	else
@@ -403,8 +403,8 @@ void Webserver::sendResponse(const int &i, Client &c)
 	}
 	else if (bytesSent == 0 || static_cast<size_t>(bytesSent) == response.length())
 	{
-		PrintApp::printEvent(WHITE, SUCCESS, "Status<%d>", c.response.getCode());
-		if (c.request.isConnectionKeepAlive() == false || c.request.errorCodes() || c.response.getCgiState())
+		PrintApp::printEvent(WHITE, SUCCESS, "Status<%d>", c.response.getStatus());
+		if (c.request.isConnectionKeepAlive() == false || c.request.errorCodes() || c.response.getCgiFlag())
 		{
 			PrintApp::printEvent(YELLOW, SUCCESS, "Connection with client has been terminated.");
 			closeConnection(i);
@@ -419,7 +419,7 @@ void Webserver::sendResponse(const int &i, Client &c)
 	else
 	{
 		c.updateLastMessageTime();
-		c.response.cutRes(bytesSent);
+		c.response.trimResponse(bytesSent);
 	}
 }
 
