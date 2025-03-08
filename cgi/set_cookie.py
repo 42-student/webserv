@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 from http import cookies
-import cgi, cgitb 
+import cgi
 
 uploaded_cookies = cgi.FieldStorage()
 

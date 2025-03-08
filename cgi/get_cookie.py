@@ -7,7 +7,6 @@ import cgi
 
 uploaded_cookies = cgi.FieldStorage()
 key = uploaded_cookies.getvalue("key")
-value = uploaded_cookies.getvalue("value")
 response_body = ["HTTP1.1 200 OK\n", "Content-type: text/html;charset=utf-8\n"]
 
 cookie = cookies.SimpleCookie()
