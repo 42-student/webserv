@@ -28,7 +28,7 @@ void Webserver::setupServers(std::vector<Server> servers)
 void Webserver::processServerRequests()
 {
 	int pollStatus;
-	initializePollFds();	
+	initializePollFds();
 	while (true)
 	{
 		pollStatus = poll(&_pollFds[0], _pollFds.size(), 1000);
@@ -61,40 +61,41 @@ void Webserver::processServerRequests()
 				}
 			}
 			continue;
-		}	
+		}
 		std::vector<struct pollfd> currentFds = _pollFds;
+		std::set<int> handledClients;
 		for (size_t i = 0; i < currentFds.size(); ++i)
 		{
 			int fd = currentFds[i].fd;
 			short revents = currentFds[i].revents;
+			if (handledClients.count(fd))
+				continue;
 			if (revents & POLLIN)
 			{
 				if (_servsDict.count(fd))
 					acceptNewConnection(_servsDict.find(fd)->second);
 				else
 				{
-					bool handled = false;
 					for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 					{
 						Client& client = it->second;
 						if (fd == it->first)
 						{
 							readAndProcessRequest(fd, client);
-							handled = true;
+							handledClients.insert(fd);
 							break;
 						}
 						else if (client.response.getCgiFlag() == 1 && fd == client.response.cgi_handler_.pipe_out[0])
 						{
 							readCgiResponse(client, client.response.cgi_handler_);
-							handled = true;
+							handledClients.insert(fd);
 							break;
 						}
 					}
 				}
 			}
-			if (revents & POLLOUT)
+			if ((revents & POLLOUT) && !handledClients.count(fd))
 			{
-				bool handled = false;
 				for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 				{
 					Client& client = it->second;
@@ -102,20 +103,19 @@ void Webserver::processServerRequests()
 					if (fd == it->first && (cgi_state == 0 || cgi_state == 2))
 					{
 						sendResponse(fd, client);
-						handled = true;
+						handledClients.insert(fd);
 						break;
 					}
 					else if (cgi_state == 1 && fd == client.response.cgi_handler_.pipe_in[1])
 					{
 						sendCgiBody(client, client.response.cgi_handler_);
-						handled = true;
+						handledClients.insert(fd);
 						break;
 					}
 				}
 			}
 			if (revents & (POLLHUP | POLLERR | POLLNVAL))
 			{
-				bool handled = false;
 				for (std::map<int, Client>::iterator it = _clientsDict.begin(); it != _clientsDict.end(); ++it)
 				{
 					Client& client = it->second;
@@ -125,20 +125,20 @@ void Webserver::processServerRequests()
 						{
 							removeFromPoll(fd);
 							close(fd);
-							handled = true;
+							handledClients.insert(fd);
 							break;
 						}
 						else if (fd == client.response.cgi_handler_.pipe_out[0])
 						{
 							readCgiResponse(client, client.response.cgi_handler_);
-							handled = true;
+							handledClients.insert(fd);
 							break;
 						}
 					}
 					else if (fd == it->first)
 					{
 						closeConnection(fd);
-						handled = true;
+						handledClients.insert(fd);
 						break;
 					}
 				}
