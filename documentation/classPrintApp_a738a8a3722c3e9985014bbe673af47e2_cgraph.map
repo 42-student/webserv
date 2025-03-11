@@ -1,0 +1,5 @@
+<map id="PrintApp::printErrorCode" name="PrintApp::printErrorCode">
+<area shape="rect" id="Node000001" title="Prints an error message with an error code and updates a reference code." alt="" coords="5,5,184,31"/>
+<area shape="rect" id="Node000002" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="232,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,15,218,15,218,21,184,21"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Response::isDir" name="Response::isDir">
+<area shape="rect" id="Node000001" title="Checks if a path is a directory." alt="" coords="983,56,1105,81"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#ab29ba174bf722bad982b58dda4b6e14f" title="Handles requests when no specific location matches." alt="" coords="724,5,935,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="975,55,883,33,884,28,977,50"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#ae717a265388b5ffc367fdab215141257" title="Processes the request target to determine the response action." alt="" coords="493,56,676,81"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="969,71,676,71,676,66,969,66"/>
+<area shape="rect" id="Node000006" href="$classResponse.html#ab4ea5587e9473a6cde6e1571fe179477" title="Processes an index file or auto&#45;indexing for a directory." alt="" coords="740,107,919,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="977,87,884,109,883,104,975,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="754,36,647,59,646,53,753,31"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="269,56,445,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="480,71,445,71,445,66,480,66"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="5,56,221,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,71,222,71,222,66,256,66"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="753,106,646,84,647,79,754,101"/>
+</map>

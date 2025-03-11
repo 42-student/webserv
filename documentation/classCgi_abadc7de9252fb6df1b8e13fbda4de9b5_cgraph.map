@@ -1,0 +1,7 @@
+<map id="Cgi::set_content_variables" name="Cgi::set_content_variables">
+<area shape="rect" id="Node000001" title="Sets content&#45;related environment variables (e.g., CONTENT_LENGTH)." alt="" coords="5,31,200,56"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#a1e8fc254762bbab2fd0187687a9e0d6f" title="Gets the request body content." alt="" coords="255,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,29,241,25,241,30,201,35"/>
+<area shape="rect" id="Node000003" href="$classRequest.html#aa76cc127010637d96d8cd82c2ed98b14" title="Gets the value of a specific header." alt="" coords="248,55,399,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,51,235,55,234,60,200,57"/>
+</map>

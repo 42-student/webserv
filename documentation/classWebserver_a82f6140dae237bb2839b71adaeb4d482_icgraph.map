@@ -1,0 +1,25 @@
+<map id="Webserver::addToPoll" name="Webserver::addToPoll">
+<area shape="rect" id="Node000001" title="Adds a file descriptor to the poll monitoring list." alt="" coords="639,164,800,189"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a51dd576c587f7b90299431bbcdc44b3e" title="Accepts a new client connection for a server." alt="" coords="347,5,591,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="699,155,653,103,623,75,589,52,542,33,544,28,592,48,626,71,657,99,703,151"/>
+<area shape="rect" id="Node000003" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,157,299,197"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="692,157,647,124,619,108,590,97,523,80,469,75,415,80,347,97,314,108,283,125,231,159,228,154,280,120,312,104,346,91,414,75,469,69,524,74,591,91,621,103,650,119,695,153"/>
+<area shape="rect" id="Node000005" href="$classWebserver.html#a149b97c3255ecf37192c57e2b96a18b2" title="Initializes the pollfd structures for server sockets." alt="" coords="367,107,570,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="655,163,590,147,532,135,533,129,591,142,657,158"/>
+<area shape="rect" id="Node000006" href="$classWebserver.html#ad96d099ad730b3497490825e11bd1864" title="Reads and processes a request from a client." alt="" coords="367,157,570,197"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="625,179,570,179,570,174,625,174"/>
+<area shape="rect" id="Node000007" href="$classWebserver.html#a0135897ce20caa7de22cd5c27063a46f" title="Reads the response from a CGI handler." alt="" coords="363,221,575,247"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="657,195,591,211,533,224,532,219,590,206,655,190"/>
+<area shape="rect" id="Node000008" href="$classWebserver.html#a8d74c666ed10770685fe0c6ffc9e3ec5" title="Sends the request body to a CGI handler." alt="" coords="377,271,561,296"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="693,200,647,231,592,260,552,273,550,268,590,256,645,227,690,195"/>
+<area shape="rect" id="Node000009" href="$classWebserver.html#af830c1e1f931e63c3dd9ec0357a05c3e" title="Sends the constructed response to a client." alt="" coords="372,320,565,345"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="704,202,658,257,627,286,592,310,561,322,559,317,589,305,624,282,654,253,700,199"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="385,37,348,52,310,77,276,105,224,158,220,154,272,101,307,72,345,48,383,32"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,164,60,189"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,179,60,179,60,174,94,174"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="393,137,347,147,293,159,292,154,346,142,392,132"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="353,179,299,179,299,174,353,174"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="392,221,346,211,292,199,293,194,347,206,393,216"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="375,270,346,260,284,231,232,199,235,195,286,226,348,256,377,265"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="365,318,345,310,306,285,271,255,219,199,223,195,274,251,309,280,348,305,367,313"/>
+</map>

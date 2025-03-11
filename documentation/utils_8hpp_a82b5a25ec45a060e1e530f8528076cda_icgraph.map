@@ -1,0 +1,11 @@
+<map id="toString" name="toString">
+<area shape="rect" id="Node000001" title="Converts a value of any type to a string." alt="" coords="607,31,680,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a8591658593e3339a1318e67c64ed36fd" title="Gets the path to an error page for a given status code." alt="" coords="361,5,544,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="593,39,544,33,545,28,593,34"/>
+<area shape="rect" id="Node000003" href="$classWebserver.html#a0135897ce20caa7de22cd5c27063a46f" title="Reads the response from a CGI handler." alt="" coords="347,55,559,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="594,52,554,57,553,52,593,47"/>
+<area shape="rect" id="Node000004" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,47,299,87"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="333,70,299,70,299,65,333,65"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
+</map>

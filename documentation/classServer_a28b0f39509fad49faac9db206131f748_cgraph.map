@@ -1,0 +1,7 @@
+<map id="Server::handleMaxBodySize" name="Server::handleMaxBodySize">
+<area shape="rect" id="Node000001" title="Handles max body size directive for a location block." alt="" coords="5,31,209,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="281,5,427,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,30,267,24,267,30,210,35"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a54f1ffb8f86f85ee1af3edc748fa42e7" title="Sets the maximum client body size from a string." alt="" coords="257,55,451,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,51,244,54,244,59,209,56"/>
+</map>

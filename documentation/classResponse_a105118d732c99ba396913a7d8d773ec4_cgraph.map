@@ -1,0 +1,5 @@
+<map id="Response::writeStatus" name="Response::writeStatus">
+<area shape="rect" id="Node000001" title="Writes the HTTP status line to the response." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a1de5376363e9a650357860b6223cf08d" title="Converts an HTTP status code to its string representation." alt="" coords="220,5,403,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,15,207,15,207,21,173,21"/>
+</map>

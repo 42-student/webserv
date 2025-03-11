@@ -1,0 +1,9 @@
+<map id="Webserver::initializePollFds" name="Webserver::initializePollFds">
+<area shape="rect" id="Node000001" title="Initializes the pollfd structures for server sockets." alt="" coords="5,31,208,56"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a82f6140dae237bb2839b71adaeb4d482" title="Adds a file descriptor to the poll monitoring list." alt="" coords="256,5,417,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,29,242,26,243,31,209,35"/>
+<area shape="rect" id="Node000003" href="$classPrintApp.html#a1f7e115d98370c8bfabe7dce55bcd929" title="Prints a formatted event message with color and status." alt="" coords="261,55,413,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,51,247,55,247,61,208,57"/>
+<area shape="rect" id="Node000004" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="465,55,684,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="413,65,451,65,451,70,413,70"/>
+</map>

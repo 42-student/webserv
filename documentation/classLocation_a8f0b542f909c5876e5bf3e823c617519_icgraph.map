@@ -1,0 +1,29 @@
+<map id="Location::getAlias" name="Location::getAlias">
+<area shape="rect" id="Node000001" title="Gets the alias path for this location." alt="" coords="1537,81,1676,107"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#acae1d9a9370f47f9c8022f1f1301d055" title="Applies an alias from a location to the target path." alt="" coords="1299,5,1460,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1560,79,1488,53,1426,33,1428,28,1490,47,1562,74"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#ae717a265388b5ffc367fdab215141257" title="Processes the request target to determine the response action." alt="" coords="1039,31,1221,56"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="1523,88,1221,56,1222,50,1524,83"/>
+<area shape="rect" id="Node000006" href="$classServer.html#aa1809d88d40daf0bc8e23c44853be180" title="Handles alias directive for a location block." alt="" coords="1056,107,1204,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1524,101,1204,118,1204,113,1523,96"/>
+<area shape="rect" id="Node000012" href="$classServer.html#acd6cac219d2d3fe5d13eee45ae5580f2" title="Checks if a regular (non&#45;CGI) location block is valid." alt="" coords="1269,157,1489,183"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1562,114,1490,141,1428,160,1426,155,1488,135,1560,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1285,30,1222,37,1221,31,1285,25"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="815,31,991,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1025,46,991,46,991,41,1025,41"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="551,31,767,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="801,46,767,46,767,41,801,41"/>
+<area shape="rect" id="Node000007" href="$classServer.html#a90c54977a2c667625763a84deea63801" title="Configures a location block with specified parameters." alt="" coords="829,131,976,156"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1043,131,976,138,976,133,1042,126"/>
+<area shape="rect" id="Node000008" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="569,131,748,156"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="816,146,748,146,748,141,816,141"/>
+<area shape="rect" id="Node000009" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,131,503,156"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="556,146,503,146,503,141,556,141"/>
+<area shape="rect" id="Node000010" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,131,297,156"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="331,146,298,146,298,141,331,141"/>
+<area shape="rect" id="Node000011" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,131,60,156"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="95,146,60,146,60,141,95,141"/>
+<area shape="rect" id="Node000013" href="$classServer.html#a54f543457a8dad67af0c6f2cf2df7b6b" title="Checks if a location block is valid (general validation)." alt="" coords="1045,156,1215,181"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1256,172,1216,172,1216,166,1256,167"/>
+<area shape="poly" id="edge13_Node000013_Node000007" title=" " alt="" coords="1031,160,976,154,977,149,1031,155"/>
+</map>

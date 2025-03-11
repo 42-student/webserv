@@ -1,0 +1,7 @@
+<map id="Response::hasReturn" name="Response::hasReturn">
+<area shape="rect" id="Node000001" title="Checks if the location has a return directive." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a197ef7cdb05427353a4bdc9fc6b2d313" title="Evaluates the return directive for a location." alt="" coords="212,5,376,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,15,198,15,198,21,164,21"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a65c0c7ca5b684f2d53805425e36899bc" title="Gets the return directive for this location." alt="" coords="424,5,573,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,15,410,15,410,21,376,21"/>
+</map>

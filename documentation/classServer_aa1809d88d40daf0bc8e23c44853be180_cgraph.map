@@ -1,0 +1,9 @@
+<map id="Server::handleAlias" name="Server::handleAlias">
+<area shape="rect" id="Node000001" title="Handles alias directive for a location block." alt="" coords="5,55,153,80"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="201,5,348,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,52,210,32,211,37,131,57"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a8f0b542f909c5876e5bf3e823c617519" title="Gets the alias path for this location." alt="" coords="205,55,344,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,65,191,65,191,70,154,70"/>
+<area shape="rect" id="Node000004" href="$classLocation.html#a664125ce6b38b60c6c38dbb9dea06100" title="Sets the alias path for this location." alt="" coords="206,104,343,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,77,211,98,210,103,130,83"/>
+</map>

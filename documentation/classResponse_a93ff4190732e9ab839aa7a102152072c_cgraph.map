@@ -1,0 +1,5 @@
+<map id="Response::checkMethod" name="Response::checkMethod">
+<area shape="rect" id="Node000001" title="Validates the request method against a location’s allowed methods." alt="" coords="5,5,185,31"/>
+<area shape="rect" id="Node000002" href="$classLocation.html#a265f1124391f33798fd3fea1f1ae03ec" title="Gets the allowed HTTP methods for this location." alt="" coords="233,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,15,219,15,219,21,185,21"/>
+</map>

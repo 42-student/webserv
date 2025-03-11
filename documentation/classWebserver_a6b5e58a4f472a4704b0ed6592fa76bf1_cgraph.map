@@ -1,0 +1,13 @@
+<map id="Webserver::assignServer" name="Webserver::assignServer">
+<area shape="rect" id="Node000001" title="Assigns a Server object to a Client based on request details." alt="" coords="5,80,188,105"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a71243c58e1c8d2343909389c5e4e37f3" title="Checks if a Server matches a Client&#39;s request criteria." alt="" coords="236,55,403,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,80,222,76,223,81,188,85"/>
+<area shape="rect" id="Node000006" href="$classClient.html#afabdd3c5f85287b6b6d8e5b6277451f5" title="Sets the associated Server object for the client." alt="" coords="254,104,385,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="188,100,241,106,240,111,188,105"/>
+<area shape="rect" id="Node000003" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="482,5,605,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,52,471,31,472,36,378,57"/>
+<area shape="rect" id="Node000004" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="484,55,603,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="403,65,470,65,470,70,403,70"/>
+<area shape="rect" id="Node000005" href="$classRequest.html#a2b94a98fd68b0bf94227cdd00c7b4676" title="Gets the server name from the request (e.g., from Host header)." alt="" coords="451,104,636,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="378,77,472,98,471,104,377,83"/>
+</map>

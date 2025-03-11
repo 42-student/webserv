@@ -1,0 +1,7 @@
+<map id="Cgi::set_common_environment_vars" name="Cgi::set_common_environment_vars">
+<area shape="rect" id="Node000001" title="Sets common CGI environment variables (e.g., SERVER_SOFTWARE)." alt="" coords="251,35,511,60"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#aa7b58a66d42251907871340b7c35589e" title="Initializes the CGI environment based on a request and location." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,36,202,31,203,26,247,31"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="13,55,195,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,64,196,69,195,63,241,59"/>
+</map>

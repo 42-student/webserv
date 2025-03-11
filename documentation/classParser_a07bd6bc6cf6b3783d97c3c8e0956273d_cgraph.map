@@ -1,0 +1,5 @@
+<map id="Parser::checkDuplicateServerName" name="Parser::checkDuplicateServerName">
+<area shape="rect" id="Node000001" title="Checks for duplicate server name settings across servers." alt="" coords="5,5,256,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a47496cbc2d45bd791824fee74b8bf4b7" title="Gets the server name." alt="" coords="304,5,479,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,15,290,15,290,21,256,21"/>
+</map>

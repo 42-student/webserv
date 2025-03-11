@@ -1,0 +1,33 @@
+<map id="Response::setError" name="Response::setError">
+<area shape="rect" id="Node000001" title="Sets an error status code and prepares an error response." alt="" coords="5,280,149,305"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#af87d6c71e7bcafd6ab5807c3c6422461" title="Generates an HTML error page for the current status code." alt="" coords="197,81,411,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,278,276,114,280,118,95,282"/>
+<area shape="rect" id="Node000007" href="$classResponse.html#af336860cc3e3d6b96c257a1845ec5e48" title="Writes HTTP headers to the response." alt="" coords="214,280,394,305"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="150,290,200,290,200,295,150,295"/>
+<area shape="rect" id="Node000015" href="$classResponse.html#a105118d732c99ba396913a7d8d773ec4" title="Writes the HTTP status line to the response." alt="" coords="732,379,899,404"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="103,303,164,333,250,372,352,410,459,438,518,448,565,450,611,447,670,438,724,424,773,407,775,412,726,430,671,443,612,452,565,456,517,453,458,443,351,415,248,377,161,338,101,308"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#a8c2f01ecb39b0663934e43b4ee4e9912" title="Loads a file into the response body." alt="" coords="493,5,637,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,79,506,32,508,37,349,84"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a439ed6bf6235874117b4693ff940f28c" title="Creates an HTML error page for a given status code." alt="" coords="720,107,911,132"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,86,536,85,671,91,743,102,742,107,670,97,536,91,411,92"/>
+<area shape="rect" id="Node000006" href="$classResponse.html#a8a7a5ff4ea2d7d84667a9f06a86e3e22" title="Sets a default error response (e.g., 500 Internal Server Error)." alt="" coords="469,107,661,132"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="411,102,456,106,455,111,411,107"/>
+<area shape="rect" id="Node000005" href="$classServer.html#a1de5376363e9a650357860b6223cf08d" title="Converts an HTTP status code to its string representation." alt="" coords="960,280,1143,305"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="835,130,1024,270,1021,274,832,134"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="661,117,706,117,706,122,661,122"/>
+<area shape="rect" id="Node000008" href="$classResponse.html#aae4f031e74dabb3d9f471fa5cebb38ad" title="Adds the Connection header to the response (e.g., &quot;keep&#45;alive&quot;)." alt="" coords="469,156,660,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="319,278,378,235,416,211,458,190,479,183,480,188,460,195,419,215,381,239,322,282"/>
+<area shape="rect" id="Node000009" href="$classResponse.html#a4f34138641c794fc3943e00717b66a47" title="Adds the Content&#45;Length header to the response." alt="" coords="459,205,671,231"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="340,277,458,239,489,231,491,236,459,245,342,282"/>
+<area shape="rect" id="Node000010" href="$classResponse.html#a91f7dde249f062a63e173acef206075b" title="Adds the Content&#45;Type header to the response." alt="" coords="465,255,664,280"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="394,281,451,276,452,281,394,287"/>
+<area shape="rect" id="Node000012" href="$classResponse.html#a5871a44fa397d9b3ebd2d00c33aa7a27" title="Adds the Date header to the response with the current time." alt="" coords="491,304,639,329"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="394,298,478,306,477,311,394,304"/>
+<area shape="rect" id="Node000013" href="$classResponse.html#ab8f6e1be6f0e381a8058beed047e81c0" title="Adds the Location header to the response (for redirects)." alt="" coords="479,353,651,379"/>
+<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="343,303,459,339,491,348,490,353,458,345,341,308"/>
+<area shape="rect" id="Node000014" href="$classResponse.html#ab22fd2b954bc52f76216f46716ba78f6" title="Adds the Server header to the response (e.g., &quot;Webserver/1.0&quot;)." alt="" coords="485,403,644,428"/>
+<area shape="poly" id="edge14_Node000007_Node000014" title=" " alt="" coords="323,303,381,346,419,369,460,389,480,396,479,401,458,394,417,374,378,350,320,308"/>
+<area shape="rect" id="Node000011" href="$classResponse.html#ac5e655ff2ab6c8040db26f4168367eb7" title="Fetches the MIME type for a file extension." alt="" coords="719,255,912,280"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="664,265,705,265,705,270,664,270"/>
+<area shape="poly" id="edge16_Node000015_Node000005" title=" " alt="" coords="846,376,1006,308,1008,313,848,381"/>
+</map>

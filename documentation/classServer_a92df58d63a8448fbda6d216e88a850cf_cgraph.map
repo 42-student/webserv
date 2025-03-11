@@ -1,0 +1,9 @@
+<map id="Server::setRoot" name="Server::setRoot">
+<area shape="rect" id="Node000001" title="Sets the root directory for serving files." alt="" coords="5,31,128,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="195,5,342,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,33,181,26,182,32,129,38"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a569baa3752bccb377c8bbb3c31295e83" title="Validates that a directory path exists and is accessible." alt="" coords="176,55,361,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,48,163,52,162,57,128,53"/>
+<area shape="rect" id="Node000004" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="409,55,583,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="361,65,395,65,395,70,361,70"/>
+</map>

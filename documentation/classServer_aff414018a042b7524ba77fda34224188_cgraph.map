@@ -1,0 +1,7 @@
+<map id="Server::handleAutoindex" name="Server::handleAutoindex">
+<area shape="rect" id="Node000001" title="Handles autoindex directive for a location block." alt="" coords="5,31,188,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="248,5,395,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,30,234,25,235,30,189,36"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#ab65e34ccafb1005bc122ccd9bb785248" title="Sets the auto&#45;indexing flag for this location." alt="" coords="236,55,407,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,50,223,54,222,59,188,56"/>
+</map>

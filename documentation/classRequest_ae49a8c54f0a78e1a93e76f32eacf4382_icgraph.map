@@ -1,0 +1,7 @@
+<map id="Request::getQuery" name="Request::getQuery">
+<area shape="rect" id="Node000001" title="Gets the query string of the request." alt="" coords="251,35,393,60"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#aa7b58a66d42251907871340b7c35589e" title="Initializes the CGI environment based on a request and location." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,39,198,33,199,28,237,33"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="13,55,195,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,61,196,66,195,61,237,56"/>
+</map>

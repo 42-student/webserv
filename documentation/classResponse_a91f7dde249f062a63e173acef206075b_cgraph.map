@@ -1,0 +1,5 @@
+<map id="Response::addContentType" name="Response::addContentType">
+<area shape="rect" id="Node000001" title="Adds the Content&#45;Type header to the response." alt="" coords="5,5,204,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#ac5e655ff2ab6c8040db26f4168367eb7" title="Fetches the MIME type for a file extension." alt="" coords="252,5,445,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,15,239,15,239,21,204,21"/>
+</map>

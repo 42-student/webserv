@@ -1,0 +1,7 @@
+<map id="Response::methodDisallowed" name="Response::methodDisallowed">
+<area shape="rect" id="Node000001" title="Checks if the request method is disallowed for a location." alt="" coords="5,5,220,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a93ff4190732e9ab839aa7a102152072c" title="Validates the request method against a location’s allowed methods." alt="" coords="268,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,15,254,15,254,21,220,21"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a265f1124391f33798fd3fea1f1ae03ec" title="Gets the allowed HTTP methods for this location." alt="" coords="496,5,659,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,15,482,15,482,21,448,21"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Location::Location" name="Location::Location">
+<area shape="rect" id="Node000001" title="Default constructor for Location." alt="" coords="204,31,344,56"/>
+<area shape="rect" id="Node000002" href="$classLocation.html#a2b29ecf5a3fd0c9be14c89cf2e8de7f1" title="Copy constructor for Location." alt="" coords="11,5,151,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,35,150,30,151,24,191,30"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a41a15b0cfd590d365e31f613d32eebd1" title="Assignment operator for Location." alt="" coords="5,55,156,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,56,157,61,156,55,190,51"/>
+</map>

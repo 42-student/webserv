@@ -1,0 +1,5 @@
+<map id="Error::Error" name="Error::Error">
+<area shape="rect" id="Node000001" title="Constructs an Error object with a formatted error message." alt="" coords="5,5,97,31"/>
+<area shape="rect" id="Node000002" href="$classError.html#a6c6aec0d0b60e909fc54cd47dca407e5" title="Formats the error message with red ANSI escape codes." alt="" coords="145,5,340,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,15,132,15,132,21,97,21"/>
+</map>

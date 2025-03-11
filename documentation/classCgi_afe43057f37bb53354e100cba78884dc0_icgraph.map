@@ -1,0 +1,5 @@
+<map id="Cgi::make_absolute_path" name="Cgi::make_absolute_path">
+<area shape="rect" id="Node000001" title="Converts a relative path to an absolute path." alt="" coords="236,13,423,38"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="5,5,188,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,28,188,28,188,23,222,23"/>
+</map>

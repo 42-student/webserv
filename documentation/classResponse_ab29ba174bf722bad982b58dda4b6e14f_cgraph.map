@@ -1,0 +1,11 @@
+<map id="Response::handleNoLocation" name="Response::handleNoLocation">
+<area shape="rect" id="Node000001" title="Handles requests when no specific location matches." alt="" coords="5,80,216,105"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#ab6e3f22a27ab9652e05956a528810b4f" title="Checks if a file or directory exists." alt="" coords="274,5,406,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,77,263,39,285,32,287,37,265,45,151,82"/>
+<area shape="rect" id="Node000003" href="$classRequest.html#a194fa6a3cd2181087f7f2c67de29a088" title="Gets the URI path of the request." alt="" coords="274,55,406,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,78,260,73,260,79,216,84"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a9ba8856213e4e1521c8f71a27b06d7d3" title="Checks if a path is a directory." alt="" coords="279,104,401,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="216,101,265,106,265,112,216,106"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#a009226ae0b9514e387a87f2c8a7acfde" title="Joins multiple path segments into a single path." alt="" coords="264,153,416,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="152,103,287,147,286,152,151,108"/>
+</map>

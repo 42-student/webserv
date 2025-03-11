@@ -1,0 +1,5 @@
+<map id="Response::Response" name="Response::Response">
+<area shape="rect" id="Node000001" title="Constructor for Response with a request." alt="" coords="5,5,161,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#ae335ddc5a5c95dac3e4826f362d492db" title="Initializes the MIME types map with default values." alt="" coords="209,5,412,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,15,196,15,196,21,161,21"/>
+</map>

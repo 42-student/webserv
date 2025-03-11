@@ -1,0 +1,9 @@
+<map id="Server::handleReturn" name="Server::handleReturn">
+<area shape="rect" id="Node000001" title="Handles return directive for a location block." alt="" coords="5,55,164,80"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="213,5,360,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,52,220,31,221,37,138,57"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a65c0c7ca5b684f2d53805425e36899bc" title="Gets the return directive for this location." alt="" coords="212,55,361,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,65,198,65,198,70,164,70"/>
+<area shape="rect" id="Node000004" href="$classLocation.html#a620c2249c66734525230ead0d04254d4" title="Sets the return directive for this location." alt="" coords="213,104,361,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,77,221,98,220,103,137,83"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Response::addRoot" name="Response::addRoot">
+<area shape="rect" id="Node000001" title="Adds the root directory from a location to the target path." alt="" coords="5,55,152,80"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#a194fa6a3cd2181087f7f2c67de29a088" title="Gets the URI path of the request." alt="" coords="229,5,361,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,52,225,31,226,36,136,57"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a77fb8e073c3c0e9c07a74c63fb15978d" title="Gets the root directory for this location." alt="" coords="200,55,391,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,65,186,65,186,70,152,70"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a009226ae0b9514e387a87f2c8a7acfde" title="Joins multiple path segments into a single path." alt="" coords="219,104,371,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,77,226,98,225,104,135,83"/>
+</map>

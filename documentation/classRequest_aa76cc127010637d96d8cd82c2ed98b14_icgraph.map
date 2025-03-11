@@ -1,0 +1,13 @@
+<map id="Request::getHeader" name="Request::getHeader">
+<area shape="rect" id="Node000001" title="Gets the value of a specific header." alt="" coords="493,35,644,60"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#abadc7de9252fb6df1b8e13fbda4de9b5" title="Sets content&#45;related environment variables (e.g., CONTENT_LENGTH)." alt="" coords="251,9,445,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,40,445,36,446,31,480,34"/>
+<area shape="rect" id="Node000005" href="$classCgi.html#a9591a42b5ae2aa26cf9e99c51fbb2ee7" title="Sets server&#45;related environment variables (e.g., SERVER_NAME)." alt="" coords="255,59,441,84"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="480,60,442,64,441,59,479,54"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#aa7b58a66d42251907871340b7c35589e" title="Initializes the CGI environment based on a request and location." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,23,203,22,203,17,237,18"/>
+<area shape="rect" id="Node000004" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="13,55,195,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="276,40,196,58,195,53,275,35"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="275,58,162,33,163,28,276,53"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="241,76,196,77,196,71,241,70"/>
+</map>

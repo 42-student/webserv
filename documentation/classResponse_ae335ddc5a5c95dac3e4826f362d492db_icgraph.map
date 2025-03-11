@@ -1,0 +1,7 @@
+<map id="Response::setupMimeTypes" name="Response::setupMimeTypes">
+<area shape="rect" id="Node000001" title="Initializes the MIME types map with default values." alt="" coords="209,31,412,56"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#aa9b6e391d77fce8daca8bac13730ec8e" title="Default constructor for Response." alt="" coords="5,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,33,161,29,162,24,196,28"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#ad42c19b6b1fa570e4e90c434e3d2a4a4" title="Constructor for Response with a request." alt="" coords="5,55,161,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,58,162,62,161,56,195,53"/>
+</map>

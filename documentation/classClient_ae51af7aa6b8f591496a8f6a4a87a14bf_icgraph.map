@@ -1,0 +1,7 @@
+<map id="Client::Client" name="Client::Client">
+<area shape="rect" id="Node000001" title="Default constructor for Client." alt="" coords="188,31,295,56"/>
+<area shape="rect" id="Node000002" href="$classClient.html#a4d8e3b9fdfa24b7586bcf24537b89b67" title="Copy constructor for Client." alt="" coords="19,5,126,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,36,126,29,127,23,175,31"/>
+<area shape="rect" id="Node000003" href="$classClient.html#a9dabcd7ad581044e84660e634ff3aaf3" title="Assignment operator for Client." alt="" coords="5,55,140,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,55,141,60,140,55,174,50"/>
+</map>

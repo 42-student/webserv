@@ -1,0 +1,5 @@
+<map id="Webserver::setupServers" name="Webserver::setupServers">
+<area shape="rect" id="Node000001" title="Sets up the web server with a list of Server configurations." alt="" coords="108,5,292,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

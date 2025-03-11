@@ -1,0 +1,11 @@
+<map id="Parser::extractServerBlocks" name="Parser::extractServerBlocks">
+<area shape="rect" id="Node000001" title="Extracts server blocks from the configuration content." alt="" coords="5,80,207,105"/>
+<area shape="rect" id="Node000002" href="$classParser.html#a4f573f9cad44ac25d45b96160a20f4d7" title="Finds the ending position of a server block." alt="" coords="270,5,430,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,77,254,39,282,32,283,37,255,45,142,83"/>
+<area shape="rect" id="Node000003" href="$classParser.html#a996bb78bd005d16a828b88e12c2b0aea" title="Finds the starting position of a server block." alt="" coords="267,55,433,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,80,253,75,253,80,207,85"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a232a474039d7b237369fddbfe3436c69" title="Removes comments (starting with &#39;#&#39;) from a string." alt="" coords="255,104,445,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,100,241,103,241,109,207,105"/>
+<area shape="rect" id="Node000005" href="$classParser.html#a0a8c4a9912a8e0dff5b2a2457231fb02" title="Removes leading and trailing whitespace from a string." alt="" coords="263,153,437,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="146,103,255,138,288,147,286,152,254,143,144,108"/>
+</map>

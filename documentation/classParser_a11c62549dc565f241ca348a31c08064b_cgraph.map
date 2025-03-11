@@ -1,0 +1,9 @@
+<map id="Parser::isDuplicateServer" name="Parser::isDuplicateServer">
+<area shape="rect" id="Node000001" title="Checks if two Server objects are duplicates based on key properties." alt="" coords="5,55,191,80"/>
+<area shape="rect" id="Node000002" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="265,5,387,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,52,253,31,254,36,158,57"/>
+<area shape="rect" id="Node000003" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="267,55,385,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,65,252,65,252,70,191,70"/>
+<area shape="rect" id="Node000004" href="$classServer.html#a47496cbc2d45bd791824fee74b8bf4b7" title="Gets the server name." alt="" coords="239,104,413,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,77,254,98,253,104,157,83"/>
+</map>

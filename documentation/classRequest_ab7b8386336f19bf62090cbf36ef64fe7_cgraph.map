@@ -1,0 +1,7 @@
+<map id="Request::setHeader" name="Request::setHeader">
+<area shape="rect" id="Node000001" title="Sets a header key&#45;value pair in the header list." alt="" coords="5,35,156,60"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#aa959f9e8aae6a13813e17b5f02b0a631" title="Converts a string to lowercase." alt="" coords="211,5,428,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,35,202,30,203,35,156,41"/>
+<area shape="rect" id="Node000003" href="$classRequest.html#a6f4acee5652a71895c2e27e3d91a6f99" title="Removes leading and trailing whitespace from a string." alt="" coords="204,55,435,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,53,191,58,190,63,156,59"/>
+</map>

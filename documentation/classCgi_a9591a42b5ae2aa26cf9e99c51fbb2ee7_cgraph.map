@@ -1,0 +1,7 @@
+<map id="Cgi::set_server_variables" name="Cgi::set_server_variables">
+<area shape="rect" id="Node000001" title="Sets server&#45;related environment variables (e.g., SERVER_NAME)." alt="" coords="5,31,192,56"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#aa76cc127010637d96d8cd82c2ed98b14" title="Gets the value of a specific header." alt="" coords="250,5,401,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,30,236,25,237,31,193,36"/>
+<area shape="rect" id="Node000003" href="$classRequest.html#abe7db3d90ed4e855d27e87a36dd9aa5b" title="Gets the HTTP method as a string (e.g., &quot;GET&quot;)." alt="" coords="240,55,411,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,51,226,54,226,60,192,56"/>
+</map>

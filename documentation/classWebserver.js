@@ -1,0 +1,26 @@
+var classWebserver =
+[
+    [ "Webserver", "classWebserver.html#ac2a6f51bcc54efaaf5f4773a7c24f009", null ],
+    [ "~Webserver", "classWebserver.html#ae49330051c77505a635f02c6fbd6edd5", null ],
+    [ "acceptNewConnection", "classWebserver.html#a51dd576c587f7b90299431bbcdc44b3e", null ],
+    [ "addToPoll", "classWebserver.html#a82f6140dae237bb2839b71adaeb4d482", null ],
+    [ "assignServer", "classWebserver.html#a6b5e58a4f472a4704b0ed6592fa76bf1", null ],
+    [ "checkServ", "classWebserver.html#a71243c58e1c8d2343909389c5e4e37f3", null ],
+    [ "closeConnection", "classWebserver.html#aaa8744ccdc6a57c355e563f14e39ae08", null ],
+    [ "handleClientTimeout", "classWebserver.html#ae68d19b1f730c4488131e529464b745f", null ],
+    [ "handleReqBody", "classWebserver.html#af9ef6a4d19496bac0ed3bde6d53d7ff6", null ],
+    [ "initializePollFds", "classWebserver.html#a149b97c3255ecf37192c57e2b96a18b2", null ],
+    [ "processServerRequests", "classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794", null ],
+    [ "readAndProcessRequest", "classWebserver.html#ad96d099ad730b3497490825e11bd1864", null ],
+    [ "readCgiResponse", "classWebserver.html#a0135897ce20caa7de22cd5c27063a46f", null ],
+    [ "removeFromPoll", "classWebserver.html#a95cbd40a9bc0de56e4f4d94d488becce", null ],
+    [ "sendCgiBody", "classWebserver.html#a8d74c666ed10770685fe0c6ffc9e3ec5", null ],
+    [ "sendResponse", "classWebserver.html#af830c1e1f931e63c3dd9ec0357a05c3e", null ],
+    [ "setupServers", "classWebserver.html#ac74bf85216aed4cf031bdca47188adb4", null ],
+    [ "_cgiOutBuff", "classWebserver.html#adb326d26329163aff4c7f6419beae2e6", null ],
+    [ "_clientsDict", "classWebserver.html#a08c70a6383b58a1cd4984f604f913db2", null ],
+    [ "_maxFd", "classWebserver.html#ac1723b11cd718213bb7c352ff080eceb", null ],
+    [ "_pollFds", "classWebserver.html#a2c650754cf65c679e13e3ecc86985530", null ],
+    [ "_serv", "classWebserver.html#aa2e6d95d3983c87c05205d3129d328c6", null ],
+    [ "_servsDict", "classWebserver.html#ae48233d5b469cade705cfd2be4b23391", null ]
+];

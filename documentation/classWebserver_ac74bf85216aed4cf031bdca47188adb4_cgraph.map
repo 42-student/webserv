@@ -1,0 +1,13 @@
+<map id="Webserver::setupServers" name="Webserver::setupServers">
+<area shape="rect" id="Node000001" title="Sets up the web server with a list of Server configurations." alt="" coords="5,80,189,105"/>
+<area shape="rect" id="Node000002" href="$classPrintApp.html#afccf912e4e14854447c955b50ba92556" title="Prints a message indicating a server has started." alt="" coords="237,80,425,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,90,224,90,224,95,189,95"/>
+<area shape="rect" id="Node000003" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="473,5,692,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,77,473,39,504,31,505,36,474,45,366,82"/>
+<area shape="rect" id="Node000004" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="521,55,644,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="425,81,507,72,508,77,426,86"/>
+<area shape="rect" id="Node000005" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="523,104,642,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="426,99,510,107,510,112,425,104"/>
+<area shape="rect" id="Node000006" href="$classServer.html#a47496cbc2d45bd791824fee74b8bf4b7" title="Gets the server name." alt="" coords="495,153,670,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="368,103,474,138,510,147,508,153,473,143,366,108"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Server::setPort" name="Server::setPort">
+<area shape="rect" id="Node000001" title="Sets the port number for the server." alt="" coords="5,31,124,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="172,5,319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,32,158,28,159,33,125,38"/>
+<area shape="rect" id="Node000003" href="$classServer.html#adc5e97ae4ed0f9bc7562156484edca3d" title="Parses a string to an integer within a specified range." alt="" coords="183,55,308,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,49,169,55,169,60,124,54"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="Server::getIndex" name="Server::getIndex">
+<area shape="rect" id="Node000001" title="Gets the default index file name." alt="" coords="1033,63,1163,88"/>
+<area shape="rect" id="Node000002" href="$classParser.html#a1c5a1e01e2ad0d4a3e9081f69c4f3c21" title="Checks for duplicate index settings within a server." alt="" coords="779,9,985,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1032,62,933,37,935,32,1033,57"/>
+<area shape="rect" id="Node000007" href="$classParser.html#ad51858a15dee9dd45c499d65e1fd6473" title="Sets default values for a Server object if not specified." alt="" coords="551,55,731,95"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1020,78,731,78,731,73,1020,73"/>
+<area shape="rect" id="Node000008" href="$classParser.html#a0a48519c138c9c3d58c3b6d970e9ff9b" title="Validates the configuration of a Server object." alt="" coords="799,116,965,141"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1033,94,935,119,933,113,1032,89"/>
+<area shape="rect" id="Node000003" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="551,5,730,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="765,23,730,22,730,17,765,17"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,63,503,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="580,37,473,65,472,60,578,32"/>
+<area shape="rect" id="Node000005" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,63,297,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="331,78,298,78,298,73,331,73"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,63,60,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="95,78,60,78,60,73,95,73"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="537,78,503,78,503,73,537,73"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="786,130,673,124,550,110,467,91,468,86,551,105,673,118,786,125"/>
+</map>

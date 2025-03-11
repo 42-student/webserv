@@ -1,0 +1,15 @@
+<map id="Webserver::acceptNewConnection" name="Webserver::acceptNewConnection">
+<area shape="rect" id="Node000001" title="Accepts a new client connection for a server." alt="" coords="5,104,249,129"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a82f6140dae237bb2839b71adaeb4d482" title="Adds a file descriptor to the poll monitoring list." alt="" coords="320,5,481,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,101,217,71,296,39,323,32,324,37,298,45,219,76,155,106"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a2396859ba246d0a12458c7a695dd36dd" title="Gets the listening socket file descriptor." alt="" coords="346,55,455,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,101,332,77,333,82,199,107"/>
+<area shape="rect" id="Node000004" href="$classPrintApp.html#a1f7e115d98370c8bfabe7dce55bcd929" title="Prints a formatted event message with color and status." alt="" coords="325,104,477,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,114,311,114,311,119,249,119"/>
+<area shape="rect" id="Node000006" href="$classWebserver.html#a95cbd40a9bc0de56e4f4d94d488becce" title="Removes a file descriptor from the poll monitoring list." alt="" coords="297,153,504,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="199,127,316,148,315,153,198,132"/>
+<area shape="rect" id="Node000007" href="$classClient.html#a49196f2b0880837512305fa3e9805f2d" title="Sets the client socket file descriptor." alt="" coords="335,203,466,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="156,127,220,157,298,187,329,197,327,202,296,193,218,162,153,132"/>
+<area shape="rect" id="Node000005" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="552,104,771,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="477,114,538,114,538,119,477,119"/>
+</map>

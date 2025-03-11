@@ -1,0 +1,40 @@
+<map id="Server::statusCodeString" name="Server::statusCodeString">
+<area shape="rect" id="Node000001" title="Converts an HTTP status code to its string representation." alt="" coords="1860,147,2043,172"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a439ed6bf6235874117b4693ff940f28c" title="Creates an HTML error page for a given status code." alt="" coords="1621,147,1812,172"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1846,162,1812,162,1812,157,1846,157"/>
+<area shape="rect" id="Node000013" href="$classServer.html#a499e886738cfd6df37fd671484957335" title="Sets the error pages mapping from a list of parameters." alt="" coords="1636,196,1797,221"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="1877,177,1779,199,1777,193,1876,172"/>
+<area shape="rect" id="Node000016" href="$classResponse.html#a105118d732c99ba396913a7d8d773ec4" title="Writes the HTTP status line to the response." alt="" coords="1143,72,1310,97"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="1874,147,1812,137,1536,108,1310,92,1310,86,1537,102,1812,131,1875,141"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#af87d6c71e7bcafd6ab5807c3c6422461" title="Generates an HTML error page for the current status code." alt="" coords="1120,121,1333,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1607,156,1334,142,1334,137,1608,151"/>
+<area shape="rect" id="Node000012" href="$classResponse.html#a8a7a5ff4ea2d7d84667a9f06a86e3e22" title="Sets a default error response (e.g., 500 Internal Server Error)." alt="" coords="1381,172,1573,197"/>
+<area shape="poly" id="edge14_Node000002_Node000012" title=" " alt="" coords="1608,173,1574,177,1573,172,1608,168"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="856,121,1072,147"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1107,137,1072,137,1072,131,1107,131"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#a6e93bc1e7daca9ccdc5689ff1f1dff8c" title="Sets an error status code and prepares an error response." alt="" coords="892,72,1036,97"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="1144,121,1032,100,1033,95,1145,116"/>
+<area shape="rect" id="Node000006" href="$classWebserver.html#af9ef6a4d19496bac0ed3bde6d53d7ff6" title="Handles the body of a client request (e.g., POST data)." alt="" coords="607,160,808,185"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="879,103,857,111,833,125,809,140,752,162,751,157,807,136,830,121,855,106,878,98"/>
+<area shape="rect" id="Node000008" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,99,299,139"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="878,92,808,95,299,118,299,113,808,90,878,86"/>
+<area shape="rect" id="Node000010" href="$classWebserver.html#a0135897ce20caa7de22cd5c27063a46f" title="Reads the response from a CGI handler." alt="" coords="347,5,559,31"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="909,71,808,46,679,30,559,23,559,18,679,25,808,41,911,65"/>
+<area shape="rect" id="Node000011" href="$classWebserver.html#a8d74c666ed10770685fe0c6ffc9e3ec5" title="Sends the request body to a CGI handler." alt="" coords="615,56,799,81"/>
+<area shape="poly" id="edge12_Node000005_Node000011" title=" " alt="" coords="878,82,799,77,800,72,879,77"/>
+<area shape="rect" id="Node000007" href="$classWebserver.html#ad96d099ad730b3497490825e11bd1864" title="Reads and processes a request from a client." alt="" coords="351,157,554,197"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="593,177,554,178,554,172,593,172"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="351,156,290,142,291,137,353,151"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,164,60,189"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="131,146,61,170,59,165,130,141"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="392,37,348,52,243,102,241,97,346,48,390,32"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="602,79,347,103,299,109,299,104,346,98,601,74"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="1400,172,1290,149,1291,144,1401,167"/>
+<area shape="rect" id="Node000014" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="1399,221,1556,247"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="1623,221,1557,228,1556,223,1622,216"/>
+<area shape="rect" id="Node000015" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="358,221,547,247"/>
+<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="1385,237,548,237,548,231,1385,231"/>
+<area shape="poly" id="edge19_Node000015_Node000009" title=" " alt="" coords="345,222,60,183,60,178,346,217"/>
+<area shape="poly" id="edge21_Node000016_Node000004" title=" " alt="" coords="1145,103,1033,124,1032,119,1144,97"/>
+<area shape="poly" id="edge22_Node000016_Node000005" title=" " alt="" coords="1130,87,1036,87,1036,82,1130,82"/>
+</map>

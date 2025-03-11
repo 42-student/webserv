@@ -1,0 +1,5 @@
+<map id="Parser::parseServerConfig" name="Parser::parseServerConfig">
+<area shape="rect" id="Node000001" title="Parses a server configuration file into Server objects." alt="" coords="108,5,297,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
+</map>

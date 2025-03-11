@@ -1,0 +1,9 @@
+<map id="Webserver::checkServ" name="Webserver::checkServ">
+<area shape="rect" id="Node000001" title="Checks if a Server matches a Client&#39;s request criteria." alt="" coords="5,55,172,80"/>
+<area shape="rect" id="Node000002" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="251,5,374,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,52,240,31,242,36,148,57"/>
+<area shape="rect" id="Node000003" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="253,55,372,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,65,239,65,239,70,172,70"/>
+<area shape="rect" id="Node000004" href="$classRequest.html#a2b94a98fd68b0bf94227cdd00c7b4676" title="Gets the server name from the request (e.g., from Host header)." alt="" coords="220,104,405,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,77,242,98,240,104,146,83"/>
+</map>

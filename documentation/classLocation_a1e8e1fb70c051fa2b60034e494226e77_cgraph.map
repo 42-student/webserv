@@ -1,0 +1,5 @@
+<map id="Location::setRootLocation" name="Location::setRootLocation">
+<area shape="rect" id="Node000001" title="Sets the root directory for this location." alt="" coords="5,5,196,31"/>
+<area shape="rect" id="Node000002" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="244,5,417,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,15,230,15,230,21,196,21"/>
+</map>

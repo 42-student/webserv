@@ -1,0 +1,14 @@
+<map id="Server::setRoot" name="Server::setRoot">
+<area shape="rect" id="Node000001" title="Sets the root directory for serving files." alt="" coords="779,35,901,60"/>
+<area shape="rect" id="Node000002" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="551,5,730,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="765,39,727,33,727,28,766,34"/>
+<area shape="rect" id="Node000006" href="$classParser.html#ad51858a15dee9dd45c499d65e1fd6473" title="Sets default values for a Server object if not specified." alt="" coords="551,55,731,95"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="766,60,731,65,730,60,765,55"/>
+<area shape="rect" id="Node000003" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,35,503,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="538,35,503,39,502,34,537,29"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,35,297,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="331,50,298,50,298,45,331,45"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,35,60,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,50,60,50,60,45,95,45"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="537,65,502,60,503,55,537,59"/>
+</map>

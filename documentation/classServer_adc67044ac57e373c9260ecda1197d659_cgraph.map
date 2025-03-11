@@ -1,0 +1,7 @@
+<map id="Server::handleAllowMethods" name="Server::handleAllowMethods">
+<area shape="rect" id="Node000001" title="Handles allowed methods directive for a location block." alt="" coords="5,31,213,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="269,5,415,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,29,255,25,255,30,214,35"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a44e41a46e41c83e7eb8effd64d2e29e5" title="Sets the allowed HTTP methods for this location." alt="" coords="261,55,423,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,51,248,55,247,60,213,57"/>
+</map>

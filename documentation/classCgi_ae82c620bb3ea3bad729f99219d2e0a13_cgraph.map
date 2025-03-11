@@ -1,0 +1,5 @@
+<map id="Cgi::~Cgi" name="Cgi::~Cgi">
+<area shape="rect" id="Node000001" title="Destructor for Cgi." alt="" coords="5,5,88,31"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#ac5f88093067e233b017ea12bcc143128" title="Clears allocated resources (e.g., environment and argument arrays)." alt="" coords="136,5,289,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,15,122,15,122,21,88,21"/>
+</map>

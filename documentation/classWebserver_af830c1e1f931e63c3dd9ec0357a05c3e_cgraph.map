@@ -1,0 +1,30 @@
+<map id="Webserver::sendResponse" name="Webserver::sendResponse">
+<area shape="rect" id="Node000001" title="Sends the constructed response to a client." alt="" coords="5,280,199,305"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a82f6140dae237bb2839b71adaeb4d482" title="Adds a file descriptor to the poll monitoring list." alt="" coords="281,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,279,119,233,146,168,188,98,214,67,245,40,267,28,269,33,248,44,218,71,192,101,151,170,124,235,109,281"/>
+<area shape="rect" id="Node000003" href="$classClient.html#a4c0c1abd381505dd71209e0a7f82c8bf" title="Clears client data, resetting to initial state." alt="" coords="293,55,431,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,279,124,241,153,189,194,135,218,110,245,89,278,74,280,79,248,94,222,114,198,138,157,192,128,243,111,281"/>
+<area shape="rect" id="Node000004" href="$classWebserver.html#aaa8744ccdc6a57c355e563f14e39ae08" title="Closes a client connection and cleans up resources." alt="" coords="259,104,465,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="110,278,163,215,201,178,245,146,279,131,282,136,248,151,205,182,167,219,115,281"/>
+<area shape="rect" id="Node000005" href="$classWebserver.html#a95cbd40a9bc0de56e4f4d94d488becce" title="Removes a file descriptor from the poll monitoring list." alt="" coords="531,129,738,155"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="115,278,169,234,206,210,246,190,314,169,385,154,454,145,518,140,518,146,455,150,386,159,315,174,248,195,208,214,172,238,118,282"/>
+<area shape="rect" id="Node000006" href="$classRequest.html#a083831561faf80c62cf8a7c551bef718" title="Gets the current error code, if any." alt="" coords="285,205,439,231"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="135,277,246,239,279,231,280,236,247,245,136,282"/>
+<area shape="rect" id="Node000007" href="$classResponse.html#ad9e95bb0461815b0025b720a09fd0613" title="Gets the CGI flag state." alt="" coords="281,255,443,280"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="199,281,267,274,267,279,199,286"/>
+<area shape="rect" id="Node000008" href="$classResponse.html#a3b440fc20d2e54c1f925fe978ed163be" title="Gets the complete HTTP response string." alt="" coords="273,304,451,329"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="199,299,260,305,259,310,199,304"/>
+<area shape="rect" id="Node000009" href="$classResponse.html#a68781bcd0a44335bb3e2fdc93546a57d" title="Gets the current HTTP status code." alt="" coords="285,353,439,379"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="139,303,247,338,285,348,284,353,246,343,138,308"/>
+<area shape="rect" id="Node000010" href="$classRequest.html#aed3f164ec849c370b656e6d9491b7177" title="Checks if the connection should be kept alive." alt="" coords="263,403,461,443"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="120,303,175,344,248,388,268,396,266,401,245,392,172,349,117,308"/>
+<area shape="rect" id="Node000011" href="$classPrintApp.html#a1f7e115d98370c8bfabe7dce55bcd929" title="Prints a formatted event message with color and status." alt="" coords="286,468,438,493"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="113,304,133,335,163,376,202,418,248,453,274,465,271,469,245,458,198,422,159,379,128,338,109,307"/>
+<area shape="rect" id="Node000013" href="$classResponse.html#a9e5463932d9ddeabbdbbc36e2ef25241" title="Trims the response string up to a specified position." alt="" coords="271,517,453,543"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="110,305,127,345,156,399,196,456,221,482,248,504,259,510,256,515,245,508,217,486,192,460,151,402,122,347,106,307"/>
+<area shape="rect" id="Node000014" href="$classClient.html#a20474aa2cb423432846cce217306d500" title="Updates the last message timestamp to the current time." alt="" coords="247,567,477,592"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="109,305,123,353,149,421,168,457,191,493,217,525,248,553,256,558,253,563,245,557,213,529,186,496,163,460,144,423,118,354,104,306"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="466,124,518,128,517,134,465,129"/>
+<area shape="rect" id="Node000012" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="525,468,744,493"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="438,478,512,478,512,483,438,483"/>
+</map>

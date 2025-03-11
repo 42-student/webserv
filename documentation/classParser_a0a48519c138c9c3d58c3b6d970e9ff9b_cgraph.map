@@ -1,0 +1,21 @@
+<map id="Parser::validateServer" name="Parser::validateServer">
+<area shape="rect" id="Node000001" title="Validates the configuration of a Server object." alt="" coords="5,129,171,155"/>
+<area shape="rect" id="Node000002" href="$classConfigFile.html#ad70ae1b5171cab9bd1f1ad587f4221f4" title="Checks if a file exists and is accessible with an optional index." alt="" coords="232,5,389,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,127,149,84,182,60,217,40,234,33,236,38,220,44,185,65,152,89,104,131"/>
+<area shape="rect" id="Node000005" href="$classServer.html#aa78e6af8bcc716e0f5dc7f61d715267a" title="Checks if the location configurations are valid and consistent." alt="" coords="228,55,393,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="118,127,218,89,243,81,245,86,220,94,120,132"/>
+<area shape="rect" id="Node000006" href="$classServer.html#abc0472b42c6dd53c1caea6dfe10e65cb" title="Gets the default index file name." alt="" coords="246,104,375,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="171,130,232,123,233,128,172,135"/>
+<area shape="rect" id="Node000007" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="251,153,370,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="172,148,238,156,237,161,171,154"/>
+<area shape="rect" id="Node000008" href="$classServer.html#aa8839197e82d5c7e51bf300694433ad7" title="Gets the root directory." alt="" coords="489,228,612,253"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,153,150,198,183,221,220,238,285,253,353,259,418,257,475,251,476,257,419,262,353,264,285,259,218,243,180,225,147,202,99,157"/>
+<area shape="rect" id="Node000009" href="$classServer.html#ad70f6e496f58e2c1babc4dfc95676273" title="Checks if the configured error pages are valid." alt="" coords="219,203,403,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="122,152,220,187,249,196,247,202,218,193,121,157"/>
+<area shape="rect" id="Node000003" href="$classConfigFile.html#a52f6f4bff539af296178f5c142468bd3" title="Checks file access permissions for a given mode." alt="" coords="451,179,651,204"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,28,404,40,445,69,481,103,534,166,530,169,477,106,441,73,401,44,377,33"/>
+<area shape="rect" id="Node000004" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="464,5,637,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="390,15,450,15,450,21,390,21"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="402,204,437,200,437,205,403,209"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="403,222,476,230,476,235,402,228"/>
+</map>

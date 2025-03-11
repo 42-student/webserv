@@ -1,0 +1,37 @@
+<map id="Server::isValidLocation" name="Server::isValidLocation">
+<area shape="rect" id="Node000001" title="Checks if a location block is valid (general validation)." alt="" coords="5,356,176,381"/>
+<area shape="rect" id="Node000002" href="$classLocation.html#a0e5f51972e02ed954426e0222215484b" title="Gets the URI path for this location." alt="" coords="523,504,658,529"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,379,288,429,493,490,523,498,521,503,491,495,287,434,130,384"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a4204d73d70844ea48580f365bf550163" title="Checks if a CGI location block is valid." alt="" coords="239,208,429,233"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,354,299,238,302,243,114,358"/>
+<area shape="rect" id="Node000011" href="$classServer.html#acd6cac219d2d3fe5d13eee45ae5580f2" title="Checks if a regular (non&#45;CGI) location block is valid." alt="" coords="224,356,444,381"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="176,366,210,366,210,371,176,371"/>
+<area shape="poly" id="edge7_Node000003_Node000002" title=" " alt="" coords="352,232,398,277,424,308,446,342,456,364,462,385,464,423,470,457,479,474,494,491,512,503,509,507,490,495,475,477,465,459,459,423,456,386,451,366,442,345,420,312,394,281,348,235"/>
+<area shape="rect" id="Node000004" href="$classConfigFile.html#a52f6f4bff539af296178f5c142468bd3" title="Checks file access permissions for a given mode." alt="" coords="737,356,937,381"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="362,205,426,181,467,170,512,161,559,157,605,160,650,171,691,193,708,210,716,228,718,267,719,305,725,324,739,341,745,347,742,351,735,345,721,326,714,306,713,267,711,230,703,213,688,197,648,176,604,165,559,163,513,166,468,175,427,187,363,210"/>
+<area shape="rect" id="Node000005" href="$classLocation.html#ae840d2a020b15765f32a5d42227f84b1" title="Gets the file extensions for CGI scripts." alt="" coords="495,107,686,132"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="361,205,491,149,533,134,535,139,493,154,363,210"/>
+<area shape="rect" id="Node000006" href="$classLocation.html#ab3bd9ddf3f0077fbdbda2dde1daa6678" title="Gets the paths to CGI executables or directories." alt="" coords="513,5,668,31"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="341,206,398,132,441,87,491,48,520,33,522,38,493,52,444,91,402,136,346,210"/>
+<area shape="rect" id="Node000007" href="$classLocation.html#a3fb6fb1a05892bc0d66e9cdb626c1d4b" title="Gets the default index file for this location." alt="" coords="492,257,689,283"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="401,231,511,252,510,257,400,236"/>
+<area shape="rect" id="Node000008" href="$classLocation.html#a77fb8e073c3c0e9c07a74c63fb15978d" title="Gets the root directory for this location." alt="" coords="495,208,686,233"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="430,218,482,218,482,223,430,223"/>
+<area shape="rect" id="Node000009" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="751,307,924,332"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="344,206,367,180,401,147,443,115,491,92,546,73,593,65,638,70,691,92,719,111,744,135,785,190,813,247,831,293,826,295,808,249,780,193,740,138,716,115,688,96,637,75,593,70,548,78,493,96,446,120,405,151,371,183,348,209"/>
+<area shape="rect" id="Node000010" href="$classLocation.html#a1e8e1fb70c051fa2b60034e494226e77" title="Sets the root directory for this location." alt="" coords="495,307,686,332"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="360,231,420,261,493,291,521,300,519,306,491,297,418,266,358,236"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="686,317,737,317,737,322,686,322"/>
+<area shape="poly" id="edge18_Node000011_Node000002" title=" " alt="" coords="355,379,446,447,469,470,493,490,511,498,509,503,491,495,465,474,442,451,352,384"/>
+<area shape="poly" id="edge17_Node000011_Node000007" title=" " alt="" coords="357,353,417,323,491,291,516,284,517,289,493,297,419,328,360,358"/>
+<area shape="poly" id="edge20_Node000011_Node000008" title=" " alt="" coords="346,354,405,300,446,269,491,242,508,235,510,240,493,247,449,273,408,304,349,358"/>
+<area shape="poly" id="edge21_Node000011_Node000010" title=" " alt="" coords="400,353,510,332,511,337,401,359"/>
+<area shape="rect" id="Node000012" href="$classConfigFile.html#ad70ae1b5171cab9bd1f1ad587f4221f4" title="Checks if a file exists and is accessible with an optional index." alt="" coords="512,356,669,381"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="444,366,498,366,498,371,444,371"/>
+<area shape="rect" id="Node000013" href="$classLocation.html#a8f0b542f909c5876e5bf3e823c617519" title="Gets the alias path for this location." alt="" coords="521,405,660,431"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="401,379,511,400,510,405,400,384"/>
+<area shape="rect" id="Node000014" href="$classLocation.html#a65c0c7ca5b684f2d53805425e36899bc" title="Gets the return directive for this location." alt="" coords="516,455,665,480"/>
+<area shape="poly" id="edge19_Node000011_Node000014" title=" " alt="" coords="360,379,420,409,493,439,521,448,519,454,491,445,418,414,358,384"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="670,366,723,366,723,371,670,371"/>
+<area shape="poly" id="edge15_Node000012_Node000009" title=" " alt="" coords="654,353,759,332,760,337,655,359"/>
+</map>

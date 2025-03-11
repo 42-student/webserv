@@ -1,0 +1,18 @@
+<map id="Response::setError" name="Response::setError">
+<area shape="rect" id="Node000001" title="Sets an error status code and prepares an error response." alt="" coords="856,95,1000,121"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#af9ef6a4d19496bac0ed3bde6d53d7ff6" title="Handles the body of a client request (e.g., POST data)." alt="" coords="607,17,808,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="879,93,807,67,745,45,746,39,809,61,881,88"/>
+<area shape="rect" id="Node000004" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,88,299,128"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="842,105,808,104,530,102,299,107,299,102,530,97,808,99,842,100"/>
+<area shape="rect" id="Node000006" href="$classWebserver.html#a0135897ce20caa7de22cd5c27063a46f" title="Reads the response from a CGI handler." alt="" coords="347,121,559,146"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="843,115,559,130,559,125,842,110"/>
+<area shape="rect" id="Node000007" href="$classWebserver.html#a8d74c666ed10770685fe0c6ffc9e3ec5" title="Sends the request body to a CGI handler." alt="" coords="615,171,799,197"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="881,128,809,155,750,174,749,169,807,149,880,123"/>
+<area shape="rect" id="Node000003" href="$classWebserver.html#ad96d099ad730b3497490825e11bd1864" title="Reads and processes a request from a client." alt="" coords="351,5,554,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="593,30,554,30,554,24,593,25"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="379,52,266,90,264,85,378,47"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,95,60,121"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,111,60,111,60,105,94,105"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="333,124,299,120,299,115,333,119"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="601,187,478,180,412,173,346,161,296,147,250,131,252,126,298,142,347,156,412,167,479,175,601,181"/>
+</map>

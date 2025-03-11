@@ -1,0 +1,11 @@
+<map id="inc/Client.hpp" name="inc/Client.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="168,5,279,31"/>
+<area shape="rect" id="Node000002" href="$Webserver_8hpp.html" title=" " alt="" coords="78,79,219,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,42,163,80,159,77,200,38"/>
+<area shape="rect" id="Node000005" href="$Client_8cpp.html" title=" " alt="" coords="244,79,355,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="247,38,289,76,285,80,244,42"/>
+<area shape="rect" id="Node000003" href="$Webserver_8cpp.html" title=" " alt="" coords="5,152,145,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,116,89,154,85,150,125,112"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="169,152,275,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="172,112,212,150,208,154,169,116"/>
+</map>

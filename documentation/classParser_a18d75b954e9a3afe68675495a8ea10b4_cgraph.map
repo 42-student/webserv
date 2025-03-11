@@ -1,0 +1,5 @@
+<map id="Parser::checkDuplicatePort" name="Parser::checkDuplicatePort">
+<area shape="rect" id="Node000001" title="Checks for duplicate port settings across servers." alt="" coords="5,5,201,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="249,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,15,235,15,235,21,202,21"/>
+</map>

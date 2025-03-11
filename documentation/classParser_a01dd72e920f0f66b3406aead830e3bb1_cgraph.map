@@ -1,0 +1,5 @@
+<map id="Parser::checkDuplicateRoot" name="Parser::checkDuplicateRoot">
+<area shape="rect" id="Node000001" title="Checks for duplicate root settings within a server." alt="" coords="5,5,205,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#aa8839197e82d5c7e51bf300694433ad7" title="Gets the root directory." alt="" coords="253,5,376,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,15,240,15,240,21,206,21"/>
+</map>

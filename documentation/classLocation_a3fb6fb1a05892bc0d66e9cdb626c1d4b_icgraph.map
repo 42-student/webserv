@@ -1,0 +1,32 @@
+<map id="Location::getIndexLocation" name="Location::getIndexLocation">
+<area shape="rect" id="Node000001" title="Gets the default index file for this location." alt="" coords="1584,105,1781,131"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a7dd166488e36698f1a7991f7d8e7e3cf" title="Handles index directive for a location block." alt="" coords="1051,5,1258,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1639,103,1590,85,1535,69,1391,42,1258,27,1259,22,1392,37,1537,63,1591,80,1640,98"/>
+<area shape="rect" id="Node000008" href="$classServer.html#a7073d8aa696cdefe1cee3f4d2718eed8" title="Applies default settings to a location block if not explicitly set." alt="" coords="1041,55,1268,80"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1603,106,1536,95,1397,82,1268,74,1268,69,1397,77,1536,90,1604,100"/>
+<area shape="rect" id="Node000009" href="$classServer.html#a4204d73d70844ea48580f365bf550163" title="Checks if a CGI location block is valid." alt="" coords="1331,105,1521,131"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1570,121,1522,121,1522,115,1570,115"/>
+<area shape="rect" id="Node000011" href="$classServer.html#acd6cac219d2d3fe5d13eee45ae5580f2" title="Checks if a regular (non&#45;CGI) location block is valid." alt="" coords="1316,155,1536,180"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1603,136,1493,157,1492,152,1602,131"/>
+<area shape="rect" id="Node000012" href="$classResponse.html#ae717a265388b5ffc367fdab215141257" title="Processes the request target to determine the response action." alt="" coords="1335,204,1517,229"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1650,140,1598,168,1537,195,1498,206,1497,201,1535,190,1596,164,1647,136"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a90c54977a2c667625763a84deea63801" title="Configures a location block with specified parameters." alt="" coords="812,55,959,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1072,36,956,57,955,52,1071,31"/>
+<area shape="rect" id="Node000004" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="551,55,729,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="798,70,730,70,730,65,798,65"/>
+<area shape="rect" id="Node000005" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,55,503,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="537,70,503,70,503,65,537,65"/>
+<area shape="rect" id="Node000006" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,55,297,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="331,70,298,70,298,65,331,65"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="95,70,60,70,60,65,95,65"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="1027,70,959,70,959,65,1027,65"/>
+<area shape="rect" id="Node000010" href="$classServer.html#a54f543457a8dad67af0c6f2cf2df7b6b" title="Checks if a location block is valid (general validation)." alt="" coords="1069,105,1240,131"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1317,121,1240,121,1240,115,1317,115"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="1073,105,953,83,954,77,1074,100"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="1342,155,1225,133,1226,128,1343,150"/>
+<area shape="rect" id="Node000013" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="1067,204,1243,229"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="1321,219,1243,219,1243,214,1321,214"/>
+<area shape="rect" id="Node000014" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="777,204,993,229"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="1053,219,994,219,994,214,1053,214"/>
+</map>

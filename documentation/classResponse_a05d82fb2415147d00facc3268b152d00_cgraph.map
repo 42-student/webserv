@@ -1,0 +1,5 @@
+<map id="Response::matchesCgiExt" name="Response::matchesCgiExt">
+<area shape="rect" id="Node000001" title="Checks if a target matches a CGI extension in a location." alt="" coords="5,5,196,31"/>
+<area shape="rect" id="Node000002" href="$classLocation.html#ae840d2a020b15765f32a5d42227f84b1" title="Gets the file extensions for CGI scripts." alt="" coords="244,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,15,230,15,230,21,196,21"/>
+</map>

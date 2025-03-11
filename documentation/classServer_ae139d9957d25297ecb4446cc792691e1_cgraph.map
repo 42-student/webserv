@@ -1,0 +1,7 @@
+<map id="Server::validateFile" name="Server::validateFile">
+<area shape="rect" id="Node000001" title="Validates that a file path exists and is accessible." alt="" coords="5,31,153,56"/>
+<area shape="rect" id="Node000002" href="$classConfigFile.html#a52f6f4bff539af296178f5c142468bd3" title="Checks file access permissions for a given mode." alt="" coords="201,5,401,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,32,187,28,188,34,154,38"/>
+<area shape="rect" id="Node000003" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="215,55,388,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,49,201,54,201,59,153,54"/>
+</map>

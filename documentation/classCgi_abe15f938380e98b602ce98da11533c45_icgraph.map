@@ -1,0 +1,7 @@
+<map id="Cgi::extract_path_info" name="Cgi::extract_path_info">
+<area shape="rect" id="Node000001" title="Extracts the PATH_INFO from a script path based on CGI extensions." alt="" coords="251,35,416,60"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#aa7b58a66d42251907871340b7c35589e" title="Initializes the CGI environment based on a request and location." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,38,203,33,203,28,237,32"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="13,55,195,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,62,196,67,195,62,236,56"/>
+</map>

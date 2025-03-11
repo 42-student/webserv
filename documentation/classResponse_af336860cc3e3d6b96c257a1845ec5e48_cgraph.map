@@ -1,0 +1,17 @@
+<map id="Response::writeHeaders" name="Response::writeHeaders">
+<area shape="rect" id="Node000001" title="Writes HTTP headers to the response." alt="" coords="5,129,185,155"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#aae4f031e74dabb3d9f471fa5cebb38ad" title="Adds the Connection header to the response (e.g., &quot;keep&#45;alive&quot;)." alt="" coords="244,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,127,160,84,195,60,232,40,251,32,253,37,234,44,198,65,163,88,112,131"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#a4f34138641c794fc3943e00717b66a47" title="Adds the Content&#45;Length header to the response." alt="" coords="233,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,127,233,89,262,81,264,86,234,94,129,132"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a91f7dde249f062a63e173acef206075b" title="Adds the Content&#45;Type header to the response." alt="" coords="240,104,439,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,130,226,126,226,131,186,135"/>
+<area shape="rect" id="Node000006" href="$classResponse.html#a5871a44fa397d9b3ebd2d00c33aa7a27" title="Adds the Date header to the response with the current time." alt="" coords="265,153,413,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="186,148,252,155,251,160,185,153"/>
+<area shape="rect" id="Node000007" href="$classResponse.html#ab8f6e1be6f0e381a8058beed047e81c0" title="Adds the Location header to the response (for redirects)." alt="" coords="253,203,425,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="131,152,234,187,268,197,267,202,233,193,129,157"/>
+<area shape="rect" id="Node000008" href="$classResponse.html#ab22fd2b954bc52f76216f46716ba78f6" title="Adds the Server header to the response (e.g., &quot;Webserver/1.0&quot;)." alt="" coords="260,252,419,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="112,153,164,194,198,217,234,237,257,246,255,251,232,242,195,222,161,199,109,157"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#ac5e655ff2ab6c8040db26f4168367eb7" title="Fetches the MIME type for a file extension." alt="" coords="493,104,687,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="439,114,480,114,480,119,439,119"/>
+</map>

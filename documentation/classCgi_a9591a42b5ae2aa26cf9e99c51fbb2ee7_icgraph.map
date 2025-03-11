@@ -1,0 +1,7 @@
+<map id="Cgi::set_server_variables" name="Cgi::set_server_variables">
+<area shape="rect" id="Node000001" title="Sets server&#45;related environment variables (e.g., SERVER_NAME)." alt="" coords="251,35,437,60"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#aa7b58a66d42251907871340b7c35589e" title="Initializes the CGI environment based on a request and location." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,37,203,33,203,27,238,32"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ab71c03fa6aa021c84cbb41c93bfb066e" title="Initializes the CGI environment for an interpreter&#45;based script." alt="" coords="13,55,195,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,62,196,67,195,62,237,57"/>
+</map>

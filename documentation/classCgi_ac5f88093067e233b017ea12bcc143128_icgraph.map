@@ -1,0 +1,7 @@
+<map id="Cgi::clear_resources" name="Cgi::clear_resources">
+<area shape="rect" id="Node000001" title="Clears allocated resources (e.g., environment and argument arrays)." alt="" coords="171,31,324,56"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#a9141d2be00256d90559eea6dbae97e55" title="Assignment operator for Cgi." alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,33,123,29,123,23,157,28"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ae82c620bb3ea3bad729f99219d2e0a13" title="Destructor for Cgi." alt="" coords="23,55,105,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,58,106,65,105,59,156,53"/>
+</map>

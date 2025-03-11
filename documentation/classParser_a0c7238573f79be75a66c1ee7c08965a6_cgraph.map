@@ -1,0 +1,11 @@
+<map id="Parser::checkDuplicateServers" name="Parser::checkDuplicateServers">
+<area shape="rect" id="Node000001" title="Checks for duplicate Server configurations in the parsed list." alt="" coords="5,55,224,80"/>
+<area shape="rect" id="Node000002" href="$classParser.html#a11c62549dc565f241ca348a31c08064b" title="Checks if two Server objects are duplicates based on key properties." alt="" coords="272,55,457,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,65,258,65,258,70,224,70"/>
+<area shape="rect" id="Node000003" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="531,5,654,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,52,519,31,520,36,425,57"/>
+<area shape="rect" id="Node000004" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="533,55,652,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="458,65,519,65,519,70,458,70"/>
+<area shape="rect" id="Node000005" href="$classServer.html#a47496cbc2d45bd791824fee74b8bf4b7" title="Gets the server name." alt="" coords="505,104,680,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="425,77,520,98,519,104,423,83"/>
+</map>

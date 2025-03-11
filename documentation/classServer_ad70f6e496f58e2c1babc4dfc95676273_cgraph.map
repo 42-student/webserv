@@ -1,0 +1,7 @@
+<map id="Server::isValidErrorPages" name="Server::isValidErrorPages">
+<area shape="rect" id="Node000001" title="Checks if the configured error pages are valid." alt="" coords="5,31,189,56"/>
+<area shape="rect" id="Node000002" href="$classConfigFile.html#a52f6f4bff539af296178f5c142468bd3" title="Checks file access permissions for a given mode." alt="" coords="237,5,437,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,31,223,27,224,33,190,36"/>
+<area shape="rect" id="Node000003" href="$classServer.html#aa8839197e82d5c7e51bf300694433ad7" title="Gets the root directory." alt="" coords="276,55,399,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,50,263,57,262,63,189,55"/>
+</map>

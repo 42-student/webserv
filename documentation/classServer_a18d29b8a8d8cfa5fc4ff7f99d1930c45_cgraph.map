@@ -1,0 +1,7 @@
+<map id="Server::Server" name="Server::Server">
+<area shape="rect" id="Node000001" title="Copy constructor for Server." alt="" coords="5,5,120,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#ad5ec9462b520e59f7ea831e157ee5e59" title="Default constructor for Server." alt="" coords="168,5,283,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,15,154,15,154,21,120,21"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a07795382def202f77721b86866078785" title="Initializes default error pages for common HTTP status codes." alt="" coords="331,5,493,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,15,317,15,317,21,283,21"/>
+</map>

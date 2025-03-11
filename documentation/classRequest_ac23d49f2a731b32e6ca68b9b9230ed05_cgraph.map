@@ -1,0 +1,17 @@
+<map id="Request::processHeaders" name="Request::processHeaders">
+<area shape="rect" id="Node000001" title="Processes a character in the request headers." alt="" coords="5,80,192,105"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#ac5b98ba579cb3597dedf9c716bbbae2a" title="Extracts headers from the parsed storage into the header list." alt="" coords="240,5,476,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,77,239,39,273,31,274,36,241,45,132,82"/>
+<area shape="rect" id="Node000003" href="$classRequest.html#ae33289a00807b7d6c38fa5b688fa4759" title="Checks if a character is valid in a header token." alt="" coords="261,55,455,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,81,248,75,248,81,193,86"/>
+<area shape="rect" id="Node000004" href="$classPrintApp.html#a738a8a3722c3e9985014bbe673af47e2" title="Prints an error message with an error code and updates a reference code." alt="" coords="269,104,447,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,99,255,105,255,110,192,104"/>
+<area shape="rect" id="Node000006" href="$classRequest.html#ab7b8386336f19bf62090cbf36ef64fe7" title="Sets a header key&#45;value pair in the header list." alt="" coords="283,153,433,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="134,103,241,138,279,148,278,153,239,143,133,108"/>
+<area shape="rect" id="Node000005" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="530,104,749,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="448,114,516,114,516,119,448,119"/>
+<area shape="rect" id="Node000007" href="$classRequest.html#aa959f9e8aae6a13813e17b5f02b0a631" title="Converts a string to lowercase." alt="" coords="531,153,748,179"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="434,163,517,163,517,169,434,169"/>
+<area shape="rect" id="Node000008" href="$classRequest.html#a6f4acee5652a71895c2e27e3d91a6f99" title="Removes leading and trailing whitespace from a string." alt="" coords="524,203,755,243"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="422,176,528,198,527,203,421,181"/>
+</map>

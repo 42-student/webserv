@@ -1,0 +1,11 @@
+<map id="Server::isValidErrorPages" name="Server::isValidErrorPages">
+<area shape="rect" id="Node000001" title="Checks if the configured error pages are valid." alt="" coords="764,5,948,31"/>
+<area shape="rect" id="Node000002" href="$classParser.html#a0a48519c138c9c3d58c3b6d970e9ff9b" title="Validates the configuration of a Server object." alt="" coords="551,5,716,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="750,21,716,21,716,15,750,15"/>
+<area shape="rect" id="Node000003" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,5,503,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="537,21,503,21,503,15,537,15"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,5,297,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="331,21,298,21,298,15,331,15"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
+</map>

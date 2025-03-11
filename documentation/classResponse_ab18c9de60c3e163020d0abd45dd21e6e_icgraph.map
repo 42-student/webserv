@@ -1,0 +1,11 @@
+<map id="Response::initCgi" name="Response::initCgi">
+<area shape="rect" id="Node000001" title="Initializes CGI execution for a script path." alt="" coords="939,5,1073,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a97b0269613bf34dafe3a36c48eac70be" title="Manages CGI execution for a target path." alt="" coords="724,5,891,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="925,21,891,21,891,15,925,15"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#ae717a265388b5ffc367fdab215141257" title="Processes the request target to determine the response action." alt="" coords="493,5,676,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="710,21,676,21,676,15,710,15"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="269,5,445,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="480,21,445,21,445,15,480,15"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="5,5,221,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,21,222,21,222,15,256,15"/>
+</map>

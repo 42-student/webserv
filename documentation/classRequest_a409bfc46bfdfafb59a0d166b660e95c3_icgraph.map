@@ -1,0 +1,11 @@
+<map id="Request::setBody" name="Request::setBody">
+<area shape="rect" id="Node000001" title="Sets the request body content." alt="" coords="847,13,983,38"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#af9ef6a4d19496bac0ed3bde6d53d7ff6" title="Handles the body of a client request (e.g., POST data)." alt="" coords="597,13,799,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="833,28,799,28,799,23,833,23"/>
+<area shape="rect" id="Node000003" href="$classWebserver.html#ad96d099ad730b3497490825e11bd1864" title="Reads and processes a request from a client." alt="" coords="347,5,549,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="584,28,549,28,549,23,584,23"/>
+<area shape="rect" id="Node000004" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,5,299,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="333,28,299,28,299,23,333,23"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>

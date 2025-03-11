@@ -1,0 +1,126 @@
+<map id="Parser::parsServConf" name="Parser::parsServConf">
+<area shape="rect" id="Node000001" title="Parses a single server configuration block into a Server object." alt="" coords="5,837,163,863"/>
+<area shape="rect" id="Node000002" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="217,812,395,837"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,838,203,834,203,839,164,844"/>
+<area shape="rect" id="Node000069" href="$classParser.html#ad51858a15dee9dd45c499d65e1fd6473" title="Sets default values for a Server object if not specified." alt="" coords="485,457,665,497"/>
+<area shape="poly" id="edge53_Node000001_Node000069" title=" " alt="" coords="93,835,141,776,222,687,272,638,327,590,386,545,448,506,470,496,473,501,451,511,389,549,331,594,276,642,226,690,145,779,97,839"/>
+<area shape="rect" id="Node000070" href="$classServer.html#a499e886738cfd6df37fd671484957335" title="Sets the error pages mapping from a list of parameters." alt="" coords="494,1785,655,1811"/>
+<area shape="poly" id="edge60_Node000001_Node000070" title=" " alt="" coords="163,849,231,853,302,862,364,877,387,887,403,899,423,929,437,968,446,1013,450,1064,448,1179,439,1304,428,1429,422,1547,423,1599,428,1647,437,1688,452,1721,466,1739,483,1754,523,1778,520,1782,480,1759,462,1743,447,1723,432,1689,423,1648,418,1600,417,1547,423,1429,433,1303,443,1179,445,1064,441,1014,432,969,419,932,399,902,384,891,362,882,301,867,231,859,163,854"/>
+<area shape="rect" id="Node000073" href="$classParser.html#a5160959fa12ec8456c4b4425edfb9a08" title="Splits a string into tokens based on delimiters." alt="" coords="243,913,369,939"/>
+<area shape="poly" id="edge65_Node000001_Node000073" title=" " alt="" coords="122,860,212,891,255,906,253,911,210,897,121,865"/>
+<area shape="rect" id="Node000074" href="$classParser.html#a0a0e4d621c8f5e9aaa8c01f5b67311e9" title="Validates the number of parameters for a directive." alt="" coords="211,963,401,1003"/>
+<area shape="poly" id="edge66_Node000001_Node000074" title=" " alt="" coords="100,861,147,903,212,948,228,956,226,960,209,952,144,907,96,865"/>
+<area shape="rect" id="Node000075" href="$classParser.html#a0a48519c138c9c3d58c3b6d970e9ff9b" title="Validates the configuration of a Server object." alt="" coords="223,156,389,181"/>
+<area shape="poly" id="edge67_Node000001_Node000075" title=" " alt="" coords="87,836,294,194,299,196,92,838"/>
+<area shape="rect" id="Node000003" href="$classParser.html#a18971b18cc0d0e1dc88557c532b27f6f" title="Checks for duplicate autoindex settings within a server." alt="" coords="457,571,693,596"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,811,327,772,356,718,396,662,421,636,448,613,476,598,478,603,451,618,424,639,400,665,360,721,332,774,315,813"/>
+<area shape="rect" id="Node000004" href="$classParser.html#ae609bd9ed375c1e496f0e2b818db8f2e" title="Checks for duplicate host settings across servers." alt="" coords="475,521,675,547"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="313,810,399,656,410,626,417,601,426,578,448,556,461,548,463,552,451,560,431,581,422,603,415,628,404,658,317,813"/>
+<area shape="rect" id="Node000006" href="$classParser.html#a1c5a1e01e2ad0d4a3e9081f69c4f3c21" title="Checks for duplicate index settings within a server." alt="" coords="471,407,678,432"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="305,811,312,745,333,645,351,590,375,536,407,486,448,443,457,435,461,440,451,447,411,489,380,539,356,592,338,647,317,746,311,812"/>
+<area shape="rect" id="Node000008" href="$classParser.html#a81b778dba2819f08e72d4b5b88ff1f21" title="Checks for duplicate max body size settings within a server." alt="" coords="475,722,674,762"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="348,809,494,764,496,769,349,814"/>
+<area shape="rect" id="Node000009" href="$classParser.html#a18d75b954e9a3afe68675495a8ea10b4" title="Checks for duplicate port settings across servers." alt="" coords="477,357,673,383"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="305,811,308,738,315,684,326,624,344,561,369,499,403,441,448,392,463,381,466,386,451,396,407,445,374,501,349,563,331,625,320,685,314,738,310,812"/>
+<area shape="rect" id="Node000011" href="$classParser.html#a4bc1bca7968756a6a775ce98f2b77b92" title="Checks for duplicate redirect settings within a server." alt="" coords="463,1084,687,1109"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="375,835,390,843,403,855,422,883,429,911,429,939,426,966,423,993,424,1019,432,1044,451,1070,457,1074,453,1078,447,1073,428,1047,419,1020,418,992,421,965,424,938,424,912,417,885,399,858,387,848,372,840"/>
+<area shape="rect" id="Node000013" href="$classParser.html#a01dd72e920f0f66b3406aead830e3bb1" title="Checks for duplicate root settings within a server." alt="" coords="475,205,675,231"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="306,812,317,738,342,619,361,550,384,479,413,409,447,343,469,312,494,283,544,237,547,241,498,286,473,315,452,346,418,412,389,481,366,552,347,620,323,739,311,812"/>
+<area shape="rect" id="Node000015" href="$classParser.html#a07bd6bc6cf6b3783d97c3c8e0956273d" title="Checks for duplicate server name settings across servers." alt="" coords="449,1133,700,1159"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="375,835,390,843,403,855,425,890,433,924,431,958,426,992,420,1025,420,1057,429,1089,451,1120,454,1123,451,1127,447,1124,424,1091,415,1058,415,1024,420,991,426,958,427,925,420,892,399,858,387,848,373,840"/>
+<area shape="rect" id="Node000017" href="$classServer.html#a74c9d17c371a17d036055b5cb225b469" title="Sets the auto&#45;indexing flag." alt="" coords="495,1035,654,1060"/>
+<area shape="poly" id="edge16_Node000002_Node000017" title=" " alt="" coords="373,835,403,855,419,876,426,898,427,941,428,982,436,1001,451,1020,466,1031,483,1038,481,1043,463,1035,448,1024,431,1004,423,983,421,941,421,899,414,879,399,859,370,840"/>
+<area shape="rect" id="Node000019" href="$classServer.html#a534056aa60457cd7f2da81dd14f7175d" title="Sets the maximum client body size." alt="" coords="465,1183,684,1208"/>
+<area shape="poly" id="edge18_Node000002_Node000019" title=" " alt="" coords="376,835,391,843,403,855,418,876,428,896,436,937,433,977,425,1017,418,1056,416,1094,425,1132,436,1151,451,1170,456,1174,452,1178,447,1173,431,1154,420,1134,411,1095,412,1055,420,1016,428,977,431,937,423,898,413,878,399,858,388,848,373,840"/>
+<area shape="rect" id="Node000021" href="$classServer.html#a351b358a52c3627da60d336c875a9629" title="Sets the host IP address for the server." alt="" coords="805,621,927,647"/>
+<area shape="poly" id="edge21_Node000002_Node000021" title=" " alt="" coords="312,811,332,780,362,741,401,702,448,670,491,652,536,639,629,624,717,620,791,623,791,628,717,625,629,629,537,644,493,657,451,675,405,706,366,745,336,783,317,813"/>
+<area shape="rect" id="Node000022" href="$classServer.html#afedc8e4e13ad0fade3b5ca0ef3bd6448" title="Sets the default index file name." alt="" coords="802,672,930,697"/>
+<area shape="poly" id="edge23_Node000002_Node000022" title=" " alt="" coords="316,810,369,758,406,729,448,708,492,693,537,683,628,671,715,669,788,673,788,678,715,675,629,677,538,688,493,698,450,712,409,734,372,762,320,814"/>
+<area shape="rect" id="Node000023" href="$classServer.html#a90c54977a2c667625763a84deea63801" title="Configures a location block with specified parameters." alt="" coords="501,1387,648,1412"/>
+<area shape="poly" id="edge25_Node000002_Node000023" title=" " alt="" coords="377,835,391,843,403,855,433,901,447,945,449,987,445,1029,438,1072,434,1117,437,1166,452,1220,474,1265,501,1308,554,1375,550,1378,497,1311,469,1268,447,1222,432,1167,429,1117,433,1072,439,1029,444,987,442,946,428,903,399,858,388,848,374,840"/>
+<area shape="rect" id="Node000061" href="$classServer.html#aaae6042006c7ebb62396ebcd04bd595e" title="Sets the port number for the server." alt="" coords="515,1684,634,1709"/>
+<area shape="poly" id="edge42_Node000002_Node000061" title=" " alt="" coords="377,835,392,843,403,855,417,877,427,904,440,970,445,1048,445,1132,442,1298,444,1369,452,1424,476,1496,505,1565,561,1670,556,1673,501,1568,471,1498,447,1425,439,1369,437,1298,440,1132,440,1048,435,971,422,905,412,879,399,858,388,848,375,840"/>
+<area shape="rect" id="Node000063" href="$classServer.html#ac08fcb44c6a4ff1bcaa73e453c918426" title="Sets the redirect URL for the server." alt="" coords="501,837,648,863"/>
+<area shape="poly" id="edge45_Node000002_Node000063" title=" " alt="" coords="396,830,488,839,488,845,395,836"/>
+<area shape="rect" id="Node000064" href="$classServer.html#a92df58d63a8448fbda6d216e88a850cf" title="Sets the root directory for serving files." alt="" coords="805,787,927,812"/>
+<area shape="poly" id="edge47_Node000002_Node000064" title=" " alt="" coords="396,818,791,800,791,805,396,823"/>
+<area shape="rect" id="Node000066" href="$classServer.html#ab2e99df931f161c2a32b1705c1541b2e" title="Sets the server name for virtual hosting." alt="" coords="488,985,661,1011"/>
+<area shape="poly" id="edge49_Node000002_Node000066" title=" " alt="" coords="371,835,403,855,416,870,423,885,427,915,432,944,439,958,451,971,476,985,473,990,448,975,434,961,427,946,422,916,417,887,411,873,400,859,368,840"/>
+<area shape="rect" id="Node000067" href="$classParser.html#aee5e3798982565dafcc24d942e973781" title="Validates the presence of a closing bracket for a block." alt="" coords="465,887,685,912"/>
+<area shape="poly" id="edge51_Node000002_Node000067" title=" " alt="" coords="346,835,402,854,450,871,490,881,488,886,449,877,400,859,344,840"/>
+<area shape="rect" id="Node000068" href="$classParser.html#ac3c746ce96cf05530e651c7d33a3fce0" title="Validates that a scope character (e.g., &#39;{&#39;) is correct." alt="" coords="479,936,671,961"/>
+<area shape="poly" id="edge52_Node000002_Node000068" title=" " alt="" coords="365,835,403,855,419,872,427,890,435,906,451,921,467,930,464,934,448,925,431,909,422,892,415,875,400,859,362,840"/>
+<area shape="rect" id="Node000005" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="805,492,927,517"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="675,521,791,510,791,515,675,527"/>
+<area shape="rect" id="Node000007" href="$classServer.html#abc0472b42c6dd53c1caea6dfe10e65cb" title="Gets the default index file name." alt="" coords="801,407,931,432"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="678,417,788,417,788,422,678,422"/>
+<area shape="rect" id="Node000010" href="$classServer.html#ae7c77c4fe067bface347665bd27bda2f" title="Gets the server port number." alt="" coords="807,307,925,332"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="648,355,793,329,793,335,649,360"/>
+<area shape="rect" id="Node000012" href="$classServer.html#a0604455a8720b607fa90de71b11a8217" title="Gets the redirect URL." alt="" coords="793,989,939,1015"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="667,1081,699,1069,713,1059,722,1047,731,1035,747,1024,778,1011,780,1016,749,1028,735,1039,726,1050,717,1062,701,1074,669,1086"/>
+<area shape="rect" id="Node000014" href="$classServer.html#aa8839197e82d5c7e51bf300694433ad7" title="Gets the root directory." alt="" coords="805,131,927,156"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="643,203,699,190,812,158,814,163,701,195,644,208"/>
+<area shape="rect" id="Node000016" href="$classServer.html#a47496cbc2d45bd791824fee74b8bf4b7" title="Gets the server name." alt="" coords="779,1039,953,1064"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="668,1131,699,1120,713,1111,722,1101,732,1091,747,1081,786,1065,788,1070,749,1086,735,1095,726,1105,716,1115,701,1124,670,1136"/>
+<area shape="rect" id="Node000018" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="1032,1189,1179,1215"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="653,1036,699,1020,713,1009,721,997,731,984,747,974,813,950,869,939,896,940,924,946,953,957,985,974,1011,994,1034,1018,1067,1073,1089,1129,1102,1175,1097,1176,1084,1131,1063,1075,1029,1021,1008,998,983,979,951,962,922,951,895,945,869,945,814,955,749,979,734,988,726,1000,717,1013,701,1024,655,1041"/>
+<area shape="poly" id="edge19_Node000019_Node000018" title=" " alt="" coords="670,1180,699,1169,713,1159,722,1147,731,1136,747,1126,812,1106,865,1101,919,1109,985,1126,1037,1149,1080,1178,1077,1183,1035,1154,983,1131,918,1114,865,1107,813,1112,749,1131,735,1140,726,1151,716,1163,701,1174,671,1185"/>
+<area shape="rect" id="Node000020" href="$classServer.html#a5e2951e5b3ced305a5a780529644da8f" title="Parses a string to an unsigned long within a specified range." alt="" coords="791,1140,941,1165"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="661,1180,777,1163,778,1168,662,1185"/>
+<area shape="poly" id="edge22_Node000021_Node000018" title=" " alt="" coords="928,632,959,640,986,657,1013,698,1035,757,1055,829,1070,908,1093,1064,1105,1175,1099,1176,1088,1064,1065,909,1049,830,1030,758,1008,700,982,661,957,645,927,637"/>
+<area shape="poly" id="edge24_Node000022_Node000018" title=" " alt="" coords="894,695,941,726,965,748,986,772,1017,825,1042,882,1062,940,1077,997,1097,1101,1105,1176,1100,1176,1092,1102,1072,999,1057,941,1037,884,1012,828,982,776,962,751,938,730,891,700"/>
+<area shape="rect" id="Node000024" href="$classLocation.html#ae840d2a020b15765f32a5d42227f84b1" title="Gets the file extensions for CGI scripts." alt="" coords="771,1337,961,1363"/>
+<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="648,1384,776,1362,777,1368,649,1390"/>
+<area shape="rect" id="Node000025" href="$classLocation.html#ab3bd9ddf3f0077fbdbda2dde1daa6678" title="Gets the paths to CGI executables or directories." alt="" coords="789,1633,943,1659"/>
+<area shape="poly" id="edge27_Node000023_Node000025" title=" " alt="" coords="584,1411,606,1453,641,1510,690,1570,718,1597,749,1620,776,1632,774,1637,747,1624,715,1601,686,1574,637,1513,601,1455,580,1414"/>
+<area shape="rect" id="Node000026" href="$classServer.html#aa1809d88d40daf0bc8e23c44853be180" title="Handles alias directive for a location block." alt="" coords="792,1189,940,1215"/>
+<area shape="poly" id="edge28_Node000023_Node000026" title=" " alt="" coords="583,1385,607,1352,644,1309,692,1263,747,1225,777,1212,779,1217,749,1230,695,1267,648,1312,611,1355,587,1388"/>
+<area shape="rect" id="Node000029" href="$classServer.html#adc67044ac57e373c9260ecda1197d659" title="Handles allowed methods directive for a location block." alt="" coords="762,1387,970,1412"/>
+<area shape="poly" id="edge30_Node000023_Node000029" title=" " alt="" coords="648,1397,749,1397,749,1402,648,1402"/>
+<area shape="rect" id="Node000031" href="$classServer.html#aff414018a042b7524ba77fda34224188" title="Handles autoindex directive for a location block." alt="" coords="775,1436,957,1461"/>
+<area shape="poly" id="edge32_Node000023_Node000031" title=" " alt="" coords="649,1409,777,1431,776,1436,648,1414"/>
+<area shape="rect" id="Node000033" href="$classServer.html#af30425ccff99943bb55340ec18439893" title="Handles CGI extension directive for a location block." alt="" coords="765,1485,967,1511"/>
+<area shape="poly" id="edge34_Node000023_Node000033" title=" " alt="" coords="602,1410,668,1440,749,1471,779,1480,777,1485,747,1477,666,1445,600,1415"/>
+<area shape="rect" id="Node000035" href="$classServer.html#a279950333d80eea37168bd5a49e94f4e" title="Handles CGI path directive for a location block." alt="" coords="783,1535,949,1560"/>
+<area shape="poly" id="edge36_Node000023_Node000035" title=" " alt="" coords="591,1410,656,1464,701,1495,749,1521,771,1529,769,1534,747,1526,698,1500,653,1469,588,1414"/>
+<area shape="rect" id="Node000037" href="$classServer.html#a7dd166488e36698f1a7991f7d8e7e3cf" title="Handles index directive for a location block." alt="" coords="763,1584,969,1609"/>
+<area shape="poly" id="edge38_Node000023_Node000037" title=" " alt="" coords="587,1411,611,1444,648,1487,695,1533,749,1570,763,1577,761,1582,747,1575,692,1537,644,1491,607,1447,583,1414"/>
+<area shape="rect" id="Node000040" href="$classServer.html#a7073d8aa696cdefe1cee3f4d2718eed8" title="Applies default settings to a location block if not explicitly set." alt="" coords="753,1239,979,1264"/>
+<area shape="poly" id="edge40_Node000023_Node000040" title=" " alt="" coords="588,1384,653,1331,698,1300,747,1274,771,1265,773,1270,749,1279,701,1305,657,1335,592,1388"/>
+<area shape="rect" id="Node000043" href="$classServer.html#a494febeef77dc8e3416ae11b18b5ade3" title="Validates a location block and handles any errors." alt="" coords="748,1288,984,1313"/>
+<area shape="poly" id="edge41_Node000023_Node000043" title=" " alt="" coords="601,1384,666,1354,747,1323,782,1314,783,1319,749,1329,668,1359,603,1389"/>
+<area shape="poly" id="edge29_Node000026_Node000018" title=" " alt="" coords="940,1199,1018,1199,1018,1205,940,1205"/>
+<area shape="poly" id="edge31_Node000029_Node000018" title=" " alt="" coords="960,1384,983,1373,1020,1340,1051,1301,1075,1260,1091,1226,1096,1229,1080,1263,1056,1304,1024,1344,985,1378,963,1389"/>
+<area shape="poly" id="edge33_Node000031_Node000018" title=" " alt="" coords="956,1436,982,1422,1006,1402,1026,1378,1059,1324,1081,1271,1095,1228,1100,1229,1086,1273,1064,1327,1030,1381,1010,1406,986,1427,959,1441"/>
+<area shape="poly" id="edge35_Node000033_Node000018" title=" " alt="" coords="965,1483,982,1472,1009,1446,1032,1415,1051,1381,1066,1347,1087,1280,1098,1228,1103,1229,1092,1281,1071,1349,1056,1384,1037,1418,1013,1449,986,1476,967,1487"/>
+<area shape="poly" id="edge37_Node000035_Node000018" title=" " alt="" coords="948,1539,966,1532,982,1521,1013,1489,1038,1452,1058,1411,1073,1369,1092,1289,1100,1228,1105,1229,1097,1290,1078,1371,1063,1413,1043,1454,1017,1492,986,1525,969,1537,950,1544"/>
+<area shape="poly" id="edge39_Node000037_Node000018" title=" " alt="" coords="966,1582,982,1571,1017,1532,1044,1488,1065,1440,1080,1391,1096,1297,1101,1228,1107,1229,1102,1298,1085,1392,1070,1442,1049,1490,1021,1536,986,1575,969,1586"/>
+<area shape="poly" id="edge43_Node000061_Node000018" title=" " alt="" coords="634,1698,724,1703,827,1702,921,1692,957,1683,982,1669,1006,1638,1028,1590,1047,1529,1063,1462,1086,1327,1099,1228,1104,1229,1091,1328,1068,1463,1052,1530,1033,1591,1011,1641,986,1673,959,1688,922,1698,827,1707,724,1708,634,1704"/>
+<area shape="rect" id="Node000062" href="$classServer.html#adc5e97ae4ed0f9bc7562156484edca3d" title="Parses a string to an integer within a specified range." alt="" coords="803,1735,929,1760"/>
+<area shape="poly" id="edge44_Node000061_Node000062" title=" " alt="" coords="635,1704,790,1732,789,1737,634,1709"/>
+<area shape="poly" id="edge46_Node000063_Node000018" title=" " alt="" coords="648,837,725,833,813,839,859,847,904,860,947,879,986,904,1016,933,1041,967,1061,1005,1076,1044,1096,1118,1105,1176,1099,1176,1091,1119,1071,1045,1056,1007,1036,970,1012,937,982,908,944,884,902,865,858,852,813,844,725,839,649,842"/>
+<area shape="poly" id="edge48_Node000064_Node000018" title=" " alt="" coords="928,802,959,812,986,829,1020,869,1047,915,1068,964,1083,1014,1101,1106,1106,1175,1101,1176,1095,1107,1078,1015,1063,966,1042,917,1016,872,982,833,956,816,927,807"/>
+<area shape="poly" id="edge50_Node000066_Node000018" title=" " alt="" coords="660,983,699,970,712,962,722,954,732,945,747,938,814,917,870,905,897,905,925,910,954,921,985,938,1014,962,1038,991,1058,1023,1073,1056,1094,1122,1104,1175,1098,1176,1089,1124,1068,1058,1053,1025,1034,994,1011,966,983,943,952,926,923,915,897,910,871,911,815,922,749,943,735,950,725,958,716,967,701,975,662,988"/>
+<area shape="poly" id="edge54_Node000069_Node000005" title=" " alt="" coords="665,483,791,495,790,500,665,488"/>
+<area shape="poly" id="edge55_Node000069_Node000007" title=" " alt="" coords="664,456,787,432,788,437,665,462"/>
+<area shape="poly" id="edge56_Node000069_Node000014" title=" " alt="" coords="664,462,682,453,698,441,713,424,722,408,728,373,731,336,736,315,746,293,768,256,793,220,841,165,845,168,798,224,772,259,750,295,741,317,737,337,733,374,727,409,717,427,702,445,685,458,666,467"/>
+<area shape="poly" id="edge57_Node000069_Node000021" title=" " alt="" coords="666,493,701,506,743,530,782,558,844,610,840,614,779,562,740,535,699,511,664,497"/>
+<area shape="poly" id="edge58_Node000069_Node000022" title=" " alt="" coords="666,485,685,494,702,507,717,526,724,545,726,583,729,621,736,639,750,656,768,668,789,677,788,682,766,673,746,660,731,641,723,622,721,584,719,546,712,528,698,511,682,499,664,490"/>
+<area shape="poly" id="edge59_Node000069_Node000064" title=" " alt="" coords="666,485,685,494,702,507,721,532,730,556,733,580,732,604,731,654,737,680,750,707,767,729,787,748,829,778,826,782,784,752,763,732,746,710,732,682,726,654,727,604,728,580,725,557,716,534,698,511,682,498,664,489"/>
+<area shape="poly" id="edge61_Node000070_Node000018" title=" " alt="" coords="656,1801,744,1805,841,1803,927,1793,960,1784,982,1771,997,1754,1011,1731,1035,1671,1054,1595,1070,1512,1091,1347,1100,1229,1105,1229,1096,1347,1075,1512,1059,1596,1040,1672,1015,1734,1001,1757,986,1775,962,1788,928,1798,841,1809,744,1810,655,1807"/>
+<area shape="poly" id="edge62_Node000070_Node000062" title=" " alt="" coords="648,1783,789,1758,790,1763,649,1788"/>
+<area shape="rect" id="Node000071" href="$classServer.html#a1de5376363e9a650357860b6223cf08d" title="Converts an HTTP status code to its string representation." alt="" coords="775,1836,957,1861"/>
+<area shape="poly" id="edge63_Node000070_Node000071" title=" " alt="" coords="649,1808,779,1831,779,1836,648,1813"/>
+<area shape="rect" id="Node000072" href="$classServer.html#ae139d9957d25297ecb4446cc792691e1" title="Validates that a file path exists and is accessible." alt="" coords="792,1885,940,1911"/>
+<area shape="poly" id="edge64_Node000070_Node000072" title=" " alt="" coords="602,1808,667,1840,749,1871,779,1880,778,1885,747,1877,665,1845,599,1813"/>
+<area shape="poly" id="edge70_Node000075_Node000007" title=" " alt="" coords="319,180,370,238,408,271,451,298,486,313,516,321,572,326,630,328,663,333,701,342,771,369,831,398,828,403,769,374,699,347,662,338,629,333,572,332,516,327,484,318,448,303,405,275,366,242,315,183"/>
+<area shape="poly" id="edge71_Node000075_Node000010" title=" " alt="" coords="329,179,383,210,450,239,541,266,634,286,793,310,793,315,633,291,540,271,448,245,380,214,326,184"/>
+<area shape="poly" id="edge72_Node000075_Node000014" title=" " alt="" coords="324,153,377,120,412,104,449,91,518,78,574,75,630,81,700,91,764,105,821,123,819,129,763,110,700,97,629,86,574,81,519,83,450,97,414,109,380,125,326,158"/>
+<area shape="rect" id="Node000059" href="$classConfigFile.html#ad70ae1b5171cab9bd1f1ad587f4221f4" title="Checks if a file exists and is accessible with an optional index." alt="" coords="496,107,653,132"/>
+<area shape="poly" id="edge68_Node000075_Node000059" title=" " alt="" coords="375,153,491,132,492,137,376,159"/>
+<area shape="rect" id="Node000076" href="$classServer.html#aa78e6af8bcc716e0f5dc7f61d715267a" title="Checks if the location configurations are valid and consistent." alt="" coords="492,156,657,181"/>
+<area shape="poly" id="edge69_Node000075_Node000076" title=" " alt="" coords="389,166,478,166,478,171,389,171"/>
+<area shape="rect" id="Node000077" href="$classServer.html#ad70f6e496f58e2c1babc4dfc95676273" title="Checks if the configured error pages are valid." alt="" coords="483,5,667,31"/>
+<area shape="poly" id="edge73_Node000075_Node000077" title=" " alt="" coords="317,154,370,102,407,73,448,48,488,32,490,37,451,52,410,77,374,106,321,158"/>
+<area shape="poly" id="edge74_Node000077_Node000014" title=" " alt="" coords="640,28,701,48,775,84,836,121,833,125,772,89,699,52,638,33"/>
+</map>

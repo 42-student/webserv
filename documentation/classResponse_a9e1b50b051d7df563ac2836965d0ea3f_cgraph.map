@@ -1,0 +1,7 @@
+<map id="Response::hasRedirect" name="Response::hasRedirect">
+<area shape="rect" id="Node000001" title="Checks if the location has a redirect directive." alt="" coords="5,5,176,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a4bc10814cea8808f1829d1288bcd199a" title="Evaluates the redirect directive for a location." alt="" coords="224,5,399,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a3ab95abcd1ffd208d8584f3a50656b8d" title="Gets the redirect URL for this location." alt="" coords="447,5,607,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="399,15,433,15,433,21,399,21"/>
+</map>

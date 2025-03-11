@@ -1,0 +1,31 @@
+<map id="Request::processChar" name="Request::processChar">
+<area shape="rect" id="Node000001" title="Processes a single character in the request parsing state machine." alt="" coords="5,167,168,192"/>
+<area shape="rect" id="Node000002" href="$classRequest.html#a1c88ac79e7450f2ca74a661f3b93a6f6" title="Processes a character in chunked transfer encoding." alt="" coords="233,141,423,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,168,219,163,220,168,168,173"/>
+<area shape="rect" id="Node000005" href="$classRequest.html#ac23d49f2a731b32e6ca68b9b9230ed05" title="Processes a character in the request headers." alt="" coords="235,92,421,117"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="117,164,215,127,250,118,251,123,217,133,119,169"/>
+<area shape="rect" id="Node000011" href="$classRequest.html#a911aca1ccfb5ce412f5315ae98436cac" title="Processes a character in the message body (non&#45;chunked)." alt="" coords="216,191,440,216"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="168,185,202,188,202,193,168,190"/>
+<area shape="rect" id="Node000012" href="$classRequest.html#a8dd318b3168419cf5e43077dfe15f707" title="Processes a character in the request line (method, URI, version)." alt="" coords="221,240,435,265"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="118,190,217,226,248,234,246,239,215,231,116,195"/>
+<area shape="rect" id="Node000003" href="$classPrintApp.html#a738a8a3722c3e9985014bbe673af47e2" title="Prints an error message with an error code and updates a reference code." alt="" coords="517,153,695,179"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,155,503,159,503,164,423,161"/>
+<area shape="rect" id="Node000004" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="778,153,997,179"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="696,163,764,163,764,169,696,169"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="386,115,441,127,489,139,528,148,526,153,487,145,439,133,385,120"/>
+<area shape="rect" id="Node000006" href="$classRequest.html#ac5b98ba579cb3597dedf9c716bbbae2a" title="Extracts headers from the parsed storage into the header list." alt="" coords="488,104,724,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="422,106,474,108,474,114,421,111"/>
+<area shape="rect" id="Node000007" href="$classRequest.html#ae33289a00807b7d6c38fa5b688fa4759" title="Checks if a character is valid in a header token." alt="" coords="509,5,703,31"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="356,89,416,64,487,39,519,31,520,36,489,45,418,69,359,94"/>
+<area shape="rect" id="Node000008" href="$classRequest.html#ab7b8386336f19bf62090cbf36ef64fe7" title="Sets a header key&#45;value pair in the header list." alt="" coords="531,55,681,80"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="421,90,517,77,518,82,422,95"/>
+<area shape="rect" id="Node000009" href="$classRequest.html#aa959f9e8aae6a13813e17b5f02b0a631" title="Converts a string to lowercase." alt="" coords="779,80,996,105"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="682,71,765,79,765,84,681,77"/>
+<area shape="rect" id="Node000010" href="$classRequest.html#a6f4acee5652a71895c2e27e3d91a6f99" title="Removes leading and trailing whitespace from a string." alt="" coords="772,15,1003,55"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="681,56,758,47,758,53,682,61"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="395,237,439,226,504,204,562,181,564,186,506,209,441,231,397,243"/>
+<area shape="rect" id="Node000013" href="$classRequest.html#a39086036f975fd4895844f3c80a4f360" title="Checks if a character is valid in a URI." alt="" coords="517,227,695,252"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="435,245,503,242,503,247,435,250"/>
+<area shape="rect" id="Node000014" href="$classRequest.html#ae9713cf1f699638d8757b03bcba6f6e3" title="Checks if a URI path position is valid (e.g., no illegal sequences)." alt="" coords="507,276,705,301"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="427,263,494,272,493,277,426,268"/>
+</map>

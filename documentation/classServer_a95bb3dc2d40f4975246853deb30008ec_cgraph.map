@@ -1,0 +1,7 @@
+<map id="Server::setupServer" name="Server::setupServer">
+<area shape="rect" id="Node000001" title="Sets up the server socket and binds it to the configured host and port." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="Node000002" href="$classPrintApp.html#a1f7e115d98370c8bfabe7dce55bcd929" title="Prints a formatted event message with color and status." alt="" coords="204,5,356,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,15,190,15,190,21,156,21"/>
+<area shape="rect" id="Node000003" href="$classPrintApp.html#a4a99f082294bb10332529f00275a1302" title="Gets the current date and time as a formatted string." alt="" coords="404,5,623,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,15,390,15,390,21,356,21"/>
+</map>

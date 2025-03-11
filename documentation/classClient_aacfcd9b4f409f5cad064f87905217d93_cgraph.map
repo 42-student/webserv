@@ -1,0 +1,5 @@
+<map id="Client::Client" name="Client::Client">
+<area shape="rect" id="Node000001" title="Constructor for Client with an associated Server." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="Node000002" href="$classClient.html#afabdd3c5f85287b6b6d8e5b6277451f5" title="Sets the associated Server object for the client." alt="" coords="160,5,291,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,15,146,15,146,21,112,21"/>
+</map>

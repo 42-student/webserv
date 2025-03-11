@@ -1,0 +1,9 @@
+<map id="Response::filePermitted" name="Response::filePermitted">
+<area shape="rect" id="Node000001" title="Checks if a file is permitted based on request and location." alt="" coords="5,31,183,56"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a93ff4190732e9ab839aa7a102152072c" title="Validates the request method against a location’s allowed methods." alt="" coords="231,5,411,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,31,217,27,218,32,183,36"/>
+<area shape="rect" id="Node000004" href="$classRequest.html#a1b2c79c4aa4c9855f2618c2cb133d6b3" title="Gets the HTTP method of the request." alt="" coords="231,55,412,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,50,217,54,217,59,183,55"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a265f1124391f33798fd3fea1f1ae03ec" title="Gets the allowed HTTP methods for this location." alt="" coords="460,5,623,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="412,15,446,15,446,21,412,21"/>
+</map>

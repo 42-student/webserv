@@ -1,0 +1,9 @@
+<map id="Server::handleIndexLocation" name="Server::handleIndexLocation">
+<area shape="rect" id="Node000001" title="Handles index directive for a location block." alt="" coords="5,55,212,80"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="285,5,432,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,52,280,31,281,36,174,57"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a3fb6fb1a05892bc0d66e9cdb626c1d4b" title="Gets the default index file for this location." alt="" coords="260,55,457,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,65,247,65,247,70,212,70"/>
+<area shape="rect" id="Node000004" href="$classLocation.html#a9df8265d1b753aab8cacf36ec905f6c9" title="Sets the default index file for this location." alt="" coords="261,104,457,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="174,77,281,99,280,104,173,83"/>
+</map>

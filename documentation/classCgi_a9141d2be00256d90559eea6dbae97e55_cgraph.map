@@ -1,0 +1,7 @@
+<map id="Cgi::operator=" name="Cgi::operator=">
+<area shape="rect" id="Node000001" title="Assignment operator for Cgi." alt="" coords="5,31,123,56"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#a56b7ac65b11553e8d0e42269adadc5b9" title="Default constructor for Cgi." alt="" coords="211,5,283,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,33,197,22,198,27,123,38"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#ac5f88093067e233b017ea12bcc143128" title="Clears allocated resources (e.g., environment and argument arrays)." alt="" coords="171,55,324,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,48,157,53,157,58,123,54"/>
+</map>

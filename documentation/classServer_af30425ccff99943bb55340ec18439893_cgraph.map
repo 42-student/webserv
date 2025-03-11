@@ -1,0 +1,7 @@
+<map id="Server::handleCgiExtension" name="Server::handleCgiExtension">
+<area shape="rect" id="Node000001" title="Handles CGI extension directive for a location block." alt="" coords="5,31,207,56"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="277,5,423,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,30,263,24,263,30,207,36"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#ac2b8694a9b2283caa169506755f41c2f" title="Sets the file extensions for CGI scripts." alt="" coords="255,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,51,241,54,241,59,207,56"/>
+</map>

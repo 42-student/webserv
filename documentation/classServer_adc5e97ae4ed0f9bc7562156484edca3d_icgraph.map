@@ -1,0 +1,16 @@
+<map id="Server::parseInt" name="Server::parseInt">
+<area shape="rect" id="Node000001" title="Parses a string to an integer within a specified range." alt="" coords="944,29,1069,55"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a499e886738cfd6df37fd671484957335" title="Sets the error pages mapping from a list of parameters." alt="" coords="559,5,721,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="930,40,721,26,721,21,931,34"/>
+<area shape="rect" id="Node000006" href="$classServer.html#aaae6042006c7ebb62396ebcd04bd595e" title="Sets the port number for the server." alt="" coords="777,55,896,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="931,56,896,61,896,56,930,51"/>
+<area shape="rect" id="Node000003" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,31,503,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="546,32,503,37,502,31,545,26"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,31,297,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="331,46,298,46,298,41,331,41"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,46,60,46,60,41,95,41"/>
+<area shape="rect" id="Node000007" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="551,55,729,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="763,70,730,70,730,65,763,65"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="537,59,503,55,503,49,537,53"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Response::applyAlias" name="Response::applyAlias">
+<area shape="rect" id="Node000001" title="Applies an alias from a location to the target path." alt="" coords="5,80,167,105"/>
+<area shape="rect" id="Node000002" href="$classLocation.html#a8f0b542f909c5876e5bf3e823c617519" title="Gets the alias path for this location." alt="" coords="221,5,360,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,77,214,39,234,32,236,38,216,45,119,82"/>
+<area shape="rect" id="Node000003" href="$classLocation.html#a0e5f51972e02ed954426e0222215484b" title="Gets the URI path for this location." alt="" coords="223,55,358,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,80,210,75,210,80,168,85"/>
+<area shape="rect" id="Node000004" href="$classRequest.html#a194fa6a3cd2181087f7f2c67de29a088" title="Gets the URI path of the request." alt="" coords="225,104,357,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,100,211,105,211,110,167,105"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#a009226ae0b9514e387a87f2c8a7acfde" title="Joins multiple path segments into a single path." alt="" coords="215,153,367,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="121,103,216,138,239,146,237,151,214,143,119,108"/>
+</map>

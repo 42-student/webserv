@@ -1,0 +1,23 @@
+<map id="Parser::setDefaultServerValues" name="Parser::setDefaultServerValues">
+<area shape="rect" id="Node000001" title="Sets default values for a Server object if not specified." alt="" coords="5,122,185,162"/>
+<area shape="rect" id="Node000002" href="$classServer.html#ad348f684eee391cc71d87c3cf953bf20" title="Gets the server host IP address." alt="" coords="237,5,359,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,120,169,80,232,40,244,34,247,38,235,44,172,85,122,124"/>
+<area shape="rect" id="Node000003" href="$classServer.html#abc0472b42c6dd53c1caea6dfe10e65cb" title="Gets the default index file name." alt="" coords="233,55,363,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,119,249,82,251,87,151,124"/>
+<area shape="rect" id="Node000004" href="$classServer.html#aa8839197e82d5c7e51bf300694433ad7" title="Gets the root directory." alt="" coords="237,104,359,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,128,222,123,223,129,186,133"/>
+<area shape="rect" id="Node000005" href="$classServer.html#a351b358a52c3627da60d336c875a9629" title="Sets the host IP address for the server." alt="" coords="237,153,359,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="186,150,223,154,222,160,185,155"/>
+<area shape="rect" id="Node000007" href="$classServer.html#afedc8e4e13ad0fade3b5ca0ef3bd6448" title="Sets the default index file name." alt="" coords="234,203,362,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="152,160,250,195,248,200,150,165"/>
+<area shape="rect" id="Node000008" href="$classServer.html#a92df58d63a8448fbda6d216e88a850cf" title="Sets the root directory for serving files." alt="" coords="237,252,359,277"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="123,160,173,198,235,237,249,244,247,249,232,242,170,202,120,164"/>
+<area shape="rect" id="Node000006" href="$classServer.html#a9c60cf3fd3ec8a4bafbf10f3f03f37a8" title="Validates and cleans a configuration token." alt="" coords="430,203,577,228"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="352,176,437,197,436,202,351,181"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="362,213,416,213,416,218,362,218"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="351,249,436,229,437,234,352,255"/>
+<area shape="rect" id="Node000009" href="$classServer.html#a569baa3752bccb377c8bbb3c31295e83" title="Validates that a directory path exists and is accessible." alt="" coords="411,252,596,277"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="360,262,397,262,397,267,360,267"/>
+<area shape="rect" id="Node000010" href="$classConfigFile.html#ae4f23f777cf887aefe510131a3535571" title="Determines the type of a file system path." alt="" coords="644,252,817,277"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="596,262,630,262,630,267,596,267"/>
+</map>

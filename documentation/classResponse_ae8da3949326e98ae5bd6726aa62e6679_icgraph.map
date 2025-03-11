@@ -1,0 +1,11 @@
+<map id="Response::isBoundary" name="Response::isBoundary">
+<area shape="rect" id="Node000001" title="Checks if a line is a multipart boundary." alt="" coords="911,5,1077,31"/>
+<area shape="rect" id="Node000002" href="$classResponse.html#a6ffeededa7c1bdd817d04cd9a6dbe2e5" title="Strips multipart boundaries from a body string." alt="" coords="679,5,863,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="897,21,863,21,863,15,897,15"/>
+<area shape="rect" id="Node000003" href="$classResponse.html#ae7bdb852b82c78c530438e05201fd488" title="Handles POST request logic (e.g., CGI or file upload)." alt="" coords="493,5,631,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="665,21,631,21,631,15,665,15"/>
+<area shape="rect" id="Node000004" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="269,5,445,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="479,21,446,21,446,15,479,15"/>
+<area shape="rect" id="Node000005" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="5,5,221,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,21,222,21,222,15,256,15"/>
+</map>

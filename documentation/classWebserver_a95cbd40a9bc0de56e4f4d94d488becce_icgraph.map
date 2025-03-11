@@ -1,0 +1,30 @@
+<map id="Webserver::removeFromPoll" name="Webserver::removeFromPoll">
+<area shape="rect" id="Node000001" title="Removes a file descriptor from the poll monitoring list." alt="" coords="899,202,1105,228"/>
+<area shape="rect" id="Node000002" href="$classWebserver.html#a51dd576c587f7b90299431bbcdc44b3e" title="Accepts a new client connection for a server." alt="" coords="347,41,591,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="967,198,913,169,850,141,773,117,694,97,554,69,555,64,695,92,774,112,852,136,915,164,969,193"/>
+<area shape="rect" id="Node000003" href="$classWebserver.html#aa5040192a38bc1b42b767c9a6d0ec794" title="Processes incoming requests and outgoing responses for all servers." alt="" coords="108,164,299,204"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="977,194,922,144,887,118,849,96,781,65,724,49,666,40,590,31,465,9,439,8,412,10,382,18,348,31,304,58,267,95,238,133,218,165,213,163,233,130,263,92,300,54,345,26,380,13,411,5,439,3,466,4,591,26,667,34,726,44,783,60,852,91,890,114,926,140,981,190"/>
+<area shape="rect" id="Node000005" href="$classWebserver.html#aaa8744ccdc6a57c355e563f14e39ae08" title="Closes a client connection and cleans up resources." alt="" coords="641,152,848,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="922,202,809,180,810,174,923,197"/>
+<area shape="rect" id="Node000007" href="$classWebserver.html#ad96d099ad730b3497490825e11bd1864" title="Reads and processes a request from a client." alt="" coords="367,192,570,232"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="885,217,570,215,570,210,885,212"/>
+<area shape="rect" id="Node000008" href="$classWebserver.html#af830c1e1f931e63c3dd9ec0357a05c3e" title="Sends the constructed response to a client." alt="" coords="372,257,565,282"/>
+<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="885,230,566,262,565,257,884,224"/>
+<area shape="rect" id="Node000009" href="$classWebserver.html#a0135897ce20caa7de22cd5c27063a46f" title="Reads the response from a CGI handler." alt="" coords="639,306,851,332"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="965,236,852,288,791,309,789,304,850,283,963,231"/>
+<area shape="rect" id="Node000010" href="$classWebserver.html#a8d74c666ed10770685fe0c6ffc9e3ec5" title="Sends the request body to a CGI handler." alt="" coords="653,356,837,381"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="983,240,927,294,891,323,852,347,823,358,821,353,849,342,888,318,924,290,979,236"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,72,348,88,282,126,230,166,227,162,279,122,346,83,389,67"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,172,60,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,187,60,187,60,182,94,182"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="686,151,590,132,468,120,415,122,347,132,294,147,246,167,244,162,292,142,346,127,414,117,468,115,591,127,687,145"/>
+<area shape="rect" id="Node000006" href="$classWebserver.html#ae68d19b1f730c4488131e529464b745f" title="Handles client timeouts by closing inactive connections." alt="" coords="351,142,586,168"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="628,163,586,162,586,156,628,158"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="658,182,571,197,570,192,657,177"/>
+<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="713,186,658,217,592,247,548,259,546,254,590,242,655,213,711,182"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="341,172,299,176,299,171,340,166"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="354,203,299,197,299,192,354,197"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="381,256,346,247,293,227,245,207,247,202,295,223,347,242,383,251"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="625,332,560,332,488,328,416,316,346,296,308,277,273,254,221,206,225,202,277,249,311,273,348,291,417,311,489,322,560,327,625,326"/>
+<area shape="poly" id="edge17_Node000010_Node000003" title=" " alt="" coords="639,382,571,383,495,378,419,364,345,337,302,309,265,273,235,236,214,206,219,203,239,233,269,269,305,305,348,333,420,358,496,373,571,378,639,377"/>
+</map>

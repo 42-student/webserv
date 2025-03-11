@@ -1,0 +1,27 @@
+<map id="Location::getCgiExtension" name="Location::getCgiExtension">
+<area shape="rect" id="Node000001" title="Gets the file extensions for CGI scripts." alt="" coords="1508,81,1699,107"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a4204d73d70844ea48580f365bf550163" title="Checks if a CGI location block is valid." alt="" coords="1269,5,1460,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1549,80,1405,33,1406,28,1550,75"/>
+<area shape="rect" id="Node000004" href="$classServer.html#a90c54977a2c667625763a84deea63801" title="Configures a location block with specified parameters." alt="" coords="829,31,976,56"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="1494,89,976,51,976,46,1494,84"/>
+<area shape="rect" id="Node000009" href="$classResponse.html#a05d82fb2415147d00facc3268b152d00" title="Checks if a target matches a CGI extension in a location." alt="" coords="1269,107,1460,132"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1495,108,1460,112,1460,107,1494,103"/>
+<area shape="rect" id="Node000010" href="$classResponse.html#ae717a265388b5ffc367fdab215141257" title="Processes the request target to determine the response action." alt="" coords="1039,132,1221,157"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="1564,115,1515,133,1461,147,1399,155,1336,158,1222,156,1222,150,1336,153,1398,150,1459,142,1513,128,1562,110"/>
+<area shape="rect" id="Node000003" href="$classServer.html#a54f543457a8dad67af0c6f2cf2df7b6b" title="Checks if a location block is valid (general validation)." alt="" coords="1045,5,1215,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1256,21,1215,21,1215,15,1256,15"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1031,32,977,38,976,33,1031,26"/>
+<area shape="rect" id="Node000005" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="569,31,748,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="816,46,748,46,748,41,816,41"/>
+<area shape="rect" id="Node000006" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,31,503,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="556,46,503,46,503,41,556,41"/>
+<area shape="rect" id="Node000007" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,31,297,56"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="331,46,298,46,298,41,331,41"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="95,46,60,46,60,41,95,41"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1256,134,1222,137,1221,132,1256,128"/>
+<area shape="rect" id="Node000011" href="$classResponse.html#a8fb18e43714b98d3ff70d742d2601f4e" title="Prepares the response body based on the request method and target." alt="" coords="815,132,991,157"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1025,147,991,147,991,142,1025,142"/>
+<area shape="rect" id="Node000012" href="$classResponse.html#ac055424f2fd1ab5c9c06ab52100c1a7c" title="Constructs the full HTTP response (headers and body)." alt="" coords="551,132,767,157"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="801,147,767,147,767,142,801,142"/>
+</map>

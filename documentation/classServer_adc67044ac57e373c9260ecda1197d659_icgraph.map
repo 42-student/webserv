@@ -1,0 +1,13 @@
+<map id="Server::handleAllowMethods" name="Server::handleAllowMethods">
+<area shape="rect" id="Node000001" title="Handles allowed methods directive for a location block." alt="" coords="972,5,1180,31"/>
+<area shape="rect" id="Node000002" href="$classServer.html#a90c54977a2c667625763a84deea63801" title="Configures a location block with specified parameters." alt="" coords="777,5,924,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="958,21,925,21,925,15,958,15"/>
+<area shape="rect" id="Node000003" href="$classParser.html#af55ca4e1cbbf1a3930eb4c92a1f64b77" title="Processes a configuration directive and updates the Server object." alt="" coords="551,5,729,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="764,21,730,21,730,15,764,15"/>
+<area shape="rect" id="Node000004" href="$classParser.html#a8e1b1571dd2e47539a9cedc0d4290d07" title="Parses a single server configuration block into a Server object." alt="" coords="345,5,503,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="537,21,503,21,503,15,537,15"/>
+<area shape="rect" id="Node000005" href="$classParser.html#a90f130177a96d2551b858dd12f37f09d" title="Parses a server configuration file into Server objects." alt="" coords="108,5,297,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="331,21,298,21,298,15,331,15"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title="Main entry point for the web server application." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
+</map>

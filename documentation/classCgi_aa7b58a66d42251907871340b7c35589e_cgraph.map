@@ -1,0 +1,34 @@
+<map id="Cgi::initialize_environment" name="Cgi::initialize_environment">
+<area shape="rect" id="Node000001" title="Initializes the CGI environment based on a request and location." alt="" coords="5,258,203,283"/>
+<area shape="rect" id="Node000002" href="$classCgi.html#a3d605c40b7902d2514d986072b2ee074" title="Builds the argument array for execve based on the interpreter." alt="" coords="304,5,457,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,257,125,217,155,162,196,104,221,78,249,55,290,36,292,41,252,60,225,82,200,108,159,165,130,219,113,259"/>
+<area shape="rect" id="Node000003" href="$classCgi.html#a8ac595fb5c0c5f58ef49062fbb2e590e" title="Builds the environment array for execve from the environment map." alt="" coords="294,69,467,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,256,164,191,204,152,249,119,280,105,282,110,252,124,207,156,168,194,116,260"/>
+<area shape="rect" id="Node000004" href="$classCgi.html#a591f7b27c8e4595d0bfb5259cfc80745" title="Decodes a URL&#45;encoded string (e.g., &quot;%20&quot; to &quot; &quot;)." alt="" coords="319,134,442,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,256,173,212,210,188,250,168,305,152,306,158,252,173,213,193,176,217,121,260"/>
+<area shape="rect" id="Node000006" href="$classCgi.html#abe15f938380e98b602ce98da11533c45" title="Extracts the PATH_INFO from a script path based on CGI extensions." alt="" coords="298,183,463,209"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="136,255,250,217,287,209,288,214,251,223,138,261"/>
+<area shape="rect" id="Node000007" href="$classRequest.html#a194fa6a3cd2181087f7f2c67de29a088" title="Gets the URI path of the request." alt="" coords="315,233,447,258"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="202,259,301,250,301,255,203,264"/>
+<area shape="rect" id="Node000008" href="$classRequest.html#ae49a8c54f0a78e1a93e76f32eacf4382" title="Gets the query string of the request." alt="" coords="309,282,452,307"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="203,277,296,285,295,290,202,282"/>
+<area shape="rect" id="Node000009" href="$classCgi.html#aad83b3f9a093357325f61761f2dc9faf" title="Sets common CGI environment variables (e.g., SERVER_SOFTWARE)." alt="" coords="251,331,511,357"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="140,281,251,316,294,326,292,331,250,321,139,286"/>
+<area shape="rect" id="Node000010" href="$classCgi.html#abadc7de9252fb6df1b8e13fbda4de9b5" title="Sets content&#45;related environment variables (e.g., CONTENT_LENGTH)." alt="" coords="283,430,478,455"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="116,282,168,347,207,384,252,415,271,424,269,428,249,420,204,388,164,350,112,285"/>
+<area shape="rect" id="Node000013" href="$classCgi.html#a205a1fb5a066e5ddab75dbc2439d55ba" title="Sets environment variables from request headers (e.g., HTTP_HOST)." alt="" coords="287,381,474,406"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="121,281,176,323,213,346,252,366,278,375,276,380,250,370,210,351,173,328,118,285"/>
+<area shape="rect" id="Node000015" href="$classCgi.html#a9591a42b5ae2aa26cf9e99c51fbb2ee7" title="Sets server&#45;related environment variables (e.g., SERVER_NAME)." alt="" coords="287,479,474,505"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="113,283,131,320,161,370,202,421,226,445,252,464,275,476,273,481,249,469,222,449,198,425,157,373,127,322,108,285"/>
+<area shape="rect" id="Node000005" href="$classCgi.html#a2e4179fb04e877eac3c1f6efc6ae5e37" title="Converts a hexadecimal string to a decimal value." alt="" coords="567,134,721,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="442,144,553,144,553,149,442,149"/>
+<area shape="rect" id="Node000011" href="$classRequest.html#a1e8fc254762bbab2fd0187687a9e0d6f" title="Gets the request body content." alt="" coords="575,430,713,455"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="478,440,562,440,562,445,478,445"/>
+<area shape="rect" id="Node000012" href="$classRequest.html#aa76cc127010637d96d8cd82c2ed98b14" title="Gets the value of a specific header." alt="" coords="569,479,719,505"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="451,453,511,464,564,474,563,479,510,469,450,458"/>
+<area shape="rect" id="Node000014" href="$classRequest.html#a8b38c3aea30881192358ae28a12b0952" title="Gets the map of request headers." alt="" coords="565,381,723,406"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="474,391,551,391,551,396,474,396"/>
+<area shape="poly" id="edge15_Node000015_Node000012" title=" " alt="" coords="474,489,555,489,555,495,474,495"/>
+<area shape="rect" id="Node000016" href="$classRequest.html#abe7db3d90ed4e855d27e87a36dd9aa5b" title="Gets the HTTP method as a string (e.g., &quot;GET&quot;)." alt="" coords="559,529,729,554"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="450,502,562,523,561,529,449,507"/>
+</map>
