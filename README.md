@@ -25,7 +25,7 @@ For more detailed documentation, please check the `documentation` folder and ope
 
 ```bash
 # Clone the repository
-git@github.com:42-student/webserv.git
+git clone git@github.com:42-student/webserv.git
 cd webserv
 
 # Compile the project
