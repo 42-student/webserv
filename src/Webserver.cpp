@@ -32,7 +32,8 @@ void Webserver::processServerRequests()
 	while (true)
 	{
 		pollStatus = poll(&_pollFds[0], _pollFds.size(), 1000);
-		if (pollStatus < 0) continue;
+		if (pollStatus < 0)
+			continue;
 		if (pollStatus == 0)
 		{
 			handleClientTimeout();
@@ -153,7 +154,7 @@ void Webserver::initializePollFds()
     _pollFds.clear();
     for (std::vector<Server>::iterator it = _serv.begin(); it != _serv.end(); ++it)
     {
-    	if (listen(it->getFd(), 369) == -1)
+    	if (listen(it->getFd(), 555) == -1)
     		PrintApp::printEvent(RED_BOLD, FAILURE, "Failed to listen on socket. Reason: %s. Closing the connection...", strerror(errno));
     	if (fcntl(it->getFd(), F_SETFL, O_NONBLOCK) < 0)
     		PrintApp::printEvent(RED_BOLD, FAILURE, "Error setting non-blocking mode using fcntl. Reason: %s. Closing the connection...", strerror(errno));
